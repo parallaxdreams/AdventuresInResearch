@@ -191,12 +191,12 @@ screen main_menu:
         ground "imgs/ui/title_screen.png" 
         hover "imgs/ui/title_screen_hover.png"
         
-        hotspot (0, 547, 255, 98) action Start()
-        hotspot (255, 547, 238, 98) action [If(FileCurrentPage()=="auto", FilePage(1)),ShowMenu("load")]
-        hotspot (493, 547, 193, 98) action ShowMenu("preferences")
-        hotspot (686, 547, 314, 98) action ShowMenu("achievements")
-        hotspot (1000, 547, 137, 98) action Help()
-        hotspot (1137, 547, 143, 98) action Quit(confirm=False)
+        hotspot (0, 547, 255, 98) action Start() alt _("Start game button")
+        hotspot (255, 547, 238, 98) action [If(FileCurrentPage()=="auto", FilePage(1)),ShowMenu("load")] alt _("Load game button")
+        hotspot (493, 547, 193, 98) action ShowMenu("preferences") alt _("Settings button")
+        hotspot (686, 547, 314, 98) action ShowMenu("achievements") alt _("Achievements button")
+        hotspot (1000, 547, 137, 98) action Help() alt _("Help button")
+        hotspot (1137, 547, 143, 98) action Quit(confirm=False) alt _("Quit game button")
     
 
 
@@ -216,13 +216,13 @@ screen navigation:
         selected_hover "imgs/ui/nav_buttons_selected.png"
         #insensitive "imgs/ui/nav_buttons_ground.png"
         
-        hotspot (0,  605, 130, 84) action Return()
-        hotspot (130, 605, 222, 84) action [If(FileCurrentPage()=="auto", FilePage(1)), ShowMenu("save")]
-        hotspot (353, 605, 225, 84) action [If(FileCurrentPage()=="auto", FilePage(1)), ShowMenu("load")]
-        hotspot (578, 605, 179, 84) action ShowMenu("preferences")
-        hotspot (757, 605, 269, 84) action ShowMenu ("achievements")
-        hotspot (1026, 605, 131, 84) action Help()
-        hotspot (1158, 605, 123, 84) action Quit()
+        hotspot (0,  605, 130, 84) action Return() alt "Back button"
+        hotspot (130, 605, 222, 84) action [If(FileCurrentPage()=="auto", FilePage(1)), ShowMenu("save")] alt _("Save Game button")
+        hotspot (353, 605, 225, 84) action [If(FileCurrentPage()=="auto", FilePage(1)), ShowMenu("load")] alt _("Load Game button")
+        hotspot (578, 605, 179, 84) action ShowMenu("preferences") alt _("Settings button")
+        hotspot (757, 605, 269, 84) action ShowMenu ("achievements") alt _("Achievements button")
+        hotspot (1026, 605, 131, 84) action Help() alt _("Help button")
+        hotspot (1158, 605, 123, 84) action Quit() alt _("Quit game button")
 
     
 
@@ -316,9 +316,9 @@ screen load_file_picker:
             selected_idle "imgs/ui/load_slots_nav_selected.png"
             selected_hover "imgs/ui/load_slots_nav_selected.png"
 
-            hotspot (47, 43, 329, 54) action FilePage(1)
-            hotspot (378, 43, 326, 54) action FilePage("auto")
-            hotspot (706, 43, 244, 54) action ShowMenu("actSelect")
+            hotspot (47, 43, 329, 54) action FilePage(1) alt _("View Saved Games button")
+            hotspot (378, 43, 326, 54) action FilePage("auto") alt _("View auto saved games button")
+            hotspot (706, 43, 244, 54) action ShowMenu("actSelect") alt _("View Act Selection screen button")
             
 
         imagemap:
@@ -374,22 +374,26 @@ screen save:
     # This ensures that any other menu screen is replaced.
     tag menu
 
+    text "Save Game Screen"
+
     add "imgs/ui/save_background.png" xalign 1.0 yalign 0.0
 
     #use load_save_slot_nav
-    use navigation
     use save_file_picker
+    use navigation
 
 screen load:
 
     # This ensures that any other menu screen is replaced.
     tag menu
 
+    text "Load Game Screen"
+
     add "imgs/ui/load_background.png" xalign 1.0 yalign 0.0
 
     #use load_save_slot_nav
-    use navigation
     use load_file_picker
+    use navigation
 
 init -2 python:
     style.file_picker_frame = Style(style.menu_frame)
@@ -412,6 +416,8 @@ screen actSelect:
 
     tag menu
 
+    text "Act Selection Screen"
+
     add "imgs/ui/actSelect_background.png" xalign 1.0 yalign 0.0
 
     imagemap:
@@ -421,9 +427,9 @@ screen actSelect:
         selected_idle "imgs/ui/load_slots_nav_selected.png"
         selected_hover "imgs/ui/load_slots_nav_selected.png"
 
-        hotspot (47, 43, 329, 54) action [If(FileCurrentPage()=="auto", FilePage(1)), ShowMenu("load")]
-        hotspot (378, 43, 326, 54) action [If(FileCurrentPage()==1, FilePage("auto")), ShowMenu("load")]
-        hotspot (706, 43, 244, 54) action ShowMenu("actSelect")
+        hotspot (47, 43, 329, 54) action [If(FileCurrentPage()=="auto", FilePage(1)), ShowMenu("load")] alt _("View Saved Games button")
+        hotspot (378, 43, 326, 54) action [If(FileCurrentPage()==1, FilePage("auto")), ShowMenu("load")] alt _("View auto saved games button")
+        hotspot (706, 43, 244, 54) action ShowMenu("actSelect") alt _("View Act Selection screen button")
 
     imagemap:
         ground "imgs/ui/actSelect_buttons_locked_insensitive.png"
@@ -433,18 +439,18 @@ screen actSelect:
 
         #1st Row
         if persistent.ActOne_unlocked:
-            hotspot (45, 99, 396, 238) action Start("restartActOne")
+            hotspot (45, 99, 396, 238) action Start("restartActOne") alt _("Restart from Act One button")
         if persistent.ActTwo_unlocked:
-            hotspot (442, 99, 396, 238) action Start("restartActTwo")
+            hotspot (442, 99, 396, 238) action Start("restartActTwo") alt _("Restart from Act Two button")
         if persistent.ActThree_unlocked:
-            hotspot (839, 99, 395, 238) action Start("restartActThree")
+            hotspot (839, 99, 395, 238) action Start("restartActThree") alt _("Restart from Act Three button")
         #2nd Row
         if persistent.ActFour_unlocked:
-            hotspot (45, 338, 396, 238) action Start("restartActFour")
+            hotspot (45, 338, 396, 238) action Start("restartActFour") alt _("Restart from Act Four button")
         if persistent.ActFive_unlocked:
-            hotspot (442, 338, 396, 238) action Start("restartActFive")
+            hotspot (442, 338, 396, 238) action Start("restartActFive") alt _("Restart from Act Five button")
         if persistent.ActSix_unlocked:
-            hotspot (839, 338, 395, 238) action Start("restartActSix")
+            hotspot (839, 338, 395, 238) action Start("restartActSix") alt _("Restart from Act Six button")
 
     use navigation
 
@@ -459,10 +465,9 @@ screen preferences:
 
     tag menu
 
-    add "imgs/ui/settings_background.png" xalign 1.0 yalign 0.0
+    text "Settings Screen"
 
-    # Include the navigation.
-    use navigation
+    add "imgs/ui/settings_background.png" xalign 1.0 yalign 0.0
 
     imagemap:
         ground "imgs/ui/settings_dialog_ground.png"
@@ -471,15 +476,18 @@ screen preferences:
         selected_hover "imgs/ui/settings_dialog_hover.png"
         selected_idle "imgs/ui/settings_dialog_hover.png"
 
-        hotspot (598, 173, 137, 38) action Preference("display", "window")
-        hotspot (785, 173, 165, 38) action Preference("display", "fullscreen")
+        hotspot (598, 173, 137, 38) action Preference("display", "window") alt _("Run game in a window button")
+        hotspot (785, 173, 165, 38) action Preference("display", "fullscreen") alt _("Run game fullscreen button")
 
     # Sliders
-        bar pos (610, 276, 336, 28) value Preference("Text Speed") style "pref_slider"
-        bar pos (610, 383, 336, 28) value Preference("Sound Volume") style "pref_slider"
-        bar pos (610, 499, 336, 28) value Preference("Music Volume") style "pref_slider"
+        bar pos (610, 276, 336, 28) value Preference("Text Speed") style "pref_slider" alt _("Text speed slider")
+        bar pos (610, 383, 336, 28) value Preference("Sound Volume") style "pref_slider" alt _("Sound effects volume slider")
+        bar pos (610, 499, 336, 28) value Preference("Music Volume") style "pref_slider" alt _("Music volume slider")
         #bar pos (32,243,148,15) value Preference("Voice Volume") style "pref_slider"
         #bar pos (47,308,148,15) value Preference("Auto-Forward", "toggle") style "pref_slider"
+
+    # Include the navigation.
+    use navigation
 
 init -2 python:
     style.pref_slider.left_bar = "imgs/ui/bar_full.png" #full
@@ -510,14 +518,14 @@ screen achievement_nav_buttons:
 
         # activate Previous Button
         if achvt_pg == 2:
-            hotspot (37, 451, 90, 90) action [ SetVariable("achvt_pg", 1), ShowMenu("achievements") ]
+            hotspot (37, 451, 90, 90) action [ SetVariable("achvt_pg", 1), ShowMenu("achievements") ] alt _("Previous page of achievements button")
 
         elif achvt_pg == 1:
             hotspot (37, 451, 90, 90) action None
 
         # activate Next Button
         if achvt_pg == 1:
-            hotspot (1154, 451, 90, 90) action [ SetVariable("achvt_pg", 2), ShowMenu("achievements") ]
+            hotspot (1154, 451, 90, 90) action [ SetVariable("achvt_pg", 2), ShowMenu("achievements") ] alt _("Next page of achievements button")
 
         elif achvt_pg == 2:
             hotspot (1154, 451, 90, 90) action None
@@ -531,6 +539,8 @@ screen achievement_nav_buttons:
 screen achievements:
 
     tag menu
+
+    text "Achievements Screen"
 
     add "imgs/ui/achievements_background.png" xalign 1.0 yalign 0.0
     # Include the navigation buttons.
@@ -835,6 +845,7 @@ screen quick_menu:
             idle "imgs/ui/settings_icon.png"
             hover "imgs/ui/settings_icon_hover.png"
             action ShowMenu('preferences')
+            alt "Game Settings Button"
         
 init -2 python:
 
