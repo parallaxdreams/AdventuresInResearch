@@ -300,7 +300,7 @@ $ name = ""
 define m = Character("Me", color="#000",ctc="dialogueAdvance", ctc_position="nestled")
 
 #supporting characters
-define tu = Character('Tutorial', ctc="dialogueAdvance", ctc_position="nestled")
+define tu = Character('Tutorial', who_alt=" ", ctc="dialogueAdvance", ctc_position="nestled")
 define dw = Character('Dr. Windham', ctc="dialogueAdvance", ctc_position="nestled")
 define k = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled")
 define ka = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled")
