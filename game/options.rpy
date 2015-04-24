@@ -72,7 +72,7 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Adventures in Research"
-    config.version = "1.4"
+    config.version = "1.6"
 
 
     config.thumbnail_width = 375
