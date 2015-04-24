@@ -184,6 +184,8 @@ screen main_menu:
 
     tag menu
 
+    text "Adventures in Research main menu"
+
     add "mmSlideShow"
 
  #Custom Main Menu
