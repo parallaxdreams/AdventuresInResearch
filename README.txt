@@ -25,7 +25,7 @@ Music by Craig Schroer
 Note: To run the Software, you will need download the Ren’Py SDK (separately
 licensed and available here: http://renpy.org/) and point it to the folder
 containing these files. The latest version of Ren’Py tested with the Software is
-6.18.3.761; later versions of Ren’Py may require changes to the Software.
+6.99.1.329; later versions of Ren’Py may require changes to the Software.
 Neither Adventures in Research nor its creators are affiliated with either
 Ren’Py or its developer(s).
 
