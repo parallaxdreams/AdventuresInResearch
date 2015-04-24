@@ -19,6 +19,10 @@ label Tutorial:
     tu "Great! In this game we’ll be exploring the basics of academic research."
     
     tu "You are going to be playing this game in your LIBR 1101 class."
+
+    # For Self-voicing only
+    sv "and this tutorial will help introduce some of the game’s features."
+
     tu "Your LIBR 1101 professor will also give you outside assignments, readings, and/or group work."
     tu "This game is meant to supplement the things you are doing in class; it will introduce some concepts and reinforce others."
     
