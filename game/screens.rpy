@@ -520,14 +520,14 @@ screen achievement_nav_buttons:
 
         # activate Previous Button
         if achvt_pg == 2:
-            hotspot (37, 451, 90, 90) action [ SetVariable("achvt_pg", 1), ShowMenu("achievements") ] alt _("Previous page of achievements button")
+            hotspot (37, 451, 90, 90) action [ SetVariable("achvt_pg", 1), ShowMenu("achievements") ] 
 
         elif achvt_pg == 1:
             hotspot (37, 451, 90, 90) action None
 
         # activate Next Button
         if achvt_pg == 1:
-            hotspot (1154, 451, 90, 90) action [ SetVariable("achvt_pg", 2), ShowMenu("achievements") ] alt _("Next page of achievements button")
+            hotspot (1154, 451, 90, 90) action [ SetVariable("achvt_pg", 2), ShowMenu("achievements") ] 
 
         elif achvt_pg == 2:
             hotspot (1154, 451, 90, 90) action None
@@ -542,7 +542,116 @@ screen achievements:
 
     tag menu
 
+    # set variable for achievements counter
+    $ achcount = 0
+
+    # This for Self Voicing this menu screen
     text "Achievements Screen"
+
+    # Self Voicing Support for achievements earned.
+    text "You have unlocked the following achievements:"
+    if persistent.achievement_tutorial_complete_unlocked:
+        text "Tutorial Completed"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_topic_tackler_unlocked:
+        text "Topic Tackler"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_bad_end1_unlocked:
+        text "Bad Ending Number One: Robot Apocalypse"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_future_reference_unlocked:
+        text "For Future Reference"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_actOne_complete_unlocked:
+        text "Act One Completed"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_bad_end2_unlocked:
+        text "Bad Ending Number Two: Zombies at the Farm"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_information_wrangler_unlocked:
+        text "Information Wrangler"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_actTwo_complete_unlocked:
+        text "Act Two Completed"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_appropriate_book_unlocked:
+        text "An Appropriate Book"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_bad_end3_unlocked:
+        text "Bad Ending Number Three: Shark Dental Assistant"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_boolean_expert_unlocked:
+        text "Boolean Expert"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_chatty_cathy_unlocked:
+        text "Chatty Cathy"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_actThree_complete_unlocked:
+        text "Act Three Completed"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_bad_end4_unlocked:
+        text "Bad Ending Number Four: Moon Landscaper"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_honesty_policy_unlocked:
+        text "Honesty is the Best Policy"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_actFour_complete_unlocked:
+        text "Act Four Completed"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_bad_end5_unlocked:
+        text "Bad Ending Number Five: Hiding in My Bomb Shelter"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_critical_thinker_unlocked:
+        text "Critical Thinker"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_actFive_complete_unlocked:
+        text "Act Five Completed"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_power_pointers_unlocked:
+        text "Power Pointers"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_actSix_complete_unlocked:
+        text "Act Six Completed"
+        $ achcount = achcount + 1
+
+    if persistent.achievement_allActs_complete_unlocked:
+        text "All Six Acts Completed"
+        $ achcount = achcount + 1
+
+    $ achremain = 22 - achcount
+
+    if achcount > 1:
+        text " . You have unlocked [achcount] achievements. [achremain] achievements remain locked."
+
+    if achcount == 1:
+        text " . You have unlocked [achcount] achievement. [achremain] achievements remain locked."
+
+    if achcount == 0:
+        text " . You have not unlocked any achievements yet. [achremain] achievements remain locked."
+
+
+    # End Self Voicing of Achievements
+    ##############################################################
 
     add "imgs/ui/achievements_background.png" xalign 1.0 yalign 0.0
     # Include the navigation buttons.
