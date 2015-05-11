@@ -297,22 +297,22 @@ $ persistent.ActSix_unlocked = False
 $ name = ""
 
 #line below is player character
-define m = Character("Me", color="#000",ctc="dialogueAdvance", ctc_position="nestled")
+define m = Character("Me", who_alt="You", color="#000",ctc="dialogueAdvance", ctc_position="nestled", what_alt="say [text]")
 
 #supporting characters
 define tu = Character('Tutorial', who_alt=" ", ctc="dialogueAdvance", ctc_position="nestled")
-define dw = Character('Dr. Windham', ctc="dialogueAdvance", ctc_position="nestled")
-define k = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled")
-define ka = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled")
-define j = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled")
-define c = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled")
-define s = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled")
-define t = Character('Tony', ctc="dialogueAdvance", ctc_position="nestled")
-define r = Character('Robot Overlord', ctc="dialogueAdvance", ctc_position="nestled", what_font="Quantico-Bold.ttf")
-define d = Character('Director', ctc="dialogueAdvance", ctc_position="nestled")
-define cm = Character('Crew Member', ctc="dialogueAdvance", ctc_position="nestled")
-define e = Character('Everyone', ctc="dialogueAdvance", ctc_position="nestled")
-define l = Character('Chat Librarian', ctc="dialogueAdvance", ctc_position="nestled")
+define dw = Character('Dr. Windham', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define k = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define ka = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define j = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define c = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define s = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define t = Character('Tony', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define r = Character('Robot Overlord', ctc="dialogueAdvance", ctc_position="nestled", what_font="Quantico-Bold.ttf", what_alt="says [text]")
+define d = Character('Director', who_alt="The Director", ctc="dialogueAdvance", ctc_position="nestled", what_alt="shouts [text]")
+define cm = Character('Crew Member', who_alt="A crew member", ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define e = Character('Everyone', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define l = Character('Chat Librarian', who_alt="The Chat Librarian", ctc="dialogueAdvance", ctc_position="nestled", what_alt="types [text]")
 
 
 #This is the unknown character, before he or she has been introduced
