@@ -316,7 +316,7 @@ define l = Character('Chat Librarian', who_alt="The Chat Librarian", ctc="dialog
 
 
 #This is the unknown character, before he or she has been introduced
-define un = Character('???', color="#000",ctc="dialogueAdvance", ctc_position="nestled")
+define un = Character('???', who_alt="unknown speaker", color="#000",ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
 
 #chatterbox characters and window, text styling
 #Kana
