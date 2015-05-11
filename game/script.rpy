@@ -103,12 +103,12 @@ image calendar dates = "imgs/ui/calendar_dates.png"
 image calendar backing = "imgs/ui/calendar_backing.png"
 
 ## Act Titlecards
-image bg ActOne = "imgs/bg/bg_ActOne.png"
-image bg ActTwo = "imgs/bg/bg_ActTwo.png"
-image bg ActThree = "imgs/bg/bg_ActThree.png"
-image bg ActFour = "imgs/bg/bg_ActFour.png"
-image bg ActFive = "imgs/bg/bg_ActFive.png"
-image bg ActSix = "imgs/bg/bg_ActSix.png"
+image bg ActOne = Image("imgs/bg/bg_ActOne.png", alt="Act One: A Case of the Mondays")
+image bg ActTwo = Image("imgs/bg/bg_ActTwo.png", alt="Act Two: Pride and Periodicals")
+image bg ActThree = Image("imgs/bg/bg_ActThree.png", alt="Act Three: Hollywood is Boolean")
+image bg ActFour = Image("imgs/bg/bg_ActFour.png", alt="Act Four: Avoiding Plagiarism")
+image bg ActFive = Image("imgs/bg/bg_ActFive.png", alt="Act Five: Climate Change a Palooza")
+image bg ActSix = Image("imgs/bg/bg_ActSix.png", alt="Act Six: Presentation Day")
 
 ##Boolean Extras Images
 image booleanEveryone = "imgs/bool/bool_everyone.png"
