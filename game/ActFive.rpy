@@ -785,7 +785,7 @@ label seeingYa:
     jump actFiveEnterPassword
 
 label actFiveEnterPassword:
-    $player_pass = renpy.input("Please enter the password for Act Six and press  < Enter >", length=6)
+    $player_pass = renpy.input("Please enter the password for Act Six and press “Enter”", length=6)
     if player_pass.upper().strip() == actSix_pass:
         stop ambient fadeout 0.8
         stop music fadeout 0.8

@@ -1300,7 +1300,7 @@ label actOneWrapUpIsOver:
     jump actOneEnterPassword
 
 label actOneEnterPassword:
-    $player_pass = renpy.input("Please enter the password for Act Two and press  < Enter >", length=6)
+    $player_pass = renpy.input("Please enter the password for Act Two and press  “Enter”", length=6)
     if player_pass.upper().strip() == actTwo_pass:
         stop music fadeout 0.8
         jump ActTwo

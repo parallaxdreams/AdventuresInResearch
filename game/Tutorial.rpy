@@ -84,7 +84,7 @@ label Tutorial:
     jump tutorialEnterPassword
 
 label tutorialEnterPassword:
-    $player_pass = renpy.input("Please enter the password for Act One and press  < Enter >", length=6)
+    $player_pass = renpy.input("Please enter the password for Act One and press “Enter”", length=6)
     if player_pass.upper().strip() == actOne_pass:
         stop ambient fadeout 0.8
         stop music fadeout 0.8

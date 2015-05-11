@@ -339,7 +339,7 @@ label start:
     
     #Player enters name here (used by other characters and in menus)
     $ noNameMatch = True
-    $ name = renpy.input("Please enter your first name (Example: Sarah) and press  < Enter >", length=15)
+    $ name = renpy.input("Please enter your first name (Example: Sarah) and press “Enter”", length=15)
     $ name = name.strip()
     jump validateName
 
@@ -348,7 +348,7 @@ label validateName:
     if name == "Kevin" or name == "Tony" or name == "Jeff" or name == "Kana" or name == "Stephanie" or name == "Christina":
         $ noNameMatch = False
         "To avoid confusion with another character in the game, please enter a nickname, or your first name and the first letter of your last name."
-        $ name = renpy.input("Please enter a nickname, or first name and last initial (Example: Jeff M.) and press  < Enter >", length=15)
+        $ name = renpy.input("Please enter a nickname, or first name and last initial (Example: Jeff M.) and press “Enter”", length=15)
         $ name = name.strip()
         jump validateName
 
@@ -357,12 +357,12 @@ label validateName:
         "You didn’t enter a name. Please try again."
 
         if noNameMatch == True:
-            $ name = renpy.input("Please enter your first name (Example: Sarah) and press  < Enter >", length=15)
+            $ name = renpy.input("Please enter your first name (Example: Sarah) and press “Enter”", length=15)
             $ name = name.strip()
             jump validateName
 
         if noNameMatch == False:
-            $ name = renpy.input("Please enter a nickname, or first name and last initial (Example: Jeff M.) and press  < Enter >", length=15)
+            $ name = renpy.input("Please enter a nickname, or first name and last initial (Example: Jeff M.) and press “Enter”", length=15)
             $ name = name.strip()
             jump validateName
 
