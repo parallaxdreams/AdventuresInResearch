@@ -21,7 +21,7 @@ label Tutorial:
     tu "You are going to be playing this game in your LIBR 1101 class."
 
     # For Self-voicing only
-    sv "and this tutorial will help introduce some of the game’s features."
+    sv "This tutorial will help introduce some of the game’s features."
 
     tu "Your LIBR 1101 professor will also give you outside assignments, readings, and/or group work."
     tu "This game is meant to supplement the things you are doing in class; it will introduce some concepts and reinforce others."
@@ -38,13 +38,13 @@ label Tutorial:
 
         tu "Who is UWG’s mascot?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Wolfie the Wolf":
+        "Wolfie the Wolf":
             tu "Correct! Great job."
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Jane the Parrot":
+        "Jane the Parrot":
             tu "Sorry, it’s Wolfie."
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Larry the Lion":
+        "Larry the Lion":
             tu "Sorry, it’s Wolfie."
     
     tu "For some of these scenarios, you will have to choose several options until you find the correct answer."
