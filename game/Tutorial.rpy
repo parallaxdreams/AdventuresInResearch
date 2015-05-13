@@ -51,10 +51,12 @@ label Tutorial:
     tu "Be careful! Some incorrect answers could lead to unintended consequences for the game’s characters."
     
     tu "Click the {image=imgs/ui/settings_icon.png} icon at the top left corner of the screen to access the game’s settings, save your progress, or quit the game."
+    sv "You can also use the up arrow key to access the settings icon anytime during the game."
     tu "You can stop and save and resume your progress as often as you need to."
-    tu "Note that pressing the “esc” key on your keyboard will also bring up the game’s menu."
+    tu "Note that pressing the “esc” or “escape” key on your keyboard will also bring up the game’s menu."
 
     tu "You can change the text speed of the game and the volume for sound effects and music from the settings menu."
+    sv "To change the speed of the self-voicing for the game’s text, consult the Help file from the settings menu."
 
     tu "If you need to see part of the screen that's covered by a menu or this text box, you press “h” on your keyboard."
 
