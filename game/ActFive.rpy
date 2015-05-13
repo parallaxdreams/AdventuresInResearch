@@ -15,7 +15,7 @@ label restartActFive:
 
 label ActFive:
 
-    $ save_name = "Name: %s\nScene: Act V" % (name)
+    $ save_name = "Name: %s.\nScene: Act 5." % (name)
 
     if not persistent.ActFive_unlocked:
        $ persistent.ActFive_unlocked = True
@@ -42,7 +42,7 @@ label ActFive:
     
     scene bg festival with fade
     play ambient "sfx/festival-ambient.ogg" fadein 0.8
-    $ save_name = "Name: %s\nScene: Act V – The Festival" % (name)
+    $ save_name = "Name: %s.\nScene: Act 5 – The Festival." % (name)
     show jeff neutral at leftmid
     with qdissolve
 
@@ -293,7 +293,7 @@ label postFilterBubbleWorld:
 
 label undergroundBunker:
     scene bg blackSolid with fade
-    $ save_name = "Name: %s\nScene: Bad Ending V" % (name)
+    $ save_name = "Name: %s.\nScene: Bad Ending 5." % (name)
     scene bg tenYrsLater with fade
 
     $ renpy.pause(2.0)
@@ -334,7 +334,7 @@ label socialMediaLiteracy:
     scene bg festival with fade
     play ambient "sfx/festival-ambient.ogg" fadein 0.8
     play music "music/Festival.ogg"
-    $ save_name = "Name: %s\nScene: Act V – The Festival" % (name)
+    $ save_name = "Name: %s.\nScene: Act 5 – The Festival." % (name)
     show kana neutral at Position(xpos=0.62, xanchor=0.5, ypos=0.5, yanchor=0.5)
     show kevin neutral at Position(xpos=0.90, xanchor=0.5, ypos=0.5, yanchor=0.5)
     show jeff neutral at Position(xpos=0.32, xanchor=0.5, ypos=0.5, yanchor=0.5)
@@ -660,7 +660,7 @@ label actFiveWrapup:
     stop music fadeout 0.8
     stop ambient fadeout 0.8
     scene bg genericCampus with fade
-    $ save_name = "Name: %s\nScene: Act V – Outside" % (name)
+    $ save_name = "Name: %s.\nScene: Act 5 – Outside." % (name)
 
     play ambient "sfx/greenery-ambient.ogg"
     play music "music/Greenery.ogg" fadein 0.8

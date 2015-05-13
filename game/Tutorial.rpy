@@ -9,7 +9,7 @@
 
 label Tutorial:
     
-    $ save_name = "Name: %s\nScene: Tutorial" % (name)
+    $ save_name = "Name: %s.\nScene: Tutorial." % (name)
 
     play ambient "sfx/greenery-ambient.ogg"
     play music "music/Greenery.ogg" fadein 0.8

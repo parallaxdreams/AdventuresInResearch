@@ -239,9 +239,10 @@ screen navigation:
 # a single screen, file_picker. We then use the file_picker screen
 # from simple load and save screens.
 screen load_save_slot:
-    $ file_text = "%s \nSaved on: %s" % (
+    $ file_text = "%s.\n%s\nSaved on: %s." % (
+        FileSlotName(number, 3, auto='auto'),
         FileSaveName(number),
-        FileTime(number, empty=_("N/A\nEmpty Save Slot")))
+        FileTime(number, format='%b %d, %H:%M', empty=_("N/A.\nEmpty Save Slot")))
     ## Original File Slot Text Layout
     #$ file_text = "%2s. Saved on: %s\n %s" % (
     #    FileSlotName(number, 3),
@@ -376,7 +377,7 @@ screen save:
     # This ensures that any other menu screen is replaced.
     tag menu
 
-    text "Save Game Screen"
+    text "Save Game Screen."
 
     add "imgs/ui/save_background.png" xalign 1.0 yalign 0.0
 
@@ -389,7 +390,7 @@ screen load:
     # This ensures that any other menu screen is replaced.
     tag menu
 
-    text "Load Game Screen"
+    text "Load Game Screen."
 
     add "imgs/ui/load_background.png" xalign 1.0 yalign 0.0
 
@@ -418,7 +419,7 @@ screen actSelect:
 
     tag menu
 
-    text "Act Selection Screen"
+    text "Act Selection Screen."
 
     add "imgs/ui/actSelect_background.png" xalign 1.0 yalign 0.0
 
@@ -467,7 +468,7 @@ screen preferences:
 
     tag menu
 
-    text "Settings Screen"
+    text "Settings Screen."
 
     add "imgs/ui/settings_background.png" xalign 1.0 yalign 0.0
 
@@ -546,96 +547,96 @@ screen achievements:
     $ achcount = 0
 
     # This for Self Voicing this menu screen
-    text "Achievements Screen"
+    text "Achievements Screen."
 
     # Self Voicing Support for achievements earned.
-    text "You have unlocked the following achievements:"
+    text "You have unlocked the following achievements:."
     if persistent.achievement_tutorial_complete_unlocked:
-        text "Tutorial Completed"
+        text "Tutorial Completed."
         $ achcount = achcount + 1
 
     if persistent.achievement_topic_tackler_unlocked:
-        text "Topic Tackler"
+        text "Topic Tackler."
         $ achcount = achcount + 1
 
     if persistent.achievement_bad_end1_unlocked:
-        text "Bad Ending Number One: Robot Apocalypse"
+        text "Bad Ending Number One: Robot Apocalypse."
         $ achcount = achcount + 1
 
     if persistent.achievement_future_reference_unlocked:
-        text "For Future Reference"
+        text "For Future Reference."
         $ achcount = achcount + 1
 
     if persistent.achievement_actOne_complete_unlocked:
-        text "Act One Completed"
+        text "Act One Completed."
         $ achcount = achcount + 1
 
     if persistent.achievement_bad_end2_unlocked:
-        text "Bad Ending Number Two: Zombies at the Farm"
+        text "Bad Ending Number Two: Zombies at the Farm."
         $ achcount = achcount + 1
 
     if persistent.achievement_information_wrangler_unlocked:
-        text "Information Wrangler"
+        text "Information Wrangler."
         $ achcount = achcount + 1
 
     if persistent.achievement_actTwo_complete_unlocked:
-        text "Act Two Completed"
+        text "Act Two Completed."
         $ achcount = achcount + 1
 
     if persistent.achievement_appropriate_book_unlocked:
-        text "An Appropriate Book"
+        text "An Appropriate Book."
         $ achcount = achcount + 1
 
     if persistent.achievement_bad_end3_unlocked:
-        text "Bad Ending Number Three: Shark Dental Assistant"
+        text "Bad Ending Number Three: Shark Dental Assistant."
         $ achcount = achcount + 1
 
     if persistent.achievement_boolean_expert_unlocked:
-        text "Boolean Expert"
+        text "Boolean Expert."
         $ achcount = achcount + 1
 
     if persistent.achievement_chatty_cathy_unlocked:
-        text "Chatty Cathy"
+        text "Chatty Cathy."
         $ achcount = achcount + 1
 
     if persistent.achievement_actThree_complete_unlocked:
-        text "Act Three Completed"
+        text "Act Three Completed."
         $ achcount = achcount + 1
 
     if persistent.achievement_bad_end4_unlocked:
-        text "Bad Ending Number Four: Moon Landscaper"
+        text "Bad Ending Number Four: Moon Landscaper."
         $ achcount = achcount + 1
 
     if persistent.achievement_honesty_policy_unlocked:
-        text "Honesty is the Best Policy"
+        text "Honesty is the Best Policy."
         $ achcount = achcount + 1
 
     if persistent.achievement_actFour_complete_unlocked:
-        text "Act Four Completed"
+        text "Act Four Completed."
         $ achcount = achcount + 1
 
     if persistent.achievement_bad_end5_unlocked:
-        text "Bad Ending Number Five: Hiding in My Bomb Shelter"
+        text "Bad Ending Number Five: Hiding in My Bomb Shelter."
         $ achcount = achcount + 1
 
     if persistent.achievement_critical_thinker_unlocked:
-        text "Critical Thinker"
+        text "Critical Thinker."
         $ achcount = achcount + 1
 
     if persistent.achievement_actFive_complete_unlocked:
-        text "Act Five Completed"
+        text "Act Five Completed."
         $ achcount = achcount + 1
 
     if persistent.achievement_power_pointers_unlocked:
-        text "Power Pointers"
+        text "Power Pointers."
         $ achcount = achcount + 1
 
     if persistent.achievement_actSix_complete_unlocked:
-        text "Act Six Completed"
+        text "Act Six Completed."
         $ achcount = achcount + 1
 
     if persistent.achievement_allActs_complete_unlocked:
-        text "All Six Acts Completed"
+        text "All Six Acts Completed."
         $ achcount = achcount + 1
 
     $ achremain = 22 - achcount

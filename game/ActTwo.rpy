@@ -15,7 +15,7 @@ label restartActTwo:
 
 label ActTwo:
     
-    $ save_name = "Name: %s\nScene: Act II" % (name)
+    $ save_name = "Name: %s.\nScene: Act 2." % (name)
     
     if not persistent.ActTwo_unlocked:
        $ persistent.ActTwo_unlocked = True
@@ -40,7 +40,7 @@ label ActTwo:
     $ renpy.pause(5.25)
 
     scene bg fountainDay with fade
-    $ save_name = "Name: %s\nScene: Act II – Fountain" % (name)
+    $ save_name = "Name: %s.\nScene: Act 2 – Fountain." % (name)
 
     play ambient "sfx/fountain-ambient.ogg"
     
@@ -54,7 +54,7 @@ label ActTwo:
     
     stop ambient fadeout 0.8
     scene bg libraryDVDs with fade
-    $ save_name = "Name: %s\nScene: Act II – Library" % (name)
+    $ save_name = "Name: %s.\nScene: Act 2 – Library." % (name)
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
     show kevin neutral at right
@@ -550,7 +550,7 @@ label zombies:
     stop ambient fadeout 0.8
 
     scene bg blackSolid with fade
-    $ save_name = "Name: %s\nScene: Bad Ending II" % (name)
+    $ save_name = "Name: %s.\nScene: Bad Ending 2." % (name)
     scene bg tenYrsLater with fade
 
     $ renpy.pause(2.0)
@@ -587,7 +587,7 @@ label zombies:
 label ScholarlyPop:
 
     scene bg libraryPCs with fade
-    $ save_name = "Name: %s\nScene: Act II – Library" % (name)
+    $ save_name = "Name: %s.\nScene: Act 2 – Library." % (name)
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
     show stephanie neutral at leftmid
