@@ -9,7 +9,7 @@
 
 label Tutorial:
     
-    $ save_name = "Name: %s\nScene: Tutorial" % (name)
+    $ save_name = "Name: %s.\nScene: Tutorial." % (name)
 
     play ambient "sfx/greenery-ambient.ogg"
     play music "music/Greenery.ogg" fadein 0.8
@@ -19,6 +19,10 @@ label Tutorial:
     tu "Great! In this game we’ll be exploring the basics of academic research."
     
     tu "You are going to be playing this game in your LIBR 1101 class."
+
+    # For Self-voicing only
+    sv "This tutorial will help introduce some of the game’s features."
+
     tu "Your LIBR 1101 professor will also give you outside assignments, readings, and/or group work."
     tu "This game is meant to supplement the things you are doing in class; it will introduce some concepts and reinforce others."
     
@@ -34,23 +38,25 @@ label Tutorial:
 
         tu "Who is UWG’s mascot?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Wolfie the Wolf":
+        "Wolfie the Wolf":
             tu "Correct! Great job."
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Jane the Parrot":
+        "Jane the Parrot":
             tu "Sorry, it’s Wolfie."
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Larry the Lion":
+        "Larry the Lion":
             tu "Sorry, it’s Wolfie."
     
     tu "For some of these scenarios, you will have to choose several options until you find the correct answer."
     tu "Be careful! Some incorrect answers could lead to unintended consequences for the game’s characters."
     
     tu "Click the {image=imgs/ui/settings_icon.png} icon at the top left corner of the screen to access the game’s settings, save your progress, or quit the game."
+    sv "You can also use the up arrow key to access the settings icon anytime during the game."
     tu "You can stop and save and resume your progress as often as you need to."
-    tu "Note that pressing the “esc” key on your keyboard will also bring up the game’s menu."
+    tu "Note that pressing the “esc” or “escape” key on your keyboard will also bring up the game’s menu."
 
     tu "You can change the text speed of the game and the volume for sound effects and music from the settings menu."
+    sv "To change the speed of the self-voicing for the game’s text, consult the Help file from the settings menu."
 
     tu "If you need to see part of the screen that's covered by a menu or this text box, you press “h” on your keyboard."
 
@@ -80,7 +86,7 @@ label Tutorial:
     jump tutorialEnterPassword
 
 label tutorialEnterPassword:
-    $player_pass = renpy.input("Please enter the password for Act One and press  < Enter >", length=6)
+    $player_pass = renpy.input("Please enter the password for Act One and press “Enter”", length=6)
     if player_pass.upper().strip() == actOne_pass:
         stop ambient fadeout 0.8
         stop music fadeout 0.8

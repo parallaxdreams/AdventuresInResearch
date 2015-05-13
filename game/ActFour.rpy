@@ -9,13 +9,13 @@
 
 #This label is only triggered from Act Selection Screen and needs to pull player name from persistent variable.
 label restartActFour:
-    call setupGameVariables
+    call setupGameVariables from _call_setupGameVariables_4
     $ name = persistent.playerName
     jump ActFour
 
 label ActFour:
 
-    $ save_name = "Name: %s\nScene: Act IV" % (name)
+    $ save_name = "Name: %s.\nScene: Act 4." % (name)
 
     if not persistent.ActFour_unlocked:
        $ persistent.ActFour_unlocked = True
@@ -41,7 +41,7 @@ label ActFour:
     $ renpy.pause(4.5)
 
     scene bg classroom with fade
-    $ save_name = "Name: %s\nScene: Act IV – Classroom" % (name)
+    $ save_name = "Name: %s.\nScene: Act 4 – Classroom." % (name)
     play music "music/Classroom.ogg" noloop
     show windham neutral at rightmid
     with qdissolve
@@ -265,7 +265,7 @@ label makeSuretoCite:
 label actFourBadEnding:
 
     scene bg blackSolid with fade
-    $ save_name = "Name: %s\nScene: Bad Ending IV" % (name)
+    $ save_name = "Name: %s.\nScene: Bad Ending 4." % (name)
     scene bg tenYrsLater with fade
 
     $ renpy.pause(2.0)
@@ -301,7 +301,7 @@ label actFourBadEnding:
 label whyCite:
 
         scene bg classroom with fade
-        $ save_name = "Name: %s\nScene: Act IV – Classroom" % (name)
+        $ save_name = "Name: %s.\nScene: Act 4 – Classroom." % (name)
         play music "music/SadPlagiarism.ogg"
         show jeff concernedleft at right
         show christina confused at left
@@ -317,7 +317,7 @@ label whyCite:
 label actFourtoTheLibrary:
     
     scene bg libraryBrowsing with fade
-    $ save_name = "Name: %s\nScene: Act IV – Library" % (name)
+    $ save_name = "Name: %s.\nScene: Act 4 – Library." % (name)
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
 
@@ -711,7 +711,7 @@ label actFourWrapUp:
     jump actFourEnterPassword
 
 label actFourEnterPassword:    
-    $player_pass = renpy.input("Please enter the password for Act Five and press  < Enter >", length=6)
+    $player_pass = renpy.input("Please enter the password for Act Five and press “Enter”", length=6)
     if player_pass.upper().strip() == actFive_pass:
         stop ambient fadeout 0.8
         stop music fadeout 0.8

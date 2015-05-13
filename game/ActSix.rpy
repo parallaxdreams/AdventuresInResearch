@@ -9,13 +9,13 @@
 
 #This label is only triggered from Act Selection Screen and needs to pull player name from persistent variable.
 label restartActSix:
-    call setupGameVariables
+    call setupGameVariables from _call_setupGameVariables_5
     $ name = persistent.playerName
     jump ActSix
 
 label ActSix:
 
-    $ save_name = "Name: %s\nScene: Act VI" % (name)
+    $ save_name = "Name: %s.\nScene: Act 6." % (name)
 
     if not persistent.ActSix_unlocked:
        $ persistent.ActSix_unlocked = True
@@ -41,7 +41,7 @@ label ActSix:
     $ renpy.pause(4.0)
 
     scene bg classroom with fade
-    $ save_name = "Name: %s\nScene: Act VI – Classroom" % (name)
+    $ save_name = "Name: %s.\nScene: Act 6 – Classroom." % (name)
     play music "music/Classroom.ogg"
     show kevin neutral at right
     show jeff neutral at left
@@ -529,7 +529,7 @@ label EndCredits:
     scene bg blackSolid with fade
     show endSlideShow
     play music "music/Opener.ogg"
-    $ save_name = "Name: %s\nScene: End Credits" % (name)
+    $ save_name = "Name: %s.\nScene: End Credits." % (name)
     if not persistent.achievement_allActs_complete_unlocked:
         $ persistent.achievement_allActs_complete_unlocked = True
         show achievement allActsComplete:

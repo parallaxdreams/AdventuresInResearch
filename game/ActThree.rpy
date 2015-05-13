@@ -9,13 +9,13 @@
 
 #This label is only triggered from Act Selection Screen and needs to pull player name from persistent variable.
 label restartActThree:
-    call setupGameVariables
+    call setupGameVariables from _call_setupGameVariables_1
     $ name = persistent.playerName
     jump ActThree
 
 label ActThree:
 
-    $ save_name = "Name: %s\nScene: Act III" % (name)
+    $ save_name = "Name: %s.\nScene: Act 3." % (name)
     
     if not persistent.ActThree_unlocked:
        $ persistent.ActThree_unlocked = True
@@ -41,7 +41,7 @@ label ActThree:
     $ renpy.pause(4.5)
     
     scene bg movieSet with fade
-    $ save_name = "Name: %s\nScene: Act III – Movie Set" % (name)
+    $ save_name = "Name: %s.\nScene: Act 3 – Movie Set." % (name)
     play ambient "sfx/movieSet-ambient.ogg"
     play music "music/MovieSet.ogg"
     menu:
@@ -596,7 +596,7 @@ label letsGoFindThatBook:
     stop ambient fadeout 0.8
     stop music fadeout 0.8
     scene bg libraryStacks with fade
-    $ save_name = "Name: %s\nScene: Act III – Library" % (name)
+    $ save_name = "Name: %s.\nScene: Act 3 – Library." % (name)
     show jeff neutral at left
     show kevin concerned at right
     with qdissolve
@@ -855,7 +855,7 @@ label gettingToDatabases:
 label sharkDentistEnding:
     
     scene bg blackSolid with fade
-    $ save_name = "Name: %s\nScene: Bad Ending III" % (name)
+    $ save_name = "Name: %s.\nScene: Bad Ending 3." % (name)
     scene bg tenYrsLater with fade
 
     $ renpy.pause(2.0)
@@ -890,7 +890,7 @@ label sharkDentistEnding:
             jump resultsTryAgain
 
 label resultsTryAgain:
-    $ save_name = "Name: %s\nScene: Act III – Library" % (name)
+    $ save_name = "Name: %s.\nScene: Act 3 – Library." % (name)
     scene bg libraryPCs with fade
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
@@ -1196,7 +1196,7 @@ label searchingWithKeywords:
     stop ambient fadeout 0.8
     stop music fadeout 0.8
     scene bg movieSetExtras with fade
-    $ save_name = "Name: %s\nScene: Act III – Movie Set" % (name)
+    $ save_name = "Name: %s.\nScene: Act 3 – Movie Set." % (name)
     play ambient "sfx/movieSet-ambient.ogg"
     play music "music/MovieSet.ogg"
     show booleanEveryone at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
@@ -1443,7 +1443,7 @@ label doneWithBoolean:
     stop music fadeout 0.8
     stop ambient fadeout 0.8
     scene bg libraryPCs with fade
-    $ save_name = "Name: %s\nScene: Act III – Library" % (name)
+    $ save_name = "Name: %s.\nScene: Act 3 – Library." % (name)
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
     m "{font=SourceSansPro-SemiboldItalic.ttf}Maybe it’s a movie about female zebras who get kidnapped from the zoo and whisked away in hot air balloons.{/font}"
@@ -1622,7 +1622,7 @@ label actThreeWrapUp:
     jump actThreeEnterPassword
 
 label actThreeEnterPassword:
-    $player_pass = renpy.input("Please enter the password for Act Four and press  < Enter >", length=6)
+    $player_pass = renpy.input("Please enter the password for Act Four and press “Enter”", length=6)
     if player_pass.upper().strip() == actFour_pass:
         stop ambient fadeout 0.8
         stop music fadeout 0.8

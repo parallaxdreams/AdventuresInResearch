@@ -9,12 +9,12 @@
 
 #This label is only triggered from Act Selection Screen and needs to pull player name from persistent variable.
 label restartActOne:
-    call setupGameVariables
+    call setupGameVariables from _call_setupGameVariables_3
     $ name = persistent.playerName
     jump ActOne
 
 label ActOne:
-    $ save_name = "Name: %s\nScene: Act I" % (name)
+    $ save_name = "Name: %s.\nScene: Act 1." % (name)
 
     #Unlock Act on Act Selection Screen if still locked
     if not persistent.ActOne_unlocked:
@@ -40,7 +40,7 @@ label ActOne:
     $ renpy.pause(3.0)
         
     scene bg classroom with fade
-    $ save_name = "Name: %s\nScene: Act I – Classroom" % (name)
+    $ save_name = "Name: %s.\nScene: Act 1 – Classroom." % (name)
     play music "music/Classroom.ogg"
     
     menu:
@@ -514,7 +514,7 @@ label presearchingWrapUp:
             jump toTheLibrary
         
 label bad_end1:
-    $ save_name = "Name: %s\nScene: Bad Ending I" % (name)
+    $ save_name = "Name: %s.\nScene: Bad Ending 1." % (name)
     scene bg blackSolid with fade
 
     scene bg tenYrsLater with fade
@@ -554,7 +554,7 @@ label bad_end1:
             jump goToLibrary
     
 label goToLibrary:
-    $ save_name = "Name: %s\nScene: Act I – Classroom" % (name)
+    $ save_name = "Name: %s.\nScene: Act 1 – Classroom." % (name)
     scene bg classroom with fade
     play music "music/Classroom.ogg"
     show kevin happy at rightmid
@@ -578,7 +578,7 @@ label goToLibrary:
 label toTheLibrary:
 
     scene bg libraryPCs with fade
-    $ save_name = "Name: %s\nScene: Act I – Library" % (name)
+    $ save_name = "Name: %s.\nScene: Act 1 – Library." % (name)
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
     show kevin confused at rightmid
@@ -809,7 +809,7 @@ label followingUpWithStephanie:
 label actOneFountain:
     
     scene bg fountainDay with fade
-    $ save_name = "Name: %s\nScene: Act I – Fountain" % (name)
+    $ save_name = "Name: %s.\nScene: Act 1 – Fountain." % (name)
     play ambient "sfx/fountain-ambient.ogg"
     play music "music/Fountain.ogg"
 
@@ -916,7 +916,7 @@ label actOneNextdayClassroom:
     $ renpy.pause(3.0)
 
     scene bg classroom with fade
-    $ save_name = "Name: %s\nScene: Act I – Classroom" % (name)
+    $ save_name = "Name: %s.\nScene: Act 1 – Classroom." % (name)
     play music "music/Classroom.ogg"
 
     show kevin neutral at right
@@ -1300,7 +1300,7 @@ label actOneWrapUpIsOver:
     jump actOneEnterPassword
 
 label actOneEnterPassword:
-    $player_pass = renpy.input("Please enter the password for Act Two and press  < Enter >", length=6)
+    $player_pass = renpy.input("Please enter the password for Act Two and press  “Enter”", length=6)
     if player_pass.upper().strip() == actTwo_pass:
         stop music fadeout 0.8
         jump ActTwo

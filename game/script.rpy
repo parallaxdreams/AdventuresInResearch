@@ -103,12 +103,12 @@ image calendar dates = "imgs/ui/calendar_dates.png"
 image calendar backing = "imgs/ui/calendar_backing.png"
 
 ## Act Titlecards
-image bg ActOne = "imgs/bg/bg_ActOne.png"
-image bg ActTwo = "imgs/bg/bg_ActTwo.png"
-image bg ActThree = "imgs/bg/bg_ActThree.png"
-image bg ActFour = "imgs/bg/bg_ActFour.png"
-image bg ActFive = "imgs/bg/bg_ActFive.png"
-image bg ActSix = "imgs/bg/bg_ActSix.png"
+image bg ActOne = Image("imgs/bg/bg_ActOne.png", alt="Act One: A Case of the Mondays")
+image bg ActTwo = Image("imgs/bg/bg_ActTwo.png", alt="Act Two: Pride and Periodicals")
+image bg ActThree = Image("imgs/bg/bg_ActThree.png", alt="Act Three: Hollywood is Boolean")
+image bg ActFour = Image("imgs/bg/bg_ActFour.png", alt="Act Four: Avoiding Plagiarism")
+image bg ActFive = Image("imgs/bg/bg_ActFive.png", alt="Act Five: Climate Change a Palooza")
+image bg ActSix = Image("imgs/bg/bg_ActSix.png", alt="Act Six: Presentation Day")
 
 ##Boolean Extras Images
 image booleanEveryone = "imgs/bool/bool_everyone.png"
@@ -297,26 +297,26 @@ $ persistent.ActSix_unlocked = False
 $ name = ""
 
 #line below is player character
-define m = Character("Me", color="#000",ctc="dialogueAdvance", ctc_position="nestled")
+define m = Character("Me", who_alt="You", color="#000",ctc="dialogueAdvance", ctc_position="nestled", what_alt="say [text]")
 
 #supporting characters
-define tu = Character('Tutorial', ctc="dialogueAdvance", ctc_position="nestled")
-define dw = Character('Dr. Windham', ctc="dialogueAdvance", ctc_position="nestled")
-define k = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled")
-define ka = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled")
-define j = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled")
-define c = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled")
-define s = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled")
-define t = Character('Tony', ctc="dialogueAdvance", ctc_position="nestled")
-define r = Character('Robot Overlord', ctc="dialogueAdvance", ctc_position="nestled", what_font="Quantico-Bold.ttf")
-define d = Character('Director', ctc="dialogueAdvance", ctc_position="nestled")
-define cm = Character('Crew Member', ctc="dialogueAdvance", ctc_position="nestled")
-define e = Character('Everyone', ctc="dialogueAdvance", ctc_position="nestled")
-define l = Character('Chat Librarian', ctc="dialogueAdvance", ctc_position="nestled")
+define tu = Character('Tutorial', who_alt=" ", ctc="dialogueAdvance", ctc_position="nestled")
+define dw = Character('Dr. Windham', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define k = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define ka = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define j = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define c = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define s = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define t = Character('Tony', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define r = Character('Robot Overlord', ctc="dialogueAdvance", ctc_position="nestled", what_font="Quantico-Bold.ttf", what_alt="says [text]")
+define d = Character('Director', who_alt="The Director", ctc="dialogueAdvance", ctc_position="nestled", what_alt="shouts [text]")
+define cm = Character('Crew Member', who_alt="A crew member", ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define e = Character('Everyone', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
+define l = Character('Chat Librarian', who_alt="The Chat Librarian", ctc="dialogueAdvance", ctc_position="nestled", what_alt="types [text]")
 
 
 #This is the unknown character, before he or she has been introduced
-define un = Character('???', color="#000",ctc="dialogueAdvance", ctc_position="nestled")
+define un = Character('???', who_alt="unknown speaker", color="#000",ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
 
 #chatterbox characters and window, text styling
 #Kana
@@ -332,14 +332,14 @@ define cbkme = Character(None, window_background="imgs/ui/playerchatterbox.png",
 label start:
     
     #initialies all variables for player choices/passwords/etc.
-    call setupGameVariables
+    call setupGameVariables from _call_setupGameVariables_6
 
     #Set the scene for the Beginning of the Game:
     scene bg genericCampus with fade
     
     #Player enters name here (used by other characters and in menus)
     $ noNameMatch = True
-    $ name = renpy.input("Please enter your first name (Example: Sarah) and press  < Enter >", length=15)
+    $ name = renpy.input("Please enter your first name (Example: Sarah) and press “Enter”", length=15)
     $ name = name.strip()
     jump validateName
 
@@ -348,7 +348,7 @@ label validateName:
     if name == "Kevin" or name == "Tony" or name == "Jeff" or name == "Kana" or name == "Stephanie" or name == "Christina":
         $ noNameMatch = False
         "To avoid confusion with another character in the game, please enter a nickname, or your first name and the first letter of your last name."
-        $ name = renpy.input("Please enter a nickname, or first name and last initial (Example: Jeff M.) and press  < Enter >", length=15)
+        $ name = renpy.input("Please enter a nickname, or first name and last initial (Example: Jeff M.) and press “Enter”", length=15)
         $ name = name.strip()
         jump validateName
 
@@ -357,12 +357,12 @@ label validateName:
         "You didn’t enter a name. Please try again."
 
         if noNameMatch == True:
-            $ name = renpy.input("Please enter your first name (Example: Sarah) and press  < Enter >", length=15)
+            $ name = renpy.input("Please enter your first name (Example: Sarah) and press “Enter”", length=15)
             $ name = name.strip()
             jump validateName
 
         if noNameMatch == False:
-            $ name = renpy.input("Please enter a nickname, or first name and last initial (Example: Jeff M.) and press  < Enter >", length=15)
+            $ name = renpy.input("Please enter a nickname, or first name and last initial (Example: Jeff M.) and press “Enter”", length=15)
             $ name = name.strip()
             jump validateName
 

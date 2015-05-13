@@ -56,8 +56,8 @@ init -1 python hide:
     ## set to False before the game is released, so the user can't
     ## cheat using developer tools.
 
-    config.developer = False
-    config.console = False
+    config.developer = True
+    config.console = True
 
     ## These control the width and height of the screen.
 
@@ -72,7 +72,7 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Adventures in Research"
-    config.version = "1.4"
+    config.version = "1.6"
 
 
     config.thumbnail_width = 375
@@ -526,6 +526,8 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    build.classify('LICENSE.txt', None)
+    build.classify('README.txt', None)
     
     ## To archive files, classify them as 'archive'.
     
