@@ -9,7 +9,7 @@
 
 #This label is only triggered from Act Selection Screen and needs to pull player name from persistent variable.
 label restartActFour:
-    call setupGameVariables
+    call setupGameVariables from _call_setupGameVariables_4
     $ name = persistent.playerName
     jump ActFour
 

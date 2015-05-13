@@ -9,7 +9,7 @@
 
 #This label is only triggered from Act Selection Screen and needs to pull player name from persistent variable.
 label restartActThree:
-    call setupGameVariables
+    call setupGameVariables from _call_setupGameVariables_1
     $ name = persistent.playerName
     jump ActThree
 

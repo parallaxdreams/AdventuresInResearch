@@ -332,7 +332,7 @@ define cbkme = Character(None, window_background="imgs/ui/playerchatterbox.png",
 label start:
     
     #initialies all variables for player choices/passwords/etc.
-    call setupGameVariables
+    call setupGameVariables from _call_setupGameVariables_6
 
     #Set the scene for the Beginning of the Game:
     scene bg genericCampus with fade
