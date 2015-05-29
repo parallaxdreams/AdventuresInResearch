@@ -21,7 +21,7 @@ label ActOne:
        $ persistent.ActOne_unlocked = True
 
     scene bg blackSolid with fade
-    scene bg ActOne with fade
+    scene bg ActOne with None
     $ renpy.pause(3.0)
 
     scene bg calendar with fade

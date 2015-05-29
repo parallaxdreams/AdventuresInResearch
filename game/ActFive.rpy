@@ -21,7 +21,7 @@ label ActFive:
        $ persistent.ActFive_unlocked = True
 
     scene bg blackSolid with fade
-    scene bg ActFive with fade
+    scene bg ActFive with None
     $ renpy.pause(3.0)
 
     scene bg calendar with fade
