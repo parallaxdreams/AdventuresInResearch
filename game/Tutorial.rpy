@@ -18,12 +18,12 @@ label Tutorial:
     
     tu "Great! In this game we’ll be exploring the basics of academic research."
     
-    tu "You are going to be playing this game in your LIBR 1101 class."
+    tu "You are going to be playing this game in your LIBR 11O1 class."
 
     # For Self-voicing only
     sv "This tutorial will help introduce some of the game’s features."
 
-    tu "Your LIBR 1101 professor will also give you outside assignments, readings, and/or group work."
+    tu "Your LIBR 11O1 professor will also give you outside assignments, readings, and/or group work."
     tu "This game is meant to supplement the things you are doing in class; it will introduce some concepts and reinforce others."
     
     tu "As you go along in the game you’ll have opportunities to earn achievements and test your knowledge."
@@ -32,9 +32,9 @@ label Tutorial:
     tu "Sometimes, you will have to make choices to progress through the game."
     tu "When you are given dialogue options, use your mouse to click on the most appropriate answer."
 
-    sv "You may use the up and down arrow keys on the keyboard to cycle through each choice. Press “Enter” to confirm your choice."
+    sv "You may use the up and down arrow keys on the keyboard to cycle through each answer. Press “Enter” to confirm your choice."
     tu "Let’s try one now!"
-
+    sv "After the question has been asked, press “Enter” to be able to select from the possible answers."
     tu "Who is UWG’s mascot?"
 
     menu:
