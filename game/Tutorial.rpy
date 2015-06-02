@@ -39,7 +39,7 @@ label Tutorial:
 
     menu:
 
-        tu "Who is UWG’s mascot?{fast}"
+        tuc "Who is UWG’s mascot?{fast}"
         
         "Wolfie the Wolf":
             tu "Correct! Great job."
