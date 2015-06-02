@@ -79,7 +79,7 @@ image bg genericCampus = "imgs/bg/bg_greenery.jpg"
 image bg blackSolid = "imgs/bg/bg_black_solid.jpg"
 
 ## For Bad Endings
-image bg tenYrsLater = "imgs/bg/bg_10yrslater.jpg"
+image bg tenYrsLater = Image("imgs/bg/bg_10yrslater.jpg", alt="Ten Years Later...")
 
 
 #library
@@ -297,25 +297,35 @@ $ persistent.ActSix_unlocked = False
 $ name = ""
 
 #line below is player character
-define m = Character("Me", who_alt="You", color="#000",ctc="dialogueAdvance", ctc_position="nestled", what_alt="say [text]")
+define m = Character("Me", who_alt="You", color="#000",ctc="dialogueAdvance", ctc_position="nestled", what_alt="say, [text]")
+define mt = Character("Me", who_alt="You", color="#000",ctc="dialogueAdvance", ctc_position="nestled", what_alt="think to yourself, [text]")
 
 #supporting characters
 define tu = Character('Tutorial', who_alt=" ", ctc="dialogueAdvance", ctc_position="nestled")
-define dw = Character('Dr. Windham', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
-define k = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
-define ka = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
-define j = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
-define c = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
-define s = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
-define t = Character('Tony', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
-define r = Character('Robot Overlord', ctc="dialogueAdvance", ctc_position="nestled", what_font="Quantico-Bold.ttf", what_alt="says [text]")
-define d = Character('Director', who_alt="The Director", ctc="dialogueAdvance", ctc_position="nestled", what_alt="shouts [text]")
-define cm = Character('Crew Member', who_alt="A crew member", ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
-define e = Character('Everyone', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
-define l = Character('Chat Librarian', who_alt="The Chat Librarian", ctc="dialogueAdvance", ctc_position="nestled", what_alt="types [text]")
+define dw = Character('Dr. Windham', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
+define k = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
+define ka = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
+define j = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
+define c = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
+define s = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
+define t = Character('Tony', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
+define r = Character('Robot Overlord', who_alt="The Robot Overlord", ctc="dialogueAdvance", ctc_position="nestled", what_font="Quantico-Bold.ttf", what_alt="says, [text]")
+define d = Character('Director', who_alt="The Director", ctc="dialogueAdvance", ctc_position="nestled", what_alt="shouts, [text]")
+define cm = Character('Crew Member', who_alt="A crew member", ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
+define e = Character('Everyone', ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
+define l = Character('Chat Librarian', who_alt="The Chat Librarian", ctc="dialogueAdvance", ctc_position="nestled", what_alt="types, [text]")
+
+#used in choices so that self-voicing doesn't speak "[person] says" and instead offers the helpful "Choose a response"
+#format is charAbbrev + c (stands for 'choice')
+define tuc = Character('Tutorial', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
+define dwc = Character('Dr. Windham', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
+define kc = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
+define jc = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
+define sc = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 
 
 #This is the unknown character, before he or she has been introduced
+define ul = Character('Librarian', who_alt="The Librarian", ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
 define un = Character('???', who_alt="unknown speaker", color="#000",ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
 
 #chatterbox characters and window, text styling
