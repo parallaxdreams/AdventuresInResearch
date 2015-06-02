@@ -42,15 +42,22 @@ label ActOne:
     scene bg classroom with fade
     $ save_name = "Name: %s.\nScene: Act 1 – Classroom." % (name)
     play music "music/Classroom.ogg"
+
+    sv "You enter the classroom and take a seat."
+
+    sv "What are you thinking right now?"
     
     menu:
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {font=SourceSansPro-SemiboldItalic.ttf}I think I’ve got a case of the Mondays. First I couldn’t find a parking spot and now...English class. Is it Friday yet?{/font}":
+
+        sv "Choose a response."
+
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I think I’ve got a case of the Mondays. First I couldn’t find a parking spot and now...English class. Is it Friday yet?{/font}":
             jump classBegins
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {font=SourceSansPro-SemiboldItalic.ttf}I’m so glad I decided to take this class with Kevin and Jeff. Makes Mondays bearable.{/font}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I’m so glad I decided to take this class with Kevin and Jeff. Makes Mondays bearable.{/font}":
             jump classBegins
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {font=SourceSansPro-SemiboldItalic.ttf}I’m glad I get to start the week with English, it’s my favorite class. I do wish I could have had time to grab a coffee this morning. Oh well...{/font}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I’m glad I get to start the week with English, it’s my favorite class. I do wish I could have had time to grab a coffee this morning. Oh well...{/font}":
             jump classBegins
 
 
@@ -83,7 +90,7 @@ label classBegins:
     
     menu:
 
-        dw "That’s a good question. Can anyone tell me why I’m having you start this project early?{fast}"
+        dwc "That’s a good question. Can anyone tell me why I’m having you start this project early?{fast}"
         
         "Raise Your Hand":
             dw "Yes, [name!q]?"
@@ -123,19 +130,20 @@ label classContinues:
 
     menu:
 
-        dw "Not necessarily. Does anyone know what to do if the book you want isn’t in the library?{fast}"
+        dwc "Not necessarily. Does anyone know what to do if the book you want isn’t in the library?{fast}"
 
         "Raise Your Hand":
+            dw "Yes, [name!q]?"
             m "You should check to see if you can find it through GIL Express."
             dw "That’s right!"
             jump talkingILL
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Pick a different topic":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Pick a different topic":
             dw "You might eventually find out that your topic needs work, but make sure you’ve exhausted all possibilities first."
             dw "If you can’t find the book you want in Ingram Library, you should check to see if you can find it through GIL Express."
             jump talkingILL
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Ask a librarian for help?": 
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Ask a librarian for help?": 
             dw "Librarians are great resources to help you with your research, always feel free to ask them for help."
             dw "In this situation, the librarian would probably tell you to see if you can find the book you want through GIL Express."   
             jump talkingILL
@@ -188,9 +196,9 @@ label talkingILL:
     
     menu:
 
-        k "Not really. I don’t even know where to start.{fast}"
+        kc "Not really. I don’t even know where to start.{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} We can pretty much write about anything we want for this paper, so why don’t you research something you really care about?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} We can pretty much write about anything we want for this paper, so why don’t you research something you really care about?":
             show kevin neutral
             with qdissolve
             k "Hmm...I’ve been spending a lot of time perfecting my cat memes lately."
@@ -209,7 +217,7 @@ label talkingILL:
             $ renpy.pause(0.2)
             jump ChristinaSoccerQ
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} We can pretty much write about anything we want for this paper, so why don’t you research something you are curious about?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} We can pretty much write about anything we want for this paper, so why don’t you research something you are curious about?":
             k "Hmm...I’ve been spending a lot of time perfecting my cat memes lately. I’d love to know why cats are so popular on the internet."
             show kevin neutral
             with qdissolve
@@ -246,9 +254,10 @@ label ChristinaSoccerQ:
     
     menu:
 
-        dw "Does anyone know what is wrong with “soccer” as a paper topic?{fast}"
+        dwc "Does anyone know what is wrong with “soccer” as a paper topic?{fast}"
 
         "You know—Raise your hand":
+            dw "Yes, [name!q]?"
             m "It is too broad."
             show windham happy
             with qdissolve
@@ -298,9 +307,9 @@ label moreSoccerQs:
 
     menu:
 
-        dw "You also have to remember that for this assignment—and for many of the assignments you’ll do in college—you need to take a position on this issue.{fast}"
+        dwc "You also have to remember that for this assignment—and for many of the assignments you’ll do in college—you need to take a position on this issue.{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q] (thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}What does she mean by “take a position”?{/font} Raise your hand to ask.":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}What does she mean by “take a position”?{/font} Raise your hand to ask.":
             m "What do you mean by “Take a position”?"
             dw "Good question, [name!q]. When you take a position in a paper you are making an argument for or against something. You are using research to make a claim that something is or isn’t true."
             dw "For example, if my topic is the drug testing of welfare recipients, I would do research that would help inform my position."
@@ -323,7 +332,7 @@ label moreSoccerQs:
             with qdissolve
             jump yetMoreSoccerQs
 
-        "{font=SourceSansPro-Bold.ttf}[name!q] (thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I think I know what she means by “take a position.”{/font} Don’t raise your hand.":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I think I know what she means by “take a position.”{/font} Don’t raise your hand.":
             jump yetMoreSoccerQs
 
 label yetMoreSoccerQs:
@@ -363,25 +372,25 @@ label refiningQuestions:
 
             #dw "Can you think of any other ways that Christina can narrow her topic, [name!q]?" if societyAttitudes_asked == True or soccerSouth_asked == True or soccerOlympics_asked == True or soccerMedia_asked == True:  
             #if societyAttitudes_asked == soccerSouth_asked == soccerOlympics_asked == soccerMedia_asked == False:
-            dw "Can you think of any ways that Christina can narrow her topic, [name!q]?{fast}"
+            dwc "Can you think of any ways that Christina can narrow her topic, [name!q]?{fast}"
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What about comparing society’s attitudes towards men and women’s soccer?" if societyAttitudes_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Suggest:{/font} What about comparing society’s attitudes towards men and women’s soccer?" if societyAttitudes_asked == False:
                 $ societyAttitudes_asked = True
                 jump societyAttitudes
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What about American women’s soccer in the South?" if soccerSouth_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Suggest:{/font} What about American women’s soccer in the South?" if soccerSouth_asked == False:
                 $ soccerSouth_asked = True
                 jump soccerSouth
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} How about American women’s soccer in the 2016 Olympics?" if soccerOlympics_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Suggest:{/font} How about American women’s soccer in the 2016 Olympics?" if soccerOlympics_asked == False:
                 $ soccerOlympics_asked = True
                 jump soccerOlympics
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What about examining the media’s representation of women’s soccer in America?" if soccerMedia_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Suggest:{/font} What about examining the media’s representation of women’s soccer in America?" if soccerMedia_asked == False:
                 $ soccerMedia_asked = True
                 jump soccerMedia
                 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t have any other topic ideas." if societyAttitudes_asked == True or soccerSouth_asked == True or soccerOlympics_asked == True or soccerMedia_asked == True:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t have any other topic ideas." if societyAttitudes_asked == True or soccerSouth_asked == True or soccerOlympics_asked == True or soccerMedia_asked == True:
                 jump questionsRefined
             
     
@@ -425,7 +434,7 @@ label questionsRefined:
     
     show jeff neutral at leftthird
     with qdissolve
-    j "In my LIBR 1101 class, we called that presearching. It is when you do research before you do research."
+    j "In my LIBR 11O1 class, we called that presearching. It is when you do research before you do research."
     hide jeff neutral
     with qdissolve
     
@@ -454,16 +463,20 @@ label questionsRefined:
     hide kevin
     with qdissolve
 
+    sv "What are you thinking right now?"
+
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q] (thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Wait, I’m still a little confused.{/font} Raise your hand.":
+        dwc "Wikipedia, Google, and reference sources like encyclopedias give you background information, help you figure out who is involved, and help you figure out what the most important things about your topic are.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Wait, I’m still a little confused.{/font} Raise your hand.":
             m "What do you mean by “important things about your topic”? What kind of important things?"
             dw "Well, very simply, you want to know the who, what, when, where, and why."
             dw "Presearching lets you find out who is involved (the players, coaches, audience members), what the main issues are (injuries, penalties, popularity), and when it started."
             dw "You can also find out where it takes place (it’s huge in Europe and South America) and why it is important to begin with."
             jump presearchingWrapUp
 
-        "{font=SourceSansPro-Bold.ttf}[name!q] (thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I’m good, I know what presearching involves.{/font} Don’t raise hand.":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I’m good, I know what presearching involves.{/font} Don’t raise hand.":
             jump presearchingWrapUp
 
 label presearchingWrapUp:
@@ -494,9 +507,9 @@ label presearchingWrapUp:
 
     menu:
 
-        j "How about you, [name!q]? Want to come along?{fast}"
+        jc "How about you, [name!q]? Want to come along?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} No, I don't think the library can help me.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} No, I don't think the library can help me.":
             m "You guys go ahead, I don’t think the library is really going to be any help for this paper. I know how to use Google, and that is really all anyone needs these days."
             show jeff surprised
             show kevin surprised
@@ -504,7 +517,7 @@ label presearchingWrapUp:
             stop music fadeout 0.8
             jump bad_end1
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Sure, count me in!":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Sure, count me in!":
             m "Sure thing. Should we head over now? My next class isn’t for another two hours."
             show jeff happy at leftmid
             with qdissolve
@@ -517,7 +530,7 @@ label bad_end1:
     $ save_name = "Name: %s.\nScene: Bad Ending 1." % (name)
     scene bg blackSolid with fade
 
-    scene bg tenYrsLater with fade
+    scene bg tenYrsLater with None
 
     $ renpy.pause(2.0)
 
@@ -527,11 +540,15 @@ label bad_end1:
     play ambient "sfx/robot-apocalypse-ambient.ogg"
     play music "music/Robot.ogg"
     
+    sv "You are hiding behind a desk in your office on the 50th floor of your company's building."
+    sv "The window is smashed, and outside you can see that the world is in flames."
+    sv "An evil-looking robot has broken down the door and is searching for you."
+
     play sndfx "sfx/robot.ogg"
     r "Reveal yourself, human minion! It is time to serve your new robot overlords!"
     
-    m "{font=SourceSansPro-SemiboldItalic.ttf}I can’t believe this is happening! If I had learned how to do more in-depth, thoughtful research I would have known that pushing the “Robot Apocalypse” button on the new prototype was a bad idea!{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}I wish I could go back in time to when I was writing that paper in college and visit the library to learn about presearching!{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}I can’t believe this is happening! If I had learned how to do more in-depth, thoughtful research I would have known that pushing the “Robot Apocalypse” button on the new prototype was a bad idea!{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}I wish I could go back in time to when I was writing that paper in college and visit the library to learn about presearching!{/font}"
 
     "Game Over"
     if not persistent.achievement_bad_end1_unlocked:
@@ -556,16 +573,21 @@ label bad_end1:
 label goToLibrary:
     $ save_name = "Name: %s.\nScene: Act 1 – Classroom." % (name)
     scene bg classroom with fade
+
+    sv "Ten years earlier..."
+
     play music "music/Classroom.ogg"
     show kevin happy at rightmid
     show jeff concerned at leftmid
     with qdissolve
 
+    sv "Jeff asks: How about you, [name!q]? Want to come to the library with us?"
+
     menu:
 
-        j "How about you, [name!q]? Want to come to the library with us?{fast}"
+        jc "How about you, [name!q]? Want to come to the library with us?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Sure, count me in!":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Sure, count me in!":
             m "Sure thing. Should we head over now? My next class isn’t for another two hours."
             show jeff happy at leftmid
             with qdissolve
@@ -581,6 +603,11 @@ label toTheLibrary:
     $ save_name = "Name: %s.\nScene: Act 1 – Library." % (name)
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
+
+    sv "You've been in the library for about 20 minutes."
+    sv "You are on the main floor with Jeff and Kevin."
+    sv "Kevin is sitting next to you as he types away on one of the computers."
+
     show kevin confused at rightmid
     with qdissolve
     k "This presearching thing isn’t going that great for me. I just did a Google search and now I’m totally confused."
@@ -595,16 +622,18 @@ label toTheLibrary:
     j "Hey, there’s a librarian over there, should we ask her?"
     
     menu:
+
+        jc "Hey, there’s a librarian over there, should we ask her? {fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Doesn’t hurt to at least ask.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Doesn’t hurt to at least ask.":
             m "If she says she’s busy, we can figure out another time."
             jump getLibrarian
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t know, she looks really busy.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t know, she looks really busy.":
             j "If she says she’s busy, we can figure out another time to meet with her. Let’s go!"
             jump getLibrarian
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t know, I don’t want to look stupid.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t know, I don’t want to look stupid.":
             j "It takes time to understand this stuff. She looks nice, I’m sure she won’t judge us."
             k "Besides, I ask for help about stuff that I should know all the time."
             jump getLibrarian
@@ -621,7 +650,7 @@ label getLibrarian:
     
     show stephanie neutral at left
     with qdissolve
-    s "Hi there, I’m not interrupting anything important, am I?"
+    ul "Hi there, I’m not interrupting anything important, am I?"
     
     m "No. Absolutely not."
     
@@ -702,25 +731,27 @@ label readyReference:
         
     else: 
         
+        sv "What would you like to know about the reference collection?"
+
         menu:
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Do we have to walk around and try to find a good reference book just by looking?" if finding_ref == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Do we have to walk around and try to find a good reference book just by looking?" if finding_ref == False:
                 $ finding_ref = True
                 jump findingRef
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What kind of stuff is in the Reference collection?" if what_stuff_ref == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What kind of stuff is in the Reference collection?" if what_stuff_ref == False:
                 $ what_stuff_ref = True
                 jump whatStuffRef
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Can we check them out and take them home?" if checkout_ref == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Can we check them out and take them home?" if checkout_ref == False:
                 $ checkout_ref = True
                 jump checkoutRef
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Looking through those reference books might take forever! Is there an easier way?" if easier_ref == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} Looking through those reference books might take forever! Is there an easier way?" if easier_ref == False:
                 $ easier_ref = True
                 jump easierRef
                 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t have any other questions right now." if finding_ref == True or what_stuff_ref == True or checkout_ref == True or easier_ref == True:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t have any other questions right now." if finding_ref == True or what_stuff_ref == True or checkout_ref == True or easier_ref == True:
                 jump doneReadyRef
             
             
@@ -762,14 +793,18 @@ label doneReadyRef:
     s "He might have also looked at where video games are popular to compare, for instance, how people play video games in Korea vs. how they play them in the US."
     s "And then, once you’ve gotten your info from presearching, you can start putting together your research question."
     
+    sv "What are you thinking right now?"
+
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q] (thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey! I know what a research question is!{/font}":
+        sc "And then, once you’ve gotten your info from presearching, you can start putting together your research question.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey! I know what a research question is!{/font}":
             m "A research question is a question you seek to answer with your research, right?"
             s "That’s right, [name!q]!"
             jump followingUpWithStephanie
 
-        "{font=SourceSansPro-Bold.ttf}[name!q] (thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}A research question? What’s that?{/font}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}A research question? What’s that?{/font}":
             m "Wait, what’s a research question?"
             s "A research question is a question you seek to answer with your research."
             jump followingUpWithStephanie
@@ -816,6 +851,9 @@ label actOneFountain:
     show kevin neutral at rightthird
     show jeff neutral at left
     with qdissolve
+
+    sv "The three of you walk to the fountain on campus."
+
     m "That librarian was actually pretty helpful. I’ve never talked to one before, they always look so busy and I never want to interrupt them."
     
     show kevin happy
@@ -866,8 +904,10 @@ label actOneFountain:
     j "Yeah, did you see that one movie that came out a couple of months ago? The one with the fighting and explosions?"
     
     menu:
+
+        jc "Yeah, did you see that one movie that came out a couple of months ago? The one with the fighting and explosions?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} That sounds like every movie. Which movie are you talking about?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} That sounds like every movie. Which movie are you talking about?":
             show jeff confused
             with qdissolve
             j "You know, the one with the horses? And the hot air balloon?"
@@ -877,7 +917,7 @@ label actOneFountain:
             j "Well apparently, they are filming parts of the sequel here at West Georgia."
             jump moreAboutTheMovie
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} The one with the horses and the hot air balloon? I loved that movie! It broke like, three box office records.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} The one with the horses and the hot air balloon? I loved that movie! It broke like, three box office records.":
             j "Well apparently, they are filming parts of the sequel here at West Georgia."
             m "That is awesome. I loved that part with the rabbit in the top hat!"
             jump moreAboutTheMovie
@@ -914,6 +954,7 @@ label actOneNextdayClassroom:
     
     show calendar_alpha
     $ renpy.pause(3.0)
+    sv "The next day."
 
     scene bg classroom with fade
     $ save_name = "Name: %s.\nScene: Act 1 – Classroom." % (name)
@@ -924,14 +965,17 @@ label actOneNextdayClassroom:
     k "...And then I was like, you’ve gotta be kidding me. Everybody knows that if a dinosaur and a robot got into a fight, the robot would definitely win."
     
     menu:
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} You have a rich fantasy life, don’t you, Kevin?":
+
+        kc "...And then I was like, you’ve gotta be kidding me. Everybody knows that if a dinosaur and a robot got into a fight, the robot would definitely win.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} You have a rich fantasy life, don’t you, Kevin?":
             show kevin happy
             with qdissolve
             k "Hey, thanks!"
             m "I’m not totally sure that was a compliment, but hey! You are welcome. Anyway, it looks like Dr. Windham is with a student already. Should we hang out for a second?"
             jump talkingToWindham
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I’m pretty sure the dinosaur would win.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I’m pretty sure the dinosaur would win.":
             show kevin confused
             with qdissolve
             k "You make a good case."
@@ -977,9 +1021,9 @@ label talkingToWindham:
     
     menu:
 
-        dw "Sure. We’ll start from the beginning. Let’s say I am writing my paper on bullying. Now, bullying is a pretty broad topic. What do you think I should do next?{fast}"
+        dwc "Sure. We’ll start from the beginning. Let’s say I am writing my paper on bullying. Now, bullying is a pretty broad topic. What do you think I should do next?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t know":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t know":
             
             dw "Think about ways you can narrow a broad topic."
             
@@ -987,7 +1031,7 @@ label talkingToWindham:
             
             jump Presearching
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Turn it into a research question?":
+        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Turn it into a research question?":
             
             dw "Not quite yet. Think about ways you can narrow a broad topic."
             
@@ -995,7 +1039,7 @@ label talkingToWindham:
             
             jump Presearching
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Presearching?":
+        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Presearching?":
             
             jump Presearching
     
@@ -1011,30 +1055,33 @@ label Presearching:
 
     menu:
 
-        dw "[name!q], can you think of ways to make my topic—cyberbullying and teenage suicide—even more specific?{fast}"
+        dwc "[name!q], can you think of ways to make my topic—cyberbullying and teenage suicide—even more specific?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} No.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} No.":
             dw "What about the differences between cyberbullying and bullying in person? And how that might relate to suicide?"
             k "Or how the law treats cyberbullies when someone commits suicide as a result of being cyberbullied?"
             m "Maybe why it seems like women are the ones who react the most violently to being cyberbullied?"
             dw "Definitely. Those all sound interesting."
             jump interestingQuestion
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I think so.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I think so.":
+
+            dw "Okay, [name!q], what do you suggest?"
+
             menu:
 
-                dw "[name!q], can you think of ways to make my topic—cyberbullying and teenage suicide—even more specific?{fast}"
+                dwc "Okay, [name!q], what do you suggest?{fast}"
 
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} The differences between cyberbullying and bullying in person? And how that might relate to suicide?":
+                "{font=SourceSansPro-Bold.ttf}Suggest:{/font} The differences between cyberbullying and bullying in person? And how that might relate to suicide?":
                     jump DWsoundsInteresting
 
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} How the law treats cyberbullies when someone commits suicide as a result of being cyberbullied?":
+                "{font=SourceSansPro-Bold.ttf}Suggest:{/font} How the law treats cyberbullies when someone commits suicide as a result of being cyberbullied?":
                     jump DWsoundsInteresting
                 
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Why it seems like women are the ones who react the most violently to being cyberbullied?":
+                "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Why it seems like women are the ones who react the most violently to being cyberbullied?":
                     jump DWsoundsInteresting
 
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Maybe just why psychologically some people turn to suicide after being cyberbullied?":
+                "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Maybe just why psychologically some people turn to suicide after being cyberbullied?":
                     jump DWsoundsInteresting
 
 label DWsoundsInteresting:
@@ -1049,12 +1096,12 @@ label interestingQuestion:
 
     menu:
 
-        dw "I decide that what is interesting to me here is how the law treats cyberbullies when someone commits suicide. So what do you think my research question could be?{fast}"
+        dwc "I decide that what is interesting to me here is how the law treats cyberbullies when someone commits suicide. So what do you think my research question could be?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Should there be an anti-cyberbullying law?":
+        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Should there be an anti-cyberbullying law?":
             jump ResearchQuestion
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What is the connection between cyberbullying and teenage suicide?":
+        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} What is the connection between cyberbullying and teenage suicide?":
             dw "Not bad, but I think I get even even more specific, since through my presearching I know that I am interested in how this issue relates to law."
             m "Maybe, “Should there be an anti-cyberbullying law?”"
             jump ResearchQuestion
@@ -1125,9 +1172,9 @@ label ResearchQuestion:
     
     menu:
         
-        dw "Is “Are video games violent?” a good research question?{fast}"
+        dwc "Is “Are video games violent?” a good research question?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Yes":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} Yes":
             
             dw "Why do you think that?"
             
@@ -1137,7 +1184,7 @@ label ResearchQuestion:
             
             jump BetterQuestion
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} No":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} No":
             
             dw "Why do you think that?"
             
@@ -1155,25 +1202,25 @@ label BetterQuestion:
     
     menu:
 
-        k "Maybe, “Do violent video games make teenagers more violent?”{fast}"
+        kc "Maybe, “Do violent video games make teenagers more violent?”{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I like it":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I like it":
             dw "Why do you like this research question?"
             m "It is specific, narrowed to a particular group of people, and it is researchable."
             dw "I think so too. I say run with it, Kevin!"
             jump actOneAnyQuestions
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t like it":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t like it":
             dw "Why not?"
             menu:
 
-                dw "Why not?{fast}"
+                dwc "Why not?{fast}"
 
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} It seems too narrow, I don’t know if Kevin would find any info on it.":
+                "{font=SourceSansPro-Bold.ttf}Say:{/font} It seems too narrow, I don’t know if Kevin would find any info on it.":
                     #m "It seems too narrow, I don’t know if Kevin would find any info on it."
                     dw "I think he probably will, but if he starts doing research and finds that there isn’t enough information to support his position he can always adjust his research question."
                     jump actOneAnyQuestions
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} It's too easily answerable. Wouldn’t it just be, “yes” or “no”?":
+                "{font=SourceSansPro-Bold.ttf}Say:{/font} It's too easily answerable. Wouldn’t it just be, “yes” or “no”?":
                     #m "It is too easily answerable too. Wouldn’t it just be, “yes” or “no”?"
                     dw "I think Kevin will find that his topic is a relatively controversial issue without a clear cut answer."
                     dw "His position will begin with a yes or no—he will argue that yes, they make teens violent, or no, they do not, but he’ll need research to back up that position."
@@ -1191,22 +1238,22 @@ label actOneAnyQuestions:
     
     menu:
         
-        dw "Why is presearching important?{fast}"
+        dwc "Why is presearching important?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} To help you narrow your topic":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} To help you narrow your topic":
             dw "Exactly. Or broaden your focus if your topic is too specific. Presearching gives you the background information about a topic that you need to know to do quality, effective research."
             show windham neutral
             with qdissolve
             jump actOneWrapUpPresearching
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} So you know where to go to find research for your topic":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} So you know where to go to find research for your topic":
             show windham neutral
             with qdissolve
             dw "Almost there."
             dw "You might find some useful sources in your presearch, but when you are developing an argument in your paper, the kinds of reference resources you’d use in a presearch—Wikipedia, encyclopedias—might not be ideal for a research paper."
             jump actOneWrapUpPresearching
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t know":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t know":
             show windham neutral
             with qdissolve
             dw "Presearching helps you narrow your topic if it is too broad, or broaden your focus if your topic is too specific."
@@ -1221,17 +1268,17 @@ label actOneWrapUpPresearching:
 
     menu:
         
-        dw "What is a research question?{fast}"
+        dwc "What is a research question?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} It is the question you are planning to answer in your research":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} It is the question you are planning to answer in your research":
             jump actOneWrapUpResearchQuestion
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} It is your paper’s argument.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} It is your paper’s argument.":
             dw "Not exactly. Your research question is the question you are planning to answer in your research."
             dw "Your paper’s argument is called your thesis, and it should be the answer to your research question."
             jump actOneWrapUpResearchQuestion
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t know.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t know.":
             dw "Your research question is the question you are planning to answer in your research."
             jump actOneWrapUpResearchQuestion
             
@@ -1254,21 +1301,21 @@ label actOneWrapUpResearchQuestionQuiz:
     else:
     
         menu:
-            dw "What are some other things you want to keep in mind when crafting a research question?{fast}"
+            dwc "What are some other things you want to keep in mind when crafting a research question?{fast}"
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} That the question can’t be answered with a “yes” or a “no”" if researchq_yesno == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} That the question can’t be answered with a “yes” or a “no”" if researchq_yesno == False:
                 $ researchq_yesno = True
                 jump actOneWrapUpResearchQuestionRight
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} That it passes the “so what” test" if researchq_sowhat == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} That it passes the “so what” test" if researchq_sowhat == False:
                 $ researchq_sowhat = True
                 jump actOneWrapUpResearchQuestionRight
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} That it isn’t based off an opinion and, therefore, unanswerable" if researchq_opinion == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} That it isn’t based off an opinion and, therefore, unanswerable" if researchq_opinion == False:
                 $ researchq_opinion = True
                 jump actOneWrapUpResearchQuestionRight
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I can’t think of anything else." if researchq_yesno == True or researchq_sowhat == True or researchq_opinion == True:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I can’t think of anything else." if researchq_yesno == True or researchq_sowhat == True or researchq_opinion == True:
                 jump actOneWrapUpIsOver
 
 label actOneWrapUpResearchQuestionRight:
