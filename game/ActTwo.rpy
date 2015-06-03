@@ -683,6 +683,8 @@ label gottaRun:
 
     play sndfx "sfx/BooksDropped.ogg"
     k "HEY KANA, NEED A HAND?" with hpunch
+
+    sv "Kana is startled by Kevin shouting, and she drops the books she was carrying."
     
     show kana surprised at left
     with qdissolve
@@ -719,7 +721,7 @@ label gottaRun:
 
         kac "I’m actually pretty excited for this project, I’m thinking about writing about museums that censor art. I’ll probably use some of the pictures in these books as primary sources.{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}thinking:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey, I know what a primary source is!{/font}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey, I know what a primary source is!{/font}":
 
             menu:
 
@@ -733,7 +735,7 @@ label gottaRun:
                     ka "That includes stuff like letters, photos, diaries, and maps. Primary sources can also be things like works of fiction or art. The idea is that they are the things that you study or analyze to create a secondary source."
                     jump nowOnToSecondarySources
 
-        "{font=SourceSansPro-Bold.ttf}thinking:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Primary source? What’s that?{/font}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Primary source? What’s that?{/font}":
             m "I don’t think I know what a primary source is. Is it your most important source?"
             ka "They are important, but that’s not really what a primary source means. A primary source is usually something that is created under the period of study, or first hand accounts of something."
             ka "That includes stuff like letters, photos, diaries, and maps. Primary sources can also be things like works of fiction or art. The idea is that they are the things that you study or analyze to create a secondary source."
@@ -752,7 +754,7 @@ label nowOnToSecondarySources:
             ka "I would probably want to do research to find things that scholars or art critics have written about why a piece of art has been censored to back up my position too—those would also be secondary sources."
             jump sourceTypesContinued
     
-        "{font=SourceSansPro-Bold.ttf}thinking:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey, I know what a secondary source is!{/font}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey, I know what a secondary source is!{/font}":
             m "A secondary source is something that analyzes a primary source."
             m "In her paper, if Kana wanted to analyze a particular piece of censored art and write about why she thinks it should or shouldn’t be censored, she would be creating a secondary source."
             m "The art that Kana is analyzing would be a primary source."
@@ -869,13 +871,15 @@ label coffeeShopContinues:
     with qdissolve
     ka "Let me know too, I love movies! I’m ©KanaPaints"
     
-    k "I’m ©AustenFan18"
+    k "I’m ©AustenFan18, with an “e”."
         
     show kana surprised
     show tony surprised
     with qdissolve
 
     e "..................................................."
+
+    sv "Everyone looks at Kevin in surprise."
     
     show kevin surprised
     with qdissolve
