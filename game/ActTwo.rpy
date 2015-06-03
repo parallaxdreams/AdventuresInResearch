@@ -47,7 +47,7 @@ label ActTwo:
     play sndfx "sfx/cb_tone.ogg"
     cbkevin "We still on to meet at the library?"
     
-    m "{font=SourceSansPro-SemiboldItalic.ttf}I better let him know that I'm almost there.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}I better let him know that I'm almost there.{/font}"
 
     play sndfx "sfx/cb_sent_tone.ogg"
     cbkme "Yeah, see you in five!"
@@ -59,16 +59,21 @@ label ActTwo:
     play music "music/Library.ogg"
     show kevin neutral at right
     with qdissolve
+
+    sv "You arrive at the library and find Kevin standing over by the DVD shelves."
+
     m "Hey, what’s up?"
     
     k "I’ve got to read {font=SourceSansPro-SemiboldItalic.ttf}Pride and Prejudice{/font} for my Women in Bonnets: A Retrospective class."
     
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} You know these are DVDs and not books, right?":
+        kc "I’ve got to read {font=SourceSansPro-SemiboldItalic.ttf}Pride and Prejudice{/font} for my Women in Bonnets: A Retrospective class.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Ask:{/font} You know these are DVDs and not books, right?":
             jump PrideAndDVDs
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} You are gonna watch the movie instead of reading the book? Are you sure that’s a good idea?":
+        "{font=SourceSansPro-Bold.ttf}Ask:{/font} You are gonna watch the movie instead of reading the book? Are you sure that’s a good idea?":
             jump PrideAndDVDs
 
 label PrideAndDVDs:
@@ -79,6 +84,9 @@ label PrideAndDVDs:
     
     show stephanie neutral at leftthird
     with qdissolve
+
+    sv "Stephanie walks over to you and Kevin."
+
     s "Hey there! Can I help with anything?"
     
     show kevin happy
@@ -157,6 +165,8 @@ label PrideAndDVDs:
     with qdissolve
     s "It’s not that bad. Let’s go through it. Follow me and I’ll explain."
     
+    sv "You follow Stephanie over to a different part of the library’s main floor."
+
     scene bg libraryBrowsing with fade
     
     show stephanie neutral at left
@@ -168,27 +178,27 @@ label PrideAndDVDs:
 
     menu:
 
-        s "Anyone care to guess what a periodical is?{fast}"
+        sc "Anyone care to guess what a periodical is?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I think I know!":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I think I know!":
             menu:
 
-                s "Anyone care to guess what a periodical is? {fast}"
+                sc "Anyone care to guess what a periodical is? {fast}"
 
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} A thing that comes out...periodically?":
+                "{font=SourceSansPro-Bold.ttf}Say:{/font} A thing that comes out...periodically?":
                     show stephanie happy
                     with qdissolve
                     s "Pretty much! Periodicals are things like newspapers, magazines, and academic journals."
                     jump periodicalTalkCont
 
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Like newspapers and magazines and stuff?":
+                "{font=SourceSansPro-Bold.ttf}Say:{/font} Like newspapers and magazines and stuff?":
                     show stephanie happy
                     with qdissolve
                     s "That’s right. And academic journals. Any publication that comes out periodically."
                     s "Meaning weekly, biweekly, monthly, yearly, and so on."
                     jump periodicalTalkCont
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I have no idea what a periodical is.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I have no idea what a periodical is.":
             show kevin concerned
             with qdissolve
             k "A thing that comes out...periodically?"
@@ -215,18 +225,18 @@ label periodicalTalkCont:
     
     menu:
 
-        s "Right! Well, what kind of information do you get in a newspaper?{fast}"
+        sc "Right! Well, what kind of information do you get in a newspaper?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Information on current events?":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} Information on current events?":
             s "Exactly!"
             jump allAboutNewspapers
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Weather?":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} Weather?":
             s "Sure! For our discussion about the information cycle, though, what we want to focus on is that newspapers contain info on current events."
             jump allAboutNewspapers
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Obituaries?":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} Obituaries?":
             s "Sure! For our discussion about the information cycle, though, what we want to focus on is that newspapers contain info on current events."
             jump allAboutNewspapers
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Sports?":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} Sports?":
             s "Sure! For our discussion about the information cycle, though, what we want to focus on is that newspapers contain info on current events."
             jump allAboutNewspapers
 
@@ -262,14 +272,14 @@ label whyImportantNewspapersQuestions:
     menu:
 
         #if newspapers_choice_one_picked == newspapers_choice_two_picked == False:
-        s "Why do you think it is important for researchers to keep this quick turnaround in mind when they use newspapers, tv, radio, or blogs in their research?{fast}"
+        sc "Why do you think it is important for researchers to keep this quick turnaround in mind when they use newspapers, tv, radio, or blogs in their research?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Because when something gets quickly published about an event, there is a very good chance that all of the facts about that event aren’t yet in?" if newspapers_choice_one_picked == False:
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Because when something gets quickly published about an event, there is a very good chance that all of the facts about that event aren’t yet in?" if newspapers_choice_one_picked == False:
             $ newspapers_choice_one_picked = True
             #s "Right, what else?"
             jump whyImportantNewspapers
     
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Maybe because when something gets quickly published about an event, there is a very good chance that the newspaper or tv show might have incorrect information?" if newspapers_choice_two_picked == False:
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Maybe because when something gets quickly published about an event, there is a very good chance that the newspaper or tv show might have incorrect information?" if newspapers_choice_two_picked == False:
             $ newspapers_choice_two_picked = True
             #s "Right, anything else?"
             jump whyImportantNewspapers
@@ -296,19 +306,19 @@ label afterEventNews:
     
     menu:
         
-        s "We’ve already touched on what these resources contain and when you’d want to use them. Do you remember when, [name!q]?{fast}"
+        sc "We’ve already touched on what these resources contain and when you’d want to use them. Do you remember when, [name!q]?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} When we were talking about coming up with a topic?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} When we were talking about coming up with a topic?":
             #m "When we were talking about coming up with a topic?"
             s "That’s right. It is a part of a process called Presearching."
             jump PresearchingActTwo
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} When we were talking about presearching?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} When we were talking about presearching?":
             #m "When we were talking about presearching?"
             s "That’s right!"
             jump PresearchingActTwo
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t remember.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t remember.":
             #m "I don’t remember."
             s "We touched on reference materials when were were discussing presearching."
             jump PresearchingActTwo
@@ -320,14 +330,14 @@ label PresearchingActTwo:
     
     menu:
         
-        s "With that in mind, what kind of information do you think reference materials contain?{fast}"
+        sc "With that in mind, what kind of information do you think reference materials contain?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Information on current events, like newspapers?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Information on current events, like newspapers?":
             #m "Information on current events, like newspapers?"
             s "No, things like encyclopedias and dictionaries take much longer to get published than newspapers do, so the information they contain generally isn’t as current as you’d find in a newspaper or magazine."
             jump ReferenceInfoCycle
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} General information on a topic.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} General information on a topic.":
             #m "General information on a topic."
             s "That’s right, I’m glad to see you were paying attention!"
             s "Things like encyclopedias and dictionaries take much longer to get published than newspapers do, so the information they contain generally isn’t as current as you’d find in a newspaper or magazine."
@@ -354,13 +364,19 @@ label ReferenceInfoCycle:
     s "That’s right, if it isn’t already up, type in westga.edu/library."
     show screenshot libraryHome
     with qdissolve
+
+    sv "You type in the address, and the library’s home page appears on the computer screen."
+
     m "I’m here, what next?"
     
     s "We are going to explore resources that you have access to that aren’t physically in the library."
     
     show kevin concerned
     with qdissolve
-    k "This looks familiar. This is where to you go find books, right?"
+
+    sv "Kevin points to the search box near the center of the webpage."
+
+    k "This looks familiar. This is where you go to find books, right?"
     
     s "It is! You can search the library catalog from the search box to see what books we have in the stacks, what periodicals we have, even what DVDs you can check out."
     
@@ -411,11 +427,13 @@ label bookComparison:
 
     elif books_longer_asked == True or books_published_later_asked == True:
 
+        s "How else do you think a book compares to reference materials or periodicals?"
+
         menu:
 
-            s "How else do you think a book compares to reference materials or periodicals?"
+            sc "How else do you think a book compares to reference materials or periodicals?{fast}"
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Books are longer than periodicals." if books_longer_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} Books are longer than periodicals." if books_longer_asked == False:
                 #m "Books are longer than periodicals."
                 s "That they are—usually, at least. And for that matter, they are usually shorter than things like encyclopedias. What do you think that means?"
                 m "That they probably go into more depth than a magazine or newspaper?"
@@ -427,7 +445,7 @@ label bookComparison:
                     $ done_comparing = True
                 jump bookComparison
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Books take longer to get published than newspapers and magazines do." if books_published_later_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} Books take longer to get published than newspapers and magazines do." if books_published_later_asked == False:
                 #m "Books take longer to get published than newspapers and magazines do."
                 s "Right! Most people don’t know just how long it takes for a book to get published though—from the time someone starts writing to when it is actually published can be between 1-2 years. Sometimes even longer!"
                 k "So if it takes books longer to get published, they probably don’t contain much current information, right?"
@@ -445,9 +463,9 @@ label bookComparison:
     
         menu:
 
-            s "While you do have one close by, though, let me ask: from what you already know about books, how do you two think a book compares to reference materials or periodicals?{fast}"
+            sc "While you do have one close by, though, let me ask: from what you already know about books, how do you two think a book compares to reference materials or periodicals?{fast}"
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Books are longer than periodicals." if books_longer_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} Books are longer than periodicals." if books_longer_asked == False:
                 #m "Books are longer than periodicals."
                 s "That they are—usually, at least. And for that matter, they are usually shorter than things like encyclopedias. What do you think that means?"
                 m "That they probably go into more depth than a magazine or newspaper?"
@@ -458,11 +476,11 @@ label bookComparison:
                     $ done_comparing = True
                 jump bookComparison
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Books take longer to get published than newspapers and magazines do." if books_published_later_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} Books take longer to get published than newspapers and magazines do." if books_published_later_asked == False:
                 #m "Books take longer to get published than newspapers and magazines do."
                 s "Right! Most people don’t know just how long it takes for a book to get published though—from the time someone starts writing, it usually takes between 1-2 years. Sometimes even longer!"
                 k "So if it takes books longer to get published, they probably don’t contain much current information, right?"
-                s "Most of time, yes."
+                s "Most of the time, yes."
                 s "The reason this is important is that when a book is published, ideally the author has had some time to process and contextualize the information."
                 k "So, it is the same kind of idea as a reference book?"
                 s "Yes and no—we’ve discussed reference materials being just an overview of a topic. Books—especially the kinds of books that you’d want to use in a research project in college—will be more of an analysis of a topic."
@@ -533,11 +551,13 @@ label doneComparingBooks:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I can see how knowing the difference between scholarly and popular materials is important.":
+        sc "You might want to use a popular magazine to see how journalists respond to certain events or issues in popular culture.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I can see how knowing the difference between scholarly and popular materials is important.":
             s "I’m glad to hear it!"
             jump gottaRun
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} That’s interesting and all, but I really don’t think it is important if something is scholarly or popular. My teacher isn’t going to know the difference, so why should I care?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} That’s interesting and all, but I really don’t think it is important if something is scholarly or popular. My teacher isn’t going to know the difference, so why should I care?":
             show stephanie surprised
             show kevin surprised
             show tony surprised
@@ -551,7 +571,7 @@ label zombies:
 
     scene bg blackSolid with fade
     $ save_name = "Name: %s.\nScene: Bad Ending 2." % (name)
-    scene bg tenYrsLater with fade
+    scene bg tenYrsLater with None
 
     $ renpy.pause(2.0)
 
@@ -561,8 +581,8 @@ label zombies:
 
     #play ambient "sfx/zombies-ambient.ogg"
     play music "music/Zombies.ogg"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Scholars warned us that this could happen, but we didn’t listen! That one guy with the blog and the goatee said that a zombie outbreak would never happen and we all believed him.{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}If only I had cared about the distinctions between scholarly and popular materials when I had the chance...Maybe I could have done something. Now, do I lock myself on the first floor or in the basement?{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Scholars warned us that this could happen, but we didn’t listen! That one guy with the blog and the goatee said that a zombie outbreak would never happen and we all believed him.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}If only I had cared about the distinctions between scholarly and popular materials when I had the chance...Maybe I could have done something. Now, do I lock myself on the first floor or in the basement?{/font}"
 
     "Game Over"
     if not persistent.achievement_bad_end2_unlocked:
@@ -595,6 +615,10 @@ label ScholarlyPop:
     show tony neutral at Position(xpos=0.60, xanchor=0.5, ypos=0.51, yanchor=0.5)
     with qdissolve
 
+    sv "Ten Years earlier..."
+
+    sv "Back in the library with Kevin, Stephanie, and Tony, you have another chance to make a statement about scholarly and popular materials."
+
     menu:
 
         "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I can see how knowing the difference between scholarly and popular materials is important.":
@@ -604,7 +628,7 @@ label ScholarlyPop:
 
 label gottaRun:
 
-    s "Well, folks, the LIBR 1101 class I teach is in a few minutes so I’ve gotta run. I hope this discussion was helpful."
+    s "Well, folks, the LIBR 11O1 class I teach is in a few minutes so I’ve gotta run. I hope this discussion was helpful."
     s "Before you leave you should head up to the stacks and look around."
     s "Send me an email if you have any more questions, or if you’d like to set up a research consultation."
     
@@ -627,6 +651,8 @@ label gottaRun:
     scene bg libraryStacks with fade
     show kevin confused at center
     with qdissolve
+
+    sv "The two of you head upstairs, and find yourselves surrounded by the large bookshelves, or “stacks”."
 
     m "It sure is quiet up here."
 
@@ -682,7 +708,7 @@ label gottaRun:
     
     m "That sounds cool. I think our friend Jeff was talking about it the other day."
     
-    ka "Jeff from class? I know him, we took LIBR 1101 together last semester."
+    ka "Jeff from class? I know him, we took LIBR 11O1 together last semester."
     show kevin neutral
     with qdissolve
     k "He’s a cool guy. He’s been helping us a lot with this research project for class."
@@ -691,24 +717,24 @@ label gottaRun:
     
     menu:
 
-        ka "I’m actually pretty excited for this project, I’m thinking about writing about museums that censor art. I’ll probably use some of the pictures in these books as primary sources.{fast}"
+        kac "I’m actually pretty excited for this project, I’m thinking about writing about museums that censor art. I’ll probably use some of the pictures in these books as primary sources.{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey, I know what a primary source is!{/font}":
+        "{font=SourceSansPro-Bold.ttf}thinking:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey, I know what a primary source is!{/font}":
 
             menu:
 
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} A primary source is like a first hand account of something, right?":
+                "{font=SourceSansPro-Bold.ttf}Say:{/font} A primary source is like a first hand account of something, right?":
                     ka "Yeah, a primary source is usually something that is created under the period of study, or first hand accounts of something."
                     ka "That includes stuff like letters, photos, diaries, and maps. Primary sources can also be things like works of fiction or art. The idea is that they are the things that you study or analyze to create a secondary source."
                     jump nowOnToSecondarySources
 
-                "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} A primary source is your most important source, right?":
+                "{font=SourceSansPro-Bold.ttf}Say:{/font} A primary source is your most important source, right?":
                     ka "Hmm...not really. A primary source is usually something that is created under the period of study, or first hand accounts of something."
                     ka "That includes stuff like letters, photos, diaries, and maps. Primary sources can also be things like works of fiction or art. The idea is that they are the things that you study or analyze to create a secondary source."
                     jump nowOnToSecondarySources
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Primary source? What’s that?{/font}":
-            m "I don’t think I know what what a primary source is. It is your most important source?"
+        "{font=SourceSansPro-Bold.ttf}thinking:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Primary source? What’s that?{/font}":
+            m "I don’t think I know what a primary source is. Is it your most important source?"
             ka "They are important, but that’s not really what a primary source means. A primary source is usually something that is created under the period of study, or first hand accounts of something."
             ka "That includes stuff like letters, photos, diaries, and maps. Primary sources can also be things like works of fiction or art. The idea is that they are the things that you study or analyze to create a secondary source."
             jump nowOnToSecondarySources
@@ -716,14 +742,17 @@ label gottaRun:
 label nowOnToSecondarySources:
 
     menu:
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Wait, what is a secondary source?":
+
+        kac "That includes stuff like letters, photos, diaries, and maps. Primary sources can also be things like works of fiction or art. The idea is that they are the things that you study or analyze to create a secondary source.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Ask:{/font} Wait, what is a secondary source?":
             ka "A secondary source is something that analyzes a primary source."
             ka "In my paper, if I wanted to analyze a particular piece of censored art and write about why I think it should or shouldn’t be censored, I would be creating a secondary source."
             ka "The art that I am analyzing would be a primary source."
             ka "I would probably want to do research to find things that scholars or art critics have written about why a piece of art has been censored to back up my position too—those would also be secondary sources."
             jump sourceTypesContinued
     
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Hey, I know what a secondary source is!":
+        "{font=SourceSansPro-Bold.ttf}thinking:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey, I know what a secondary source is!{/font}":
             m "A secondary source is something that analyzes a primary source."
             m "In her paper, if Kana wanted to analyze a particular piece of censored art and write about why she thinks it should or shouldn’t be censored, she would be creating a secondary source."
             m "The art that Kana is analyzing would be a primary source."
@@ -762,7 +791,7 @@ label sourceTypesContinued:
     
     show kevin happy
     with qdissolve
-    k "Wow, I really wish I had taken LIBR 1101. It sounds like you and Jeff learned a lot in that class."
+    k "Wow, I really wish I had taken LIBR 11O1. It sounds like you and Jeff learned a lot in that class."
     
     ka "It was pretty useful!"
     
@@ -783,11 +812,15 @@ label sourceTypesContinued:
     #play music [ "music/gb_swing_cityL_jazz_patio.ogg", "music/gb_buddy_jazz_patio.ogg", "music/gb_park_bench_jazz_patio.ogg" ] fadein 2.0
     play music "music/gb_swing_cityL_jazz_patio.ogg" fadein 2.0
 
+    sv "A short time later, Kana joins you and Kevin at a table on the patio."
+
+    sv "To break the silence, you say..."
+
     menu:    
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} How cool is it that we have a coffee shop in the library?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} How cool is it that we have a coffee shop in the library?":
             jump coffeeShopContinues
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I’m at this coffee shop pretty much every day. I didn’t realize there was a whole library attached to it for a long time.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I’m at this coffee shop pretty much every day. I didn’t realize there was a whole library attached to it for a long time.":
             jump coffeeShopContinues
 
 label coffeeShopContinues:
@@ -880,12 +913,15 @@ label coffeeShopContinues:
     scene bg libraryReference with fade
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Man, my brain hurts. Who knew there was so many different kinds of...stuff?{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Books, journals, databases...Wait a second, I didn’t even get a coffee.{/font}"
+
+    sv "You head back into the library, and pause for a moment to think."
+
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Man, my brain hurts. Who knew there was so many different kinds of...stuff?{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Books, journals, databases...Wait a second, I didn’t even get a coffee.{/font}"
     
     show stephanie neutral at center
     with qdissolve
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Hey, there’s Stephanie, it looks like her class is over.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Hey, there’s Stephanie, it looks like her class is over.{/font}"
     m "Hey Stephanie, I hate to bother you, but do you have a sec?"
 
     show stephanie happy
@@ -919,7 +955,7 @@ label EndofActTwo:
     
         menu:
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Can you explain the information cycle again?" if infocycle_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Can you explain the information cycle again?" if infocycle_asked == False:
                 #m "Can you explain the information cycle again?"
                 show stephanie neutral
                 with qdissolve
@@ -932,7 +968,7 @@ label EndofActTwo:
                     $ done_wrapping_up_ActTwo = True
                 jump EndofActTwo
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What are the differences between primary, secondary, and tertiary sources?" if different_sources_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What are the differences between primary, secondary, and tertiary sources?" if different_sources_asked == False:
                 #m "What are the differences between primary, secondary, and tertiary sources?"
                 show stephanie neutral
                 with qdissolve
@@ -945,7 +981,7 @@ label EndofActTwo:
                     $ done_wrapping_up_ActTwo = True
                 jump EndofActTwo
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What is the difference between a popular and scholarly source?" if popular_scholarly_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What is the difference between a popular and scholarly source?" if popular_scholarly_asked == False:
                 #m "What is the difference between a popular and scholarly source?"
                 show stephanie neutral
                 with qdissolve
@@ -957,7 +993,7 @@ label EndofActTwo:
                     $ done_wrapping_up_ActTwo = True
                 jump EndofActTwo
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Why is it important to know about different kinds of information sources?" if info_source_differences_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Why is it important to know about different kinds of information sources?" if info_source_differences_asked == False:
                 #m "Why is it important to know about different kinds of information sources?"
                 show stephanie neutral
                 with qdissolve
@@ -971,7 +1007,7 @@ label EndofActTwo:
                     $ done_wrapping_up_ActTwo = True
                 jump EndofActTwo
             
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t have any more questions. Thanks for your help!" if infocycle_asked == True or different_sources_asked == True or popular_scholarly_asked == True or info_source_differences_asked == True:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t have any more questions. Thanks for your help!" if infocycle_asked == True or different_sources_asked == True or popular_scholarly_asked == True or info_source_differences_asked == True:
                 jump ActTwoWrapup
             
 label ActTwoWrapup:
