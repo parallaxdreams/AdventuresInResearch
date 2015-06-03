@@ -322,6 +322,7 @@ define dwc = Character('Dr. Windham', ctc="dialogueAdvance", ctc_position="nestl
 define kc = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 define jc = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 define sc = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
+define kac = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 
 
 #This is the unknown character, before he or she has been introduced
@@ -332,9 +333,9 @@ define un = Character('???', who_alt="unknown speaker", color="#000",ctc="dialog
 #Kana
 define cbkana = Character(None, window_background="imgs/ui/kanachatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False)
 #Kevin
-define cbkevin = Character(None, window_background="imgs/ui/kevinchatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False)
+define cbkevin = Character(None, window_background="imgs/ui/kevinchatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False, what_alt="A new chatterbox message from Kevin appears, [text]")
 #Player
-define cbkme = Character(None, window_background="imgs/ui/playerchatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False)
+define cbkme = Character(None, window_background="imgs/ui/playerchatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False, what_alt="You send a message that says, [text]")
 
 
 #######################################
