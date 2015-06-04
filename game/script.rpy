@@ -323,6 +323,7 @@ define kc = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled", wh
 define jc = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 define sc = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 define kac = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
+define cc = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 
 
 #This is the unknown character, before he or she has been introduced
