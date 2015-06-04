@@ -47,7 +47,7 @@ label ActTwo:
     play sndfx "sfx/cb_tone.ogg"
     cbkevin "We still on to meet at the library?"
     
-    mt "{font=SourceSansPro-SemiboldItalic.ttf}I better let him know that I'm almost there.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}I better let him know that I’m almost there.{/font}"
 
     play sndfx "sfx/cb_sent_tone.ogg"
     cbkme "Yeah, see you in five!"
