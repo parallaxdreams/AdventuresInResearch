@@ -540,9 +540,9 @@ label bad_end1:
     play ambient "sfx/robot-apocalypse-ambient.ogg"
     play music "music/Robot.ogg"
     
-    sv "You are hiding behind a desk in your office on the 50th floor of your company's building."
+    sv "You are hiding behind a desk in your office on the 50th floor of your company’s building."
     sv "The window is smashed, and outside you can see that the world is in flames."
-    sv "An evil-looking robot has broken down the door and is searching for you."
+    sv "A menacing-looking robot has broken down the door and is searching for you."
 
     play sndfx "sfx/robot.ogg"
     r "Reveal yourself, human minion! It is time to serve your new robot overlords!"
