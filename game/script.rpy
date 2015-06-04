@@ -117,7 +117,7 @@ image booleanBlueShirt = "imgs/bool/bool_blueShirt.png"
 image booleanBlueShirtORskirt = "imgs/bool/bool_blueShirtORskirt.png"
 image booleanPants = "imgs/bool/bool_pants.png"
 image booleanPantsANDblueShirt = "imgs/bool/bool_pantsANDblueShirt.png"
-image booleanWomenNOTpink = "imgs/bool/bool_womenNOTpink.png"
+image booleanWomenNOTred = "imgs/bool/bool_womenNOTred.png"
 image booleanWomenORmen = "imgs/bool/bool_womenORmen.png"
 
 ## Main Menu Slideshow
@@ -331,7 +331,7 @@ define un = Character('???', who_alt="unknown speaker", color="#000",ctc="dialog
 
 #chatterbox characters and window, text styling
 #Kana
-define cbkana = Character(None, window_background="imgs/ui/kanachatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False)
+define cbkana = Character(None, window_background="imgs/ui/kanachatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False, what_alt="A chatterbox message from Kana says, [text]")
 #Kevin
 define cbkevin = Character(None, window_background="imgs/ui/kevinchatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False, what_alt="A new chatterbox message from Kevin appears, [text]")
 #Player

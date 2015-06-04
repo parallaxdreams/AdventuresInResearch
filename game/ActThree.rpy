@@ -44,12 +44,15 @@ label ActThree:
     $ save_name = "Name: %s.\nScene: Act 3 – Movie Set." % (name)
     play ambient "sfx/movieSet-ambient.ogg"
     play music "music/MovieSet.ogg"
+    
+    sv "You’re walking on campus and see a large group of people gathered nearby. You think to yourself..."
+
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hmm...I’ve got about an hour before my next class. I guess I could go to the library, but it’s so nice outside today.{/font}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hmm...I’ve got about an hour before my next class. I guess I could go to the library, but it’s so nice outside today.{/font}":
             jump movieFilmingBegins
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey—isn’t that the movie crew that Tony was talking about earlier this week?{/font}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey—isn’t that the movie crew that Tony was talking about earlier this week?{/font}":
             jump movieFilmingBegins
 
 label movieFilmingBegins:
@@ -76,11 +79,13 @@ label movieFilmingBegins:
     d "You know, that’s crazy...but it just might work."
 
     m "............................."
+
+    sv "nothing, since the scene in front of you defies explanation."
     
     hide georgeblucas
     with qdissolve
     
-    m "{font=SourceSansPro-SemiboldItalic.ttf}What the heck is this movie about? Speaking of puzzling things, is that Kevin?{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}What the heck is this movie about? Speaking of puzzling things, is that Kevin?{/font}"
     
 
     show kevin neutral at rightmid
@@ -153,11 +158,14 @@ label movieFilmingBegins:
     k "Yeah?"
 
     menu:
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Could you stop the music, please?":
+
+        kc "Yeah?{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Ask:{/font} Could you stop the music, please?":
             jump poorLarryH
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} This music is killing me. Make it stop.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} This music is killing me. Make it stop.":
             jump poorLarryH
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I feel like I'm trapped in some old Atari game. Turn off the music NOW.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I feel like I'm trapped in some old Atari game. Turn off the music NOW.":
             jump poorLarryH
 
 label poorLarryH:
@@ -188,7 +196,10 @@ label poorLarryH:
     k "Ah I think I’m getting it. So I want to make sure that I’m using websites and stuff that have been created by experts."
     
     menu:
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Why is that important? I'm not following.":
+
+        kc "Ah I think I’m getting it. So I want to make sure that I’m using websites and stuff that have been created by experts.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Ask:{/font} Why is that important? I'm not following.":
             #m "Why is that important? I'm not following."
             show jeff concerned
             with qdissolve
@@ -200,7 +211,7 @@ label poorLarryH:
             j "They’ve really studied the issues that they are writing about, so there is a much better chance that what they publish is more trustworthy."
             jump Hornblatz
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I think I know why using information from an expert is important.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I think I know why using information from an expert is important.":
             #m "I think I know why using information from an expert is important."
             jump Hornblatz
             
@@ -264,11 +275,14 @@ label Hornblatz:
     k "I guess I’m a NOOB at researching."
     
     menu:
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Everyone is a NOOB at some point.":
+
+        kc "I guess I’m a NOOB at researching.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Everyone is a NOOB at some point.":
             k "That’s really deep, [name!q]!"
             jump noobTalk
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Hey, don’t put yourself down!":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Hey, don’t put yourself down!":
             show kevin confused
             with qdissolve
             k "I suppose you are right. Everyone is a NOOB at everything at some point."
@@ -290,8 +304,10 @@ label noobTalk:
     k "And it is important to think about the intended audience of something...why?"
     
     menu:
+
+        kc "And it is important to think about the intended audience of something...why?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I’m not sure, actually.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I’m not sure, actually.":
             #m "I’m not sure, actually."
             j "Because different audiences have different information needs."
             j "Middle schoolers will need to know more basic information that involves less analysis than high school or college students."
@@ -300,7 +316,7 @@ label noobTalk:
             with qdissolve
             jump PointOfView
             
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I think I know why.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I think I know why.":
             #m "I think I know why."
             m "Because different audiences have different information needs."
             m "Middle schoolers will need to know more basic information that involves less analysis than high school or college students."
@@ -324,7 +340,7 @@ label PointOfView:
     m "The music seemed...old. When was the last time this website was updated?"
     
     k "Hmm, let’s see."
-    $ vidgameyear = 2014-9
+    $ vidgameyear = 2015-9
     k "Looks like it was last updated in [vidgameyear]. That’s not bad, right? Not even ten years!"
     
     show jeff confused
@@ -359,7 +375,7 @@ label PointOfView:
 
     show jeff neutral
     with qdissolve
-    j "All this reminds me—in my LIBR 1101 class we had an acronym for remembering all of these evaluation criteria. It was CRAAP."
+    j "All this reminds me—in my LIBR 11O1 class we had an acronym for remembering all of these evaluation criteria. It was CRAAP."
     
     show kevin concerned
     with qdissolve
@@ -472,10 +488,13 @@ label PointOfView:
     show screenshot libraryHome
     with qdissolve
     j "Right."
+
+    sv "You bring up the library’s website on your phone."
+    sv "Now what?"
     
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Alright, I see the search box where I can look up things in the library catalog. Let’s jump right in.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Alright, I see the search box where I can look up things in the library catalog. Let’s jump right in.":
             show kevin concerned
             with qdissolve
             k "Wait, I’m a little lost. What are you talking about?"
@@ -485,7 +504,7 @@ label PointOfView:
             with qdissolve
             jump usingTheCatalog
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I have no idea where to start.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I have no idea where to start.":
             j "See that rectangular box in the middle of the screen? And that tab that says “books”?"
             j "That is where you can search the library catalog to see what books, DVDs, and government documents the library has."
             jump usingTheCatalog
@@ -501,16 +520,16 @@ label usingTheCatalog:
 
     menu:
 
-         j "[name!q], what book do you think we should choose?{fast}"
+         jc "[name!q], what book do you think we should choose?{fast}"
 
-         "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} How about {font=SourceSansPro-SemiboldItalic.ttf}Films and Libraries {/font}?":
+         "{font=SourceSansPro-Bold.ttf}Suggest:{/font} How about {font=SourceSansPro-SemiboldItalic.ttf}Films and Libraries {/font}?":
             j "I don’t know about that one, from the title, it seems to be more about suggesting what films libraries should have in their collections."
             j "Maybe {font=SourceSansPro-SemiboldItalic.ttf}Breaking in to the Movies: Film and the Culture of Politics{/font}?"
             j "The title looks relevant, anyway."
             j "Let’s click on it to see if we can get any more info on it."
             jump aboutThatBook
 
-         "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What about {font=SourceSansPro-SemiboldItalic.ttf}Breaking in to the Movies: Film and the Culture of Politics{/font}?":
+         "{font=SourceSansPro-Bold.ttf}Suggest:{/font} What about {font=SourceSansPro-SemiboldItalic.ttf}Breaking in to the Movies: Film and the Culture of Politics{/font}?":
             if not persistent.achievement_appropriate_book_unlocked:
                 $ persistent.achievement_appropriate_book_unlocked = True
                 show achievement appropriateBook:
@@ -521,11 +540,12 @@ label usingTheCatalog:
                     easeout 0.9 alpha 0.0
                 $ renpy.pause(0.1)
                 play sndfx "sfx/achievement.ogg"
+                sv "You just unlocked the “An Appropriate Book” achievement."
             j "That looks pretty good. The title looks relevant, anyway."
             j "Let’s click on it to see if we can get any more info on it."
             jump aboutThatBook
 
-         "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Maybe the book called {font=SourceSansPro-SemiboldItalic.ttf}Film Production{/font}?":
+         "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Maybe the book called {font=SourceSansPro-SemiboldItalic.ttf}Film Production{/font}?":
             show jeff concerned
             with qdissolve
             j "Hmm I don’t know. The title makes it sound like it was written for people interested in the technical aspects of film, or breaking into the industry."
@@ -541,6 +561,9 @@ label aboutThatBook:
     
     show screenshot bookRecordCN
     with qdissolve
+
+    sv "After clicking on the title, the catalog shows the record for the book."
+
     k "Wow, there is a lot of information about that book."
 
     j "Once you click on the title of a book you are interested in, it takes you to what is called the “record.”"
@@ -554,20 +577,22 @@ label importantPartsOfRecord:
 
     else:
 
+        sv "This leaves you with some questions."
+
         menu:
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Why is it important who the author is?" if author_important_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Why is it important who the author is?" if author_important_asked == False:
                 $ author_important_asked = True
                 j "Well if you want to find a particular book, the author is a good way to make sure you have the book you want. Sometimes books have the same titles."
                 jump importantPartsOfRecord
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Why is it important to know when the book was published?" if date_published_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Why is it important to know when the book was published?" if date_published_asked == False:
                 $ date_published_asked = True
                 j "For one thing, to make sure you have the right book, or the edition of the book you want."
                 j "For a lot of projects you might want to make sure that you are working with the resources that have been most recently published and therefore are most up to date."
                 jump importantPartsOfRecord
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Similar items?" if similar_items_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Similar items?" if similar_items_asked == False:
                 $ similar_items_asked = True
                 j "Yeah, it’s pretty sweet. If you find a book you like, the library catalog suggests books that are similar to that book that you might want to check out."
                 j "A lot of book records also have subjects listed. Do you see that?"
@@ -575,7 +600,7 @@ label importantPartsOfRecord:
                 j "You can click on those to do a new search of books that are categorized with the same subject as the book you want."
                 jump importantPartsOfRecord
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What is the call number?" if call_number_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What is the call number?" if call_number_asked == False:
                 $ call_number_asked = True
                 j "The call number is how you find your book."
                 j "Books in the library are arranged according to the Library of Congress Classification system and are grouped by subject."
@@ -600,6 +625,9 @@ label letsGoFindThatBook:
     show jeff neutral at left
     show kevin concerned at right
     with qdissolve
+
+    sv "The three of you go to the library."
+
     k "We have the book’s call number: PN1994 .G54 2002. How do we find the book using this string of letters and numbers?"
     
     j "First we need to see what floor it’s on. The book’s record we looked at earlier said this book was located in the stacks."
@@ -675,22 +703,22 @@ label letsGoFindThatBook:
 
     menu:
 
-        s "We are looking for databases, where do you think we should go?{fast}"
+        sc "We are looking for databases, where do you think we should go?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} GALILEO and Databases?":
+        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} GALILEO and Databases?":
             show stephanie neutral
             with qdissolve
             s "Right, go ahead and click that link on the left side of the screen, Kevin."
             jump gettingToDatabases
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} The library catalog?":
+        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} The library catalog?":
             show stephanie neutral
             with qdissolve
             s "No, we’d use that when we are searching for books, government documents, things like that. We want GALILEO and databases."
             s "Go ahead and click that link on the left side of the screen, Kevin."
             jump gettingToDatabases
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Google?":
+        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Google?":
             show stephanie happy
             with qdissolve
             s "Haha, not right this moment. It can be useful, but you can’t always find scholarly articles for free on Google."
@@ -834,9 +862,9 @@ label gettingToDatabases:
 
     menu:
 
-        s "Well, what can we glean from this? What do you think, [name!q]?{fast}"
+        sc "Well, what can we glean from this? What do you think, [name!q]?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} That we should just give up this searching databases stuff and use Google already. This is too much work, see ya.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} That we should just give up this searching databases stuff and use Google already. This is too much work, see ya.":
             show stephanie surprised
             show kevin surprised
             show jeff surprisedleft
@@ -844,7 +872,7 @@ label gettingToDatabases:
             stop ambient fadeout 0.8
             jump sharkDentistEnding
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I think it means that our search is too broad, or too vague.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I think it means that our search is too broad, or too vague.":
             show stephanie neutral
             with qdissolve
             s "I agree. From what I’m hearing about the kinds of info you want, instead of “film” and “culture” you want to look into film theory."
@@ -856,7 +884,7 @@ label sharkDentistEnding:
     
     scene bg blackSolid with fade
     $ save_name = "Name: %s.\nScene: Bad Ending 3." % (name)
-    scene bg tenYrsLater with fade
+    scene bg tenYrsLater with None
 
     $ renpy.pause(2.0)
 
@@ -865,9 +893,12 @@ label sharkDentistEnding:
     scene bg sharkDentist with fade
     #play ambient "sfx/underwater-ambient.ogg"
     play music "music/Shark.ogg" noloop
-    m "{font=SourceSansPro-SemiboldItalic.ttf}All my friends were so concerned when I gave up on using databases for searching, but I think everything turned out alright.{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Sure, I failed out of college and the only job I could get is as a dental assistant for sharks but, you know, at least I get to interact with wildlife.{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}And I really think having ten fingers is kind of greedy. Yeah, that was definitely the right decision. Now, have they fed the shark yet? He gets bitey when he’s hungry....{/font}"
+
+    sv "You are swimming in a large tank, wearing full scuba gear and carrying a giant toothbrush. A shark looks at you anxiously."
+
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}All my friends were so concerned when I gave up on using databases for searching, but I think everything turned out alright.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Sure, I failed out of college and the only job I could get is as a dental assistant for sharks but, you know, at least I get to interact with wildlife.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}And I really think having ten fingers is kind of greedy. Yeah, that was definitely the right decision. Now, have they fed the shark yet? He gets bitey when he’s hungry....{/font}"
     
     "Game Over"
     if not persistent.achievement_bad_end3_unlocked:
@@ -880,6 +911,7 @@ label sharkDentistEnding:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Bad Ending 3: Shark Dentist” achievement."
 
     menu:
 
@@ -899,11 +931,13 @@ label resultsTryAgain:
     show jeff neutralleft at right
     with qdissolve
     
+    sv "Ten years earlier..."
+
     menu:
 
-        s "Well, what can we glean from this? What do you think, [name!q]?{fast}"
+        sc "Well, what can we glean from this? What do you think, [name!q]?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I think it means that our search is too broad, or too vague.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I think it means that our search is too broad, or too vague.":
             show stephanie neutral
             with qdissolve
             s "I agree. From what I’m hearing about the kinds of info you want, instead of “film” and “culture” you want to look into film theory."
@@ -1029,7 +1063,7 @@ label moreDatabaseSearching:
     
     m "Kana’s gonna meet us down here to work on our projects."
     
-    j "She was in my LIBR 1101 class last semester, so she should be able to help us navigate GALILEO."
+    j "She was in my LIBR 11O1 class last semester, so she should be able to help us navigate GALILEO."
     
     m "Cool. Well while we are waiting for her, maybe we can search GALILEO?"
     
@@ -1037,6 +1071,9 @@ label moreDatabaseSearching:
 
     show kana happy at leftmid
     with qdissolve
+
+    sv "Kana arrives."
+
     ka "Hi, you two."
 
     j "That was fast! Hey Kana, we were just talking about subject specific databases. Do you use them for art?"
@@ -1076,10 +1113,12 @@ label moreDatabaseSearching:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Research guides sound interesting, I’m going to go check one out that relates to my topic.":
+        jc "Also, the resources listed on research guides are usually in order of relevance, or importance.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Research guides sound interesting, I’m going to go check one out that relates to my topic.":
             jump databaseSearching
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} That sounds like it might be cool. I’ll check it out later.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} That sounds like it might be cool. I’ll check it out later.":
             jump databaseSearching
 
 label databaseSearching:
@@ -1092,7 +1131,7 @@ label databaseSearching:
 
     show jeff confusedleft
     with qdissolve
-    j "We talked about them in LIBR 1101, keywords are like your search terms."
+    j "We talked about them in LIBR 11O1, keywords are like your search terms."
 
     show kana neutral
     with qdissolve
@@ -1105,9 +1144,9 @@ label databaseSearching:
 
     menu:
 
-        ka "What keywords would you use?{fast}"
+        kac "What keywords would you use?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Censorship of art in museums":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} Censorship of art in museums":
             show jeff concernedleft
             with qdissolve
             j "I don’t know about that, actually. You never want to search for whole phrases or questions."
@@ -1117,7 +1156,7 @@ label databaseSearching:
             m "That still doesn’t explain why you searched for things like “sculpture” and “first amendment”"
             jump searchingWithKeywords
        
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Censor, art, museums":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} Censor, art, museums":
             ka "I searched for those too, they are the most important ideas and words in my research question."
             ka "Those aren’t the only words I can use in my search though."
             jump searchingWithKeywords
@@ -1201,6 +1240,8 @@ label searchingWithKeywords:
     play music "music/MovieSet.ogg"
     show booleanEveryone at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
 
+    sv "You arrive at the movie location on campus. A large crowd of people are here."
+
     m "Here we are. Looks like there was a pretty big turnout for extras, I think we might be too late."
 
     show jeff neutral at Position(xpos=0.33, xanchor=0.5, ypos=0.5, yanchor=0.5)
@@ -1214,6 +1255,8 @@ label searchingWithKeywords:
 
     ka "Let’s think about this in terms of the extras over there, those men talking to those women."
 
+    sv "Kana points to a group of six people cast as extras in the movie: three women wearing skirts and three men wearing jackets and pants."
+
     m "Okay..."
 
     ka "Cool. So let’s say that each person is a keyword, a search term."
@@ -1222,6 +1265,8 @@ label searchingWithKeywords:
     hide booleanEveryone
     show booleanPants at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
     with dissolve
+
+    sv "The three women disappear, leaving the three men to stand there talking to themselves. Each guy is wearing a different color shirt: red, green, or blue."
 
     m "Wait, how did that happen?"
 
@@ -1241,16 +1286,18 @@ label searchingWithKeywords:
     show booleanPantsANDblueShirt at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
     with dissolve
 
+    sv "The two men who aren’t wearing a blue shirt disappear."
+
     ka "What happened?"
 
     menu:
 
-        ka "What happened?{fast}"
+        kac "What happened?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} All that guy’s friends went away.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} All that guy’s friends went away.":
             jump BooleanContinues
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} You got fewer people in the shot.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} You got fewer people in the shot.":
             jump BooleanContinues
 
 label BooleanContinues:
@@ -1260,12 +1307,12 @@ label BooleanContinues:
 
     menu:
 
-        ka "What do you think will happen if I use “OR”?{fast}"
+        kac "What do you think will happen if I use “OR”?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I have no idea":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} I have no idea":
             jump moreBooleanStuff
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} You’ll have more people in the shot?":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} You’ll have more people in the shot?":
             jump moreBooleanStuff
 
 label moreBooleanStuff:
@@ -1277,6 +1324,8 @@ label moreBooleanStuff:
     hide booleanPantsANDblueShirt
     show booleanBlueShirt at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
     with dissolve
+
+    sv "The guy in the blue shirt and pants is joined by a woman wearing a blue shirt and a skirt."
 
     ka "How many people do I have?"
 
@@ -1292,6 +1341,8 @@ label moreBooleanStuff:
     show booleanBlueShirtORskirt at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
     with dissolve
 
+    sv "Two more women in skirts (one wearing a green shirt, and the other wearing a red shirt) join the woman in the blue shirt and the man in the blue shirt."
+
     ka "How many people are in the shot?"
 
 
@@ -1305,6 +1356,7 @@ label moreBooleanStuff:
     show booleanWomenORmen at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
     with dissolve
     
+    sv "Two men (one wearing a red shirt, and one wearing a green shirt) join the group."
 
     j "So the broader your search term—here, men and women are much less specific than the kinds or colors of the clothes they are wearing—the more results you will get."
     j "That’s true for “AND” too."
@@ -1315,29 +1367,33 @@ label moreBooleanStuff:
 
     menu:
 
-        ka "So, the last Boolean operator is “NOT”. Do you have an idea of how that might work, [name!q]?{fast}"
+        kac "So, the last Boolean operator is “NOT”. Do you have an idea of how that might work, [name!q]?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} No.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} No.":
             ka "Well, let’s go back to our extras. Let’s start by saying I want women in the shot."
             hide booleanWomenORmen
             show booleanWomen at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
             with dissolve
-            ka "Now, let’s say I want all women but NOT ones wearing pink."
+            sv "The three men disappear from the group of extras."
+            ka "Now, let’s say I want all women but NOT ones wearing red."
             jump BooleanNot
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I think so.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I think so.":
             m "Let’s go back to our extras. Let’s start by saying I want women in the shot."
             hide booleanWomenORmen
             show booleanWomen at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
             with dissolve
-            m "Now, let’s say I want all women but NOT ones wearing pink."
+            sv "The three men disappear from the group of extras."
+            m "Now, let’s say I want all women but NOT ones wearing red."
             jump BooleanNot
 
 label BooleanNot:
 
     hide booleanWomen
-    show booleanWomenNOTpink at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
+    show booleanWomenNOTred at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
     with dissolve
+
+    sv "The woman wearing the red shirt disappears from the group."
 
     m "We lost one of the women. So “NOT” narrows the search too."
 
@@ -1357,14 +1413,14 @@ label BooleanNot:
 
     menu:
 
-        j "What does “AND” do?{fast}"
+        jc "What does “AND” do?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} “AND” narrows the search.":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} “AND” narrows the search.":
             $ boolean_and_right = True
             j "Right! When you use “AND” you are telling the database or catalog that you want to find every time your search terms are together."
             jump BooleanQuizOR
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} “AND” broadens the search.":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} “AND” broadens the search.":
             j "Actually, no."
             j "When you use “AND” you are telling the database or catalog that you want to find every time your search terms are together."
             j "It narrows the search."
@@ -1377,15 +1433,15 @@ label BooleanQuizOR:
 
     menu:
 
-        j "Okay, what about “OR”?{fast}"
+        jc "Okay, what about “OR”?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} “OR” narrows the search.":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} “OR” narrows the search.":
             j "Actually, no."
             j "When you use “OR” you are telling the database or catalog that you want to find every time either one of your search terms turn up somewhere."
             j "It broadens the search, sometimes by a lot."
             jump BooleanQuizNot
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} “OR” broadens the search.":
+        "{font=SourceSansPro-Bold.ttf}Answer:{/font} “OR” broadens the search.":
             $ boolean_or_right = True
             j "Right! When you use “OR” you are telling the database or catalog that you want to find every time either one of your search terms turn up somewhere."
             j "It broadens the search, sometimes by a lot."
@@ -1397,15 +1453,15 @@ label BooleanQuizNot:
 
     menu:
 
-        j "What about “NOT”?{fast}"
+        jc "What about “NOT”?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} “NOT” narrows the search.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} “NOT” narrows the search.":
             $ boolean_not_right = True
             j "Right! When you use “NOT” you are telling the database or catalog that you want to exclude certain words or related ideas."
             j "It helps focus your search."
             jump doneWithBoolean
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} “NOT” broadens the search.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} “NOT” broadens the search.":
             j "Actually, no."
             j "When you use “NOT” you are telling the database or catalog that you want to exclude certain words or related ideas."
             j "It helps focus your search."
@@ -1423,6 +1479,7 @@ label doneWithBoolean:
                 easeout 0.9 alpha 0.0
             $ renpy.pause(0.1)
             play sndfx "sfx/achievement.ogg"
+            sv "You just unlocked the “Boolean Expert” achievement."
     m "Kana, Jeff, thanks a lot for your help."
     m "Boolean is kind of a tricky concept, but I think I’m getting the hang of it."
 
@@ -1446,18 +1503,26 @@ label doneWithBoolean:
     $ save_name = "Name: %s.\nScene: Act 3 – Library." % (name)
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Maybe it’s a movie about female zebras who get kidnapped from the zoo and whisked away in hot air balloons.{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}They crash land at a farm in rural Georgia only to find out that the farmers have been doing crazy experiments on their livestock.{/font}"
+
+    sv "You arrive back at the library and take a seat at one of the computers."
+
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Maybe it’s a movie about female zebras who get kidnapped from the zoo and whisked away in hot air balloons.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}They crash land at a farm in rural Georgia only to find out that the farmers have been doing crazy experiments on their livestock.{/font}"
     
-    m ".................................."
+    mt ".................................."
     
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Anyway, I should probably organize all my notes on all the research stuff I learned today.{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Ugh, what a mess. I just can’t get my mind around it.{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Hey! I know! I’ll try that online chat reference service. It’s supposed to be available 24/7.{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Let’s see, I’ve gotta go to the library homepage.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Anyway, I should probably organize all my notes on all the research stuff I learned today.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Ugh, what a mess. I just can’t get my mind around it.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Hey! I know! I’ll try that online chat reference service. It’s supposed to be available 24/7.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Let’s see, I’ve gotta go to the library homepage.{/font}"
     show screenshot libraryHome
     with qdissolve
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Ah! There it is. That’s easy. I guess I’ll just type in my question and see how it goes.{/font}"
+
+    sv "You look on the homepage for the library help box."
+
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Ah! There it is. That’s easy. I guess I’ll just type in my question and see how it goes.{/font}"
+
+    sv "What will you type into the chat box?"
     
     jump chattingLibrarian
 
@@ -1474,6 +1539,8 @@ label chattingLibrarian:
                 easeout 0.9 alpha 0.0
             $ renpy.pause(0.1)
             play sndfx "sfx/achievement.ogg"
+            sv "You just unlocked the “Chatty Cathy” achievement."
+
         m "That’s all. Thanks a lot Laura!"
         l "You’re welcome!"
         jump actThreeWrapUp
@@ -1482,7 +1549,7 @@ label chattingLibrarian:
 
         menu:
 
-            "{font=SourceSansPro-Bold.ttf}[name!q] types:{/font} My friends mentioned that there was this acronym to help them remember what all they need to do to evaluate information. I think it was called CRAAP. Do you know what those letters stand for again?" if chat_crap_asked == False: 
+            "{font=SourceSansPro-Bold.ttf}Type:{/font} My friends mentioned that there was this acronym to help them remember what all they need to do to evaluate information. I think it was called CRAAP. Do you know what those letters stand for again?" if chat_crap_asked == False: 
                 $chat_crap_asked = True
                 if first_chat == True:
                     $ first_chat = False 
@@ -1509,7 +1576,7 @@ label chattingLibrarian:
                     l "Can I help you with anything else?"
                     jump chattingLibrarian
 
-            "{font=SourceSansPro-Bold.ttf}[name!q] types:{/font} How can I tell if something I’m reading is scholarly?" if chat_scholarly_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Type:{/font} How can I tell if something I’m reading is scholarly?" if chat_scholarly_asked == False:
                 $ chat_scholarly_asked = True
                 if first_chat == True:
                     $ first_chat = False 
@@ -1528,7 +1595,7 @@ label chattingLibrarian:
                     l "Can I help you with anything else?"
                     jump chattingLibrarian
 
-            "{font=SourceSansPro-Bold.ttf}[name!q] types:{/font} How do I come up with keywords?" if chat_keywords_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Type:{/font} How do I come up with keywords?" if chat_keywords_asked == False:
                 $ chat_keywords_asked = True
                 if first_chat == True:
                     $ first_chat = False 
@@ -1547,7 +1614,7 @@ label chattingLibrarian:
                     l "Can I help you with anything else?" 
                     jump chattingLibrarian
 
-            "{font=SourceSansPro-Bold.ttf}[name!q] types:{/font} What is GALILEO?" if chat_galileo_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Type:{/font} What is GALILEO?" if chat_galileo_asked == False:
                 $ chat_galileo_asked = True
                 if first_chat == True:
                     $ first_chat = False 
@@ -1564,7 +1631,7 @@ label chattingLibrarian:
                     l "Can I help you with anything else?"
                     jump chattingLibrarian  
 
-            "{font=SourceSansPro-Bold.ttf}[name!q] types:{/font} What’s a subject specific database, and why would I want to use it?" if chat_subjdbase_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Type:{/font} What’s a subject specific database, and why would I want to use it?" if chat_subjdbase_asked == False:
                 $ chat_subjdbase_asked = True
                 if first_chat == True:
                     $ first_chat = False 
@@ -1589,7 +1656,7 @@ label chattingLibrarian:
                     l "Can I help you with anything else?"
                     jump chattingLibrarian
 
-            "{font=SourceSansPro-Bold.ttf}[name!q] types:{/font} What are Boolean Operators and how do they affect my search?" if chat_boolean_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Type:{/font} What are Boolean Operators and how do they affect my search?" if chat_boolean_asked == False:
                 $ chat_boolean_asked = True
                 if first_chat == True:
                     $ first_chat = False 
@@ -1604,7 +1671,7 @@ label chattingLibrarian:
                     l "“AND” and “NOT” both narrow your search, and “OR” broadens your search."
                     jump chattingLibrarian
 
-            "{font=SourceSansPro-Bold.ttf}[name!q] types:{/font} That’s all. Thanks a lot Laura!" if chat_crap_asked == True or chat_scholarly_asked == True or chat_keywords_asked == True or chat_galileo_asked == True or chat_subjdbase_asked == True or chat_boolean_asked == True:
+            "{font=SourceSansPro-Bold.ttf}Type:{/font} That’s all. Thanks a lot Laura!" if chat_crap_asked == True or chat_scholarly_asked == True or chat_keywords_asked == True or chat_galileo_asked == True or chat_subjdbase_asked == True or chat_boolean_asked == True:
                 l "You’re welcome!"
                 jump actThreeWrapUp
 
@@ -1619,6 +1686,7 @@ label actThreeWrapUp:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Act Three Completed” achievement."
     jump actThreeEnterPassword
 
 label actThreeEnterPassword:
