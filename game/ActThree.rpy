@@ -1664,7 +1664,7 @@ label chattingLibrarian:
                     l "I’m a part of a cooperative of libraries that help each other answer their patrons’ reference questions."
                     l "I’m reading your question and will be with you shortly."
                     l "Boolean operators are words that help you narrow or broaden your search as needed."
-                    l "AND and NOT both narrow your search, and OR broadens your search."
+                    l "“AND” and “NOT” both narrow your search, and “OR” broadens your search."
                     jump chattingLibrarian
                 else:
                     l "Boolean operators are words that help you narrow or broaden your search as needed."
