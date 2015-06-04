@@ -45,19 +45,25 @@ label ActFour:
     play music "music/Classroom.ogg" noloop
     show windham neutral at rightmid
     with qdissolve
+
+    sv "Things are wrapping up in class for the day, and Dr. Windham is speaking."
+
     dw "Before you all leave, I made some comments on the drafts that you submitted earlier this week. Most of you are on the right track!"
     stop music fadeout 0.3
     play music "music/SadPlagiarism.ogg" fadein 0.8
     dw "Before I return your papers to you, though, I want to take a moment to talk about plagiarism."
     
     menu:
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {i}Uh oh, that’s not good.{/i}":
+
+        dwc "Before I return your papers to you, though, I want to take a moment to talk about plagiarism.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Uh oh, that’s not good.{/font}":
             jump WhatsWindhamUpTo
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} (Uncomfortable fidgeting)":
+        "(Uncomfortable fidgeting)":
             jump WhatsWindhamUpTo
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {i}Not plagiarism again, we just talked about this!{/i}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Not plagiarism again, we just talked about this!{/font}":
             jump WhatsWindhamUpTo
 
 
@@ -69,13 +75,15 @@ label WhatsWindhamUpTo:
     
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {i}I wonder if somebody cheated!{/i}":
+        dwc "We touched on this at the beginning of class, but I feel the need to stress to you all again how important it is to do your own work in this course and, really, throughout the remainder of your college and professional careers.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I wonder if somebody cheated!{/font}":
             jump WindhamTalksPlagiarism
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {i}I wonder if I cheated! I don’t think I did...{/i}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I wonder if I cheated! I don’t think I did...{/font}":
             jump WindhamTalksPlagiarism
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {i}Why is she talking about this in class again?{/i}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Why is she talking about this in class again?{/font}":
             jump WindhamTalksPlagiarism
 
 
@@ -87,13 +95,15 @@ label WindhamTalksPlagiarism:
     
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {i}Holy crap!{/i}":
+        dwc "You could even get expelled from the university.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Holy crap!{/font}":
             jump WindhamTriesToSalvageClass
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {i}Expelled? Seriously? That’s heavy!{/i}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Expelled? Seriously? That’s heavy!{/font}":
             jump WindhamTriesToSalvageClass
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} {i}I didn’t realize it could get that bad, yikes.{/i}":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I didn’t realize it could get that bad, yikes.{/font}":
             jump WindhamTriesToSalvageClass
 
     
@@ -159,19 +169,22 @@ label WindhamTriesToSalvageClass:
     
     show jeff concernedleft
     with qdissolve
-    j "Hey, is she alright?"
+    j "Hey, is {font=SourceSansPro-SemiboldItalic.ttf}she{/font} alright?"
     
-    m "Kevin?"
+    m "Who?"
     
     show jeff confusedleft
     with qdissolve
-    j "No, Christina. Look over there, she’s still sitting at her desk. She looks like she got some bad news."
+    j "Christina. Look over there, she’s still sitting at her desk. She looks like she got some bad news."
 
-    menu:    
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Should we see if she’s okay?":
+    menu:
+
+        jc "Christina. Look over there, she’s still sitting at her desk. She looks like she got some bad news.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Ask:{/font} Should we see if she’s okay?":
             jump checkingOnChristina
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Maybe we should just leave her alone if she’s upset?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Maybe we should just leave her alone if she’s upset?":
             jump checkingOnChristina
 
 
@@ -215,15 +228,15 @@ label checkingOnChristina:
     
     menu:
     
-        c "I’m still not really sure how to fix it. What would you do, [name!q]?{fast}"
+        cc "I’m still not really sure how to fix it. What would you do, [name!q]?{fast}"
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Honestly, I would just leave out the citation altogether the next time I want to use something I found on the internet. If you don’t tell the professor where you got the information she probably won’t find it.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Honestly, I would just leave out the citation altogether the next time I want to use something I found on the internet. If you don’t tell the professor where you got the information she probably won’t find it.":
             show christina surprised
             show jeff surprisedleft
             stop music fadeout 0.8
             jump actFourBadEnding
         
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I would just make sure that every time I used someone else’s words I would set it off in quotation marks and cite it.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I would just make sure that every time I used someone else’s words I would set it off in quotation marks and cite it.":
             jump makeSuretoCite
 
 label makeSuretoCite:
@@ -250,6 +263,9 @@ label makeSuretoCite:
             
             show kana neutral at center
             with qdissolve
+
+            sv "Kana walks up to you."
+
             ka "Hey guys, are you still here? I had to talk to Dr. Windham about something with my draft."
             
             j "We are about to head over to the library to talk to Stephanie about citation and plagiarism."
@@ -266,7 +282,7 @@ label actFourBadEnding:
 
     scene bg blackSolid with fade
     $ save_name = "Name: %s.\nScene: Bad Ending 4." % (name)
-    scene bg tenYrsLater with fade
+    scene bg tenYrsLater with None
 
     $ renpy.pause(2.0)
 
@@ -275,8 +291,11 @@ label actFourBadEnding:
     scene bg moonLandscaper with fade
 
     play music "music/Moonscape.ogg" noloop
-    m "{i}Sigh, I wish I wouldn’t have been so lax about plagiarism when I was in college. After my teacher caught me plagiarizing and I got that “F” in class I felt like I couldn’t show my face in polite society.{/i}"
-    m "{i}Which is good, I guess, because the only job I could get after “the incident” was on the moon. Sure is lonely up here. At least there is no one up here to witness my shame.{/i}"
+
+    sv "You’re on the moon, in a spacesuit, holding a rake. Yes, you’re a moon landscaper."
+
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Sigh, I wish I wouldn’t have been so lax about plagiarism when I was in college. After my teacher caught me plagiarizing and I got that “F” in class I felt like I couldn’t show my face in polite society.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Which is good, I guess, because the only job I could get after “the incident” was on the moon. Sure is lonely up here. At least there is no one up here to witness my shame.{/font}"
     
     "Game Over"
     if not persistent.achievement_bad_end4_unlocked:
@@ -289,6 +308,7 @@ label actFourBadEnding:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Bad Ending 4: Moon Landscaper” achievement."
 
     menu:
 
@@ -307,11 +327,15 @@ label whyCite:
         show christina confused at left
         with qdissolve
 
+        sv "Ten years earlier..."
+
+        sv "Christina says, “I’m still not really sure how to fix it. What would you do, [name!q]?”"
+
         menu:
     
-            c "I’m still not really sure how to fix it. What would you do, [name!q]?{fast}"
+            cc "I’m still not really sure how to fix it. What would you do, [name!q]?{fast}"
         
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I would just make sure that every time I used someone else’s words I would set it off in quotation marks and cite it.":
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I would just make sure that every time I used someone else’s words I would set it off in quotation marks and cite it.":
                 jump makeSuretoCite
 
 label actFourtoTheLibrary:
@@ -326,6 +350,9 @@ label actFourtoTheLibrary:
     show kana neutral at Position(xpos=0.60, xanchor=0.5, ypos=0.5, yanchor=0.5)
     show jeff neutralleft at rightedge
     with qdissolve
+
+    sv "The four of you head to the library and find Stephanie."
+
     s "Hi there, everyone! How’s the project going?"
     
     with qdissolve
@@ -477,12 +504,12 @@ label typesofPlagiarism:
     else:
         menu:
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What’s idea plagiarism?" if idea_plagiarism_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What’s idea plagiarism?" if idea_plagiarism_asked == False:
                 $ idea_plagiarism_asked = True
                 s "Idea plagiarism is what it sounds like—taking someone else’s idea and passing it off as your own."
                 jump typesofPlagiarism
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What’s style plagiarism?" if style_plagiarism_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What’s style plagiarism?" if style_plagiarism_asked == False:
                 $ style_plagiarism_asked = True
                 s "Style plagiarism can be tricky—it is when you copy someone else’s flow of logic, or the way they’ve organized their information."
 
@@ -584,6 +611,7 @@ label JeffHasMoreToSay:
     hide christina
     with qdissolve
 
+    sv "Christina and Kana leave."
 
     show stephanie neutral
     with qdissolve
@@ -614,6 +642,7 @@ label actFourWrapUpQuestions:
                 easeout 0.9 alpha 0.0
             $ renpy.pause(0.1)
             play sndfx "sfx/achievement.ogg"
+            sv "You just unlocked the “Honesty is the Best Policy” achievement."
         m "I don’t have any other questions. Thanks!"
         show stephanie happy
         with qdissolve
@@ -625,7 +654,7 @@ label actFourWrapUpQuestions:
 
         menu:
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What is paraphrase plagiarism again?" if paraphrase_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What is paraphrase plagiarism again?" if paraphrase_asked == False:
                 $ paraphrase_asked = True
                 show stephanie neutral
                 with qdissolve
@@ -635,7 +664,7 @@ label actFourWrapUpQuestions:
                 s "Anything else?"
                 jump actFourWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What is style plagiarism again?" if style_plag_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What is style plagiarism again?" if style_plag_asked == False:
                 $ style_plag_asked = True
                 show stephanie neutral
                 with qdissolve
@@ -646,7 +675,7 @@ label actFourWrapUpQuestions:
                 s "Anything else?"
                 jump actFourWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What is idea plagiarism again?" if idea_plag_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What is idea plagiarism again?" if idea_plag_asked == False:
                 $ idea_plag_asked = True
                 show stephanie neutral
                 with qdissolve
@@ -656,7 +685,7 @@ label actFourWrapUpQuestions:
                 s "Anything else?"
                 jump actFourWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} How do I know if something is common knowledge?" if common_know_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} How do I know if something is common knowledge?" if common_know_asked == False:
                 $ common_know_asked = True
                 show stephanie neutral
                 with qdissolve
@@ -668,7 +697,7 @@ label actFourWrapUpQuestions:
                 s "Anything else?"
                 jump actFourWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} How can I use images ethically?" if image_ethics_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} How can I use images ethically?" if image_ethics_asked == False:
                 $ image_ethics_asked = True
                 show stephanie neutral
                 with qdissolve
@@ -678,7 +707,7 @@ label actFourWrapUpQuestions:
                 s "Anything else?"
                 jump actFourWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} What is in-text citation again?" if intext_citation_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} What is in-text citation again?" if intext_citation_asked == False:
                 $ intext_citation_asked = True
                 show stephanie neutral
                 with qdissolve
@@ -689,7 +718,7 @@ label actFourWrapUpQuestions:
                 s "Anything else?"
                 jump actFourWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t have any other questions. Thanks!" if paraphrase_asked == True or style_plag_asked == True or idea_plag_asked == True or common_know_asked == True or image_ethics_asked == True or intext_citation_asked == True:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t have any other questions. Thanks!" if paraphrase_asked == True or style_plag_asked == True or idea_plag_asked == True or common_know_asked == True or image_ethics_asked == True or intext_citation_asked == True:
                 show stephanie happy
                 with qdissolve
                 s "No problem. See you later!"
@@ -708,6 +737,8 @@ label actFourWrapUp:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Act Four Completed” achievement."
+
     jump actFourEnterPassword
 
 label actFourEnterPassword:    
