@@ -46,17 +46,23 @@ label ActSix:
     show kevin neutral at right
     show jeff neutral at left
     with qdissolve
+
+    sv "You arrive for the final session of Dr. Windham’s class."
+    sv "There’s a sense of nervousness in the air as everyone waits for the presentations to begin."
+
     k "Wow, I can’t believe it’s finally presentation day."
 
     j "I know, I feel like we’ve been working on this project forever."
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I can’t believe I’m saying this, but it was kind of interesting to do this research project.":
+        jc "I know, I feel like we’ve been working on this project forever.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I can’t believe I’m saying this, but it was kind of interesting to do this research project.":
             k "I agree. I’m glad to finally have it done though."
             jump ActSixContinues
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I’m glad to finally have it done.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I’m glad to finally have it done.":
             k "Me too. I can’t believe I’m saying this, but it was of interesting to do this research project."
             jump ActSixContinues
 
@@ -77,13 +83,15 @@ label ActSixContinues:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} You might want to rethink that.":
+        kc "I’m not worried about that, I put most of the stuff I wanted to say on my slides.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} You might want to rethink that.":
             show kevin concerned
             with qdissolve
             k "Why?"
             jump slideText
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} That’s a good idea.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} That’s a good idea.":
             j "Actually, you might want to rethink that, Kevin."
             show kevin concerned
             with qdissolve
@@ -96,7 +104,7 @@ label slideText:
 
     show kevin neutral
     with qdissolve
-    k "Let me guess, you got some presentation tips in your LIBR 1101 class."
+    k "Let me guess, you got some presentation tips in your LIBR 11O1 class."
 
     show jeff happy
     with qdissolve
@@ -136,11 +144,13 @@ label slideText:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} PowerPoint Karaoke? What is that?":
+        cc "I hope you told him to stay away from PowerPoint Karaoke.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Ask:{/font} PowerPoint Karaoke? What is that?":
             j "It’s when you read all of the text right off your PowerPoint slide."
             jump PowerPointKaraoke
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Is that like, reading all the text right off your PowerPoint slide?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Is that like, reading all the text right off your PowerPoint slide?":
             j "Right."
             jump PowerPointKaraoke
 
@@ -202,11 +212,13 @@ label PowerPointKaraoke:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} It is still too much to read, even over a few slides.":
+        kc "Can I just split up the text into two or three slides?{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} It is still too much to read, even over a few slides.":
             ka "I agree."
             jump moreSlideCritiques
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} That might be a good solution!":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} That might be a good solution!":
             ka "I disagree. It is still too much to read, even over a few slides."
             jump moreSlideCritiques
 
@@ -217,6 +229,7 @@ label moreSlideCritiques:
 
     show tony neutralright at Position(xpos=0.30, xanchor=0.5, ypos=0.5, yanchor=0.5)
     with qdissolve
+    sv "Tony walks over and joins the group."
     t "Hey guys, how’s it going?"
 
     show kevin neutral
@@ -254,11 +267,13 @@ label moreSlideCritiques:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Well that is where preparation comes in.":
+        kc "I’m just freaking out, though—without that information somewhere, I’m worried I’m gonna lose my place.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Well that is where preparation comes in.":
             j "If you know a good amount about your topic, you will not need so many of the textual clues."
             jump yetMoreSlideCritiques
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} If you know a good amount about your topic, you won’t need so many of those textual clues.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} If you know a good amount about your topic, you won’t need so many of those textual clues.":
             j "Right, preparation can help a lot to make sure you stay on track."
             jump yetMoreSlideCritiques
 
@@ -302,15 +317,16 @@ label reviewingSlidesWithKevin:
                 easeout 0.9 alpha 0.0
             $ renpy.pause(0.1)
             play sndfx "sfx/achievement.ogg"
+            sv "You just unlocked the “Power Pointers” achievement."
         jump NotTooBad
 
     else:
 
         menu:
 
-            k "Anything else?{fast}"
+            kc "Anything else?{fast}"
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Make sure your font is consistent throughout, and clear enough to read." if fonts_are_bad == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} Make sure your font is consistent throughout, and clear enough to read." if fonts_are_bad == False:
                 $ fonts_are_bad = True
                 show kevin happy
                 with qdissolve
@@ -320,7 +336,7 @@ label reviewingSlidesWithKevin:
                 k "Anything else?"
                 jump reviewingSlidesWithKevin
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Maybe take those animations away?" if animations_are_bad == False:
+            "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Maybe take those animations away?" if animations_are_bad == False:
                 $ animations_are_bad = True
                 show kevin concerned
                 with qdissolve
@@ -335,7 +351,7 @@ label reviewingSlidesWithKevin:
                 k "Anything else?"
                 jump reviewingSlidesWithKevin
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I can’t really see that bright yellow text on your white background." if colors_are_bad == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I can’t really see that bright yellow text on your white background." if colors_are_bad == False:
                 $ colors_are_bad = True
                 show kevin surprised
                 with qdissolve
@@ -371,7 +387,7 @@ label reviewingSlidesWithKevin:
                 k "Anything else?"
                 jump reviewingSlidesWithKevin
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I think that’s it." if fonts_are_bad == True or animations_are_bad == True or colors_are_bad == True:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I think that’s it." if fonts_are_bad == True or animations_are_bad == True or colors_are_bad == True:
                 jump NotTooBad
 
 
@@ -428,13 +444,15 @@ label NotTooBad:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Kevin, don’t ever change.":
+        kc "We can celebrate how we all totally rocked this presentation’s face off.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Kevin, don’t ever change.":
             jump WindhamsAnnouncement
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Better than drinking our sorrows away!":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Better than drinking our sorrows away!":
             jump WindhamsAnnouncement
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Here’s hoping...":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Here’s hoping...":
             jump WindhamsAnnouncement
 
 
@@ -454,15 +472,15 @@ label WindhamsAnnouncement:
 
     menu:
 
-        dw "You all ready to go?{fast}"
+        dwc "You all ready to go?{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} As we’ll ever be":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} As we’ll ever be":
             jump pickingTheOrder
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} We don’t have much choice, so...I guess.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} We don’t have much choice, so...I guess.":
             jump pickingTheOrder
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Let’s do this!":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Let’s do this!":
             jump pickingTheOrder
 
 label pickingTheOrder:
@@ -516,8 +534,12 @@ label pickingTheOrder:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Act Six Completed” achievement."
     m "Thanks everyone!"
     m "Here goes nothing....."
+
+    sv "You walk to the front of the room to give your presentation."
+    sv "You have completed the game."
     stop music fadeout 0.8
     jump EndCredits
 
