@@ -363,6 +363,7 @@ label refiningQuestions:
                 easeout 0.9 alpha 0.0
             $ renpy.pause(0.1)
             play sndfx "sfx/achievement.ogg"
+            sv "You just unlocked the “Topic Tackler” achievement."
         
         jump questionsRefined
    
@@ -561,6 +562,7 @@ label bad_end1:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Bad Ending 1: Robot Apocalypse” achievement."
     menu:
 
         "Game Over{fast}"
@@ -727,6 +729,7 @@ label readyReference:
                 easeout 0.9 alpha 0.0
             $ renpy.pause(0.1)
             play sndfx "sfx/achievement.ogg"
+            sv "You just unlocked the “For Future Reference” achievement."
         jump doneReadyRef
         
     else: 
@@ -1343,6 +1346,7 @@ label actOneWrapUpIsOver:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Act One Completed” achievement."
     dw "For more in depth questions, you might want to meet with a librarian. You can meet in-person or online via chat reference."
     jump actOneEnterPassword
 

@@ -595,6 +595,7 @@ label zombies:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Bad Ending 2: Zombies at the Farm” achievement."
 
     menu:
 
@@ -953,6 +954,7 @@ label EndofActTwo:
                 easeout 0.9 alpha 0.0
             $ renpy.pause(0.1)
             play sndfx "sfx/achievement.ogg"
+            sv "You just unlocked the “Information Wrangler” achievement."
         jump ActTwoWrapup
         
     else:
@@ -1026,6 +1028,7 @@ label ActTwoWrapup:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Act Two Completed” achievement."
     jump actTwoEnterPassword
 
 label actTwoEnterPassword:
