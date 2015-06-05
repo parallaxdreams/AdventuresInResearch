@@ -50,6 +50,10 @@ label ActFive:
     with qdissolve
 
     play music "music/Festival.ogg"
+
+    sv "Jeff, Kevin, and you walk over to the Climate Change a Palooza event happening on campus."
+    sv "A variety of booths with climate-related themes are set up around the festival."
+
     k "So this is Climate Change a Palooza, huh?"
     
     show jeff concerned
@@ -71,12 +75,14 @@ label ActFive:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Let’s visit Kana first":
+        jc "Where do you want to start, [name!q]?{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Let’s visit Kana first":
             $ visited_kana = True
             j "Okay, let’s go."
             jump visitKana
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Let’s visit Christina first":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Let’s visit Christina first":
             $ visited_christina = True
             j "Okay, let’s go."
             jump visitChristina
@@ -95,6 +101,9 @@ label visitKana:
     show kevin happy at Position(xpos=0.90, xanchor=0.5, ypos=0.5, yanchor=0.5)
     show jeff neutral at Position(xpos=0.32, xanchor=0.5, ypos=0.5, yanchor=0.5)
     with qdissolve
+
+    sv "You walk through the festival to Kana’s booth."
+
     k "Hi Kana!"
 
     show kana happy
@@ -151,7 +160,7 @@ label visitKana:
 
     show kevin neutral
     with qdissolve
-    k "I didn’t take LIBR 1101 or anything but I’m not a dummy."
+    k "I didn’t take LIBR 11O1 or anything but I’m not a dummy."
 
     show jeff neutral
     with qdissolve
@@ -183,14 +192,17 @@ label visitKana:
 
 
     menu:
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I agree, filter bubbles sounds like a natural evolution of the technology. I think it’s great.":
+
+        kc "What’s wrong with that? It sounds kinda awesome.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I agree, filter bubbles sounds like a natural evolution of the technology. I think it’s great.":
             show jeff neutral
             with qdissolve
             j "Well it is nice in some respects, I guess. The more it filters out other information, the better chance you get results that are relevant to what you want."
             j "The problem is that sometimes it filters out information that contradicts your beliefs or interests but which you need in order to cover your bases."
             jump postFilterBubbleWorld
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I can see why it is a problem.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I can see why it is a problem.":
             show jeff neutral
             with qdissolve
             m "It is nice in some respects, but the more it filters out other information, the better chance you get results that are relevant to what you want."
@@ -220,7 +232,7 @@ label postFilterBubbleWorld:
     j "Think about it, people post news articles or opinions on Facebook or Twitter or Chatterbox because those are things that they have some kind of reaction to—either they really agree with something or really disagree with something."
     j "Either way, there is a good chance that you are starting out with biased information."
 
-    ka "In LIBR 1101 we talked about it in the context of something called “social media literacy”."
+    ka "In LIBR 11O1 we talked about it in the context of something called “social media literacy”."
 
     show kevin concerned
     with qdissolve
@@ -277,7 +289,9 @@ label postFilterBubbleWorld:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Honestly, I’m not sure this social media literacy stuff is that important. Don’t you have to just trust that when people post things online that they’ve checked out their information? All my Facebook, Twitter, and Chatterbox friends are really smart, I think I’m just going to believe them when they tell me things.":
+        kc "That’s true. Most of the time I don’t even think about privacy when I post things online. I guess I should be more careful.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Honestly, I’m not sure this social media literacy stuff is that important. Don’t you have to just trust that when people post things online that they’ve checked out their information? All my Facebook, Twitter, and Chatterbox friends are really smart, I think I’m just going to believe them when they tell me things.":
             show jeff surprised
             show kana surprised
             show kevin surprised
@@ -286,7 +300,7 @@ label postFilterBubbleWorld:
             stop ambient fadeout 0.8
             jump undergroundBunker
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} This was a really useful conversation!":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} This was a really useful conversation!":
             m "We keep talking about evaluating sources, but I think I have a better idea now of what an important part of the process it really is!"
             m "And, for that matter, that it is something we need to do outside of the classroom too."
             jump thanksKana
@@ -294,7 +308,7 @@ label postFilterBubbleWorld:
 label undergroundBunker:
     scene bg blackSolid with fade
     $ save_name = "Name: %s.\nScene: Bad Ending 5." % (name)
-    scene bg tenYrsLater with fade
+    scene bg tenYrsLater with None
 
     $ renpy.pause(2.0)
 
@@ -304,9 +318,12 @@ label undergroundBunker:
 
     play ambient "sfx/bunker-ambient.ogg"
     play music "music/Bunker.ogg"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}I’m so glad that I listened to my friends on Facebook when they warned everyone that spiders had obtained a nuclear bomb and were about to take over the world.{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Sure I had to quit my wildly successful job as an ice cream taster, cut off all ties with friends and family and empty out my savings to build this spider-proof shelter, but it will be worth it after the spider apocalypse is over and I’m the only one left standing.{/font}"
-    m "{font=SourceSansPro-SemiboldItalic.ttf}Granted, it’s been about six months and I really would have expected the bomb to have gone off now. Oh well, I guess I’ll just sit here and keep waiting. Anyway, where was I? “122,321,187 bottles of beer on the wall....”{/font}"
+
+    sv "You’re sitting in an underground bunker, wearing a hazmat suit. Canned foods line the shelves on the walls, and there are bottles of water on the floor next to you."
+
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}I’m so glad that I listened to my friends on Facebook when they warned everyone that spiders had obtained a nuclear bomb and were about to take over the world.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Sure I had to quit my wildly successful job as an ice cream taster, cut off all ties with friends and family and empty out my savings to build this spider-proof shelter, but it will be worth it after the spider apocalypse is over and I’m the only one left standing.{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}Granted, it’s been about six months and I really would have expected the bomb to have gone off now. Oh well, I guess I’ll just sit here and keep waiting. Anyway, where was I? “122,321,187 bottles of beer on the wall....”{/font}"
    
     "Game Over"
     if not persistent.achievement_bad_end5_unlocked:
@@ -319,6 +336,7 @@ label undergroundBunker:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Bad Ending 5: Hiding in My Bomb Shelter” achievement."
 
     menu:
 
@@ -332,6 +350,9 @@ label undergroundBunker:
 label socialMediaLiteracy:
     
     scene bg festival with fade
+
+    sv "Ten years earlier..."
+
     play ambient "sfx/festival-ambient.ogg" fadein 0.8
     play music "music/Festival.ogg"
     $ save_name = "Name: %s.\nScene: Act 5 – The Festival." % (name)
@@ -340,9 +361,13 @@ label socialMediaLiteracy:
     show jeff neutral at Position(xpos=0.32, xanchor=0.5, ypos=0.5, yanchor=0.5)
     with qdissolve
 
+    sv "Back at the festival, Kevin says, That’s true. Most of the time I don’t even think about privacy when I post things online. I guess I should be more careful."
+
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} This was a really useful conversation!":
+        kc "That’s true. Most of the time I don’t even think about privacy when I post things online. I guess I should be more careful.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} This was a really useful conversation!":
             m "We keep talking about evaluating sources, but I think I have a better idea now of what an important part of the process it really is!"
             m "And, for that matter, that it is something we need to do outside of the classroom too."
             jump thanksKana
@@ -365,7 +390,9 @@ label thanksKana:
     if visited_christina == True:
         menu:
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} We were just there. Kevin is now a master recycler.":
+            kac "Have you guys visited Christina yet?{fast}"
+
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} We were just there. Kevin is now a master recycler.":
                 show kana happy
                 with qdissolve
                 ka "I’m glad to hear it. Well I’ve got to get back."
@@ -375,7 +402,7 @@ label thanksKana:
                 j "Sure thing. See ya!"
                 jump actFiveWrapup
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} We stopped by there first. She sounds like she’s doing better since the whole...plagiarism thing":
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} We stopped by there first. She sounds like she’s doing better since the whole...plagiarism thing":
                 show kana happy
                 with qdissolve
                 ka "I’m glad to hear it. Well I’ve got to get back."
@@ -387,25 +414,27 @@ label thanksKana:
 
     else:
         menu:
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} We are heading over there now.":
-                ka "Sounds good. Well I’ve got to get back."
-                show kana happy
-                with qdissolve
-                ka "I’ll see you guys on Monday for the class presentations?"
-                show jeff happy
-                with qdissolve
-                j "Sure thing. See ya!"
-                jump visitChristina
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} We are going over there now. I trust that we’ll be able to leave these drowning people in your capable hands.":
-                ka "Sounds good. Well I’ve got to get back."
-                show kana happy
-                with qdissolve
-                ka "I’ll see you guys on Monday for the class presentations?"
-                show jeff happy
-                with qdissolve
-                j "Sure thing. See ya!"
-                jump visitChristina
+            kac "Have you guys visited Christina yet?{fast}"
+
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} We are heading over there now.":
+                jump headingThereNow
+                
+
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} We are going over there now. I trust that we’ll be able to leave these drowning people in your capable hands.":
+                jump headingThereNow
+
+
+label headingThereNow:
+    ka "Sounds good. Well I’ve got to get back."
+    show kana happy
+    with qdissolve
+    ka "I’ll see you guys on Monday for the class presentations?"
+    show jeff happy
+    with qdissolve
+    j "Sure thing. See ya!"
+    jump visitChristina
+
 
 label visitChristina:
 
@@ -421,6 +450,8 @@ label visitChristina:
     show kevin neutral at Position(xpos=0.90, xanchor=0.5, ypos=0.5, yanchor=0.5)
     show jeff neutral at Position(xpos=0.32, xanchor=0.5, ypos=0.5, yanchor=0.5)
     with qdissolve
+
+    sv "You walk through the festival to Christina’s booth."
 
     m "Hey Christina!"
 
@@ -556,13 +587,15 @@ label memoryJogging:
 
         menu:
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} You should paraphrase when..." if paraphrase_jogged == False:
+            sv "Choose a response"
+
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} You should paraphrase when..." if paraphrase_jogged == False:
                 $ paraphrase_jogged = True
                 m "You should paraphrase in most situations, when you feel like you can convey the original author’s general idea or intention in your own words."
                 c "You still have to cite the original author when you paraphrase though!"
                 jump memoryJogging
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} You should use a direct quote when..." if direct_quote_jogged == False:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} You should use a direct quote when..." if direct_quote_jogged == False:
                 $ direct_quote_jogged = True
                 m "You should use a direct quote when you need the original author’s exact phrasing to fully convey the author’s meaning."
                 j "Or if you think they’ve said something in a really useful way."
@@ -626,35 +659,27 @@ label summarizingThings:
     
     else:
         menu:
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} We are gonna head over now.":
-                c "Cool. Well I’ve got to get back."
-                show christina happy
-                with qdissolve
-                c "I’ll see you guys on Monday for the class presentations?"
-                show jeff happy
-                with qdissolve
-                j "Sure thing. See ya!"
-                jump visitKana
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I’m not sure she’ll be able to beat sorting recyclables, but we’ll see!":
-                c "Cool. Well I’ve got to get back."
-                show christina happy
-                with qdissolve
-                c "I’ll see you guys on Monday for the class presentations?"
-                show jeff happy
-                with qdissolve
-                j "Sure thing. See ya!"
-                jump visitKana
+            cc "Did you see Kana’s here too? You should stop by her booth before you leave, if you haven’t already.{fast}"
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} We’ll go check it out. Thanks for letting us play!":
-                c "Cool. Well I’ve got to get back."
-                show christina happy
-                with qdissolve
-                c "I’ll see you guys on Monday for the class presentations?"
-                show jeff happy
-                with qdissolve
-                j "Sure thing. See ya!"
-                jump visitKana
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} We are gonna head over now.":
+                jump headingToKana
+
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I’m not sure she’ll be able to beat sorting recyclables, but we’ll see!":
+                jump headingToKana
+
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} We’ll go check it out. Thanks for letting us play!":
+                jump headingToKana
+
+label headingToKana:
+    c "Cool. Well I’ve got to get back."
+    show christina happy
+    with qdissolve
+    c "I’ll see you guys on Monday for the class presentations?"
+    show jeff happy
+    with qdissolve
+    j "Sure thing. See ya!"
+    jump visitKana                
 
 label actFiveWrapup:
     stop music fadeout 0.8
@@ -668,6 +693,9 @@ label actFiveWrapup:
     show jeff neutral at leftmid
     show kevin neutral at right
     with qdissolve
+
+    sv "After leaving the festival, the three of you walk down a sidewalk in a quieter part of campus."
+
     m "I’m glad we stopped by. It’s nice to do something to take my mind off of that presentation."
 
     j "I can’t believe we have to give them on Monday. These last couple of weeks have gone by so fast."
@@ -712,25 +740,29 @@ label actFiveWrapUpQuestions:
                 easeout 0.9 alpha 0.0
             $ renpy.pause(0.1)
             play sndfx "sfx/achievement.ogg"
+            sv "You just unlocked the “Critical Thinker” achievement."
         jump actFiveWrapUpOver
     
     else:
         menu:
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Kana mentioned something about filter bubbles. What is that again?" if filter_bubbles_asked==False:
+
+            sv "Choose a response."
+
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Kana mentioned something about filter bubbles. What is that again?" if filter_bubbles_asked==False:
                 $ filter_bubbles_asked = True
                 j "Often when we search places like Google and Facebook our results can be filtered in such a way that we are sometimes presented with information that only confirms our beliefs or shows one side of a story."
                 j "This can negatively affect our research, because research involves considering all aspects of a topic and thinking critically about the information we consume."
                 j "Anything else?"
                 jump actFiveWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Kana talked about social media literacy. What is that again?" if social_media_lit_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Kana talked about social media literacy. What is that again?" if social_media_lit_asked == False:
                 $ social_media_lit_asked = True
                 j "Social media literacy is all about thinking critically about the information we consume in places like Facebook, Twitter, and Chatterbox."
                 j "If we do research based off of things we read in those spaces, or use information we find in social media, we just need to evaluate it the same way we’d evaluate any information we might use in a research project."
                 j "Anything else?"
                 jump actFiveWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} Christina talked about ways to read a particular text. How was that useful?" if reading_text_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} Christina talked about ways to read a particular text. How was that useful?" if reading_text_asked == False:
                 $ reading_text_asked = True
                 j "Well, we’ve been talking about finding and evaluating resources, and thinking about how to read a particular text is a part of that."
                 j "Once we’ve found the source, the next step is to figure out how to use it."
@@ -739,7 +771,7 @@ label actFiveWrapUpQuestions:
                 j "Anything else?"
                 jump actFiveWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} How was our discussion of integrating sources useful?" if integrating_sources_asked == False:
+            "{font=SourceSansPro-Bold.ttf}Ask:{/font} How was our discussion of integrating sources useful?" if integrating_sources_asked == False:
                 $ integrating_sources_asked = True
                 j "It is important because you need to know what to do with the resources once you find them."
                 j "You can either quote from them directly to help you make your point, paraphrase something they’ve said if you don’t need to use their exact words to convey their meaning, or you can just summarize an overall argument or a theme."
@@ -747,7 +779,7 @@ label actFiveWrapUpQuestions:
                 j "Anything else?"
                 jump actFiveWrapUpQuestions
 
-            "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I don’t have any more questions." if filter_bubbles_asked == True or social_media_lit_asked == True or reading_text_asked == True or integrating_sources_asked == True:
+            "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t have any more questions." if filter_bubbles_asked == True or social_media_lit_asked == True or reading_text_asked == True or integrating_sources_asked == True:
                 jump actFiveWrapUpOver
 
 label actFiveWrapUpOver:
@@ -761,10 +793,12 @@ label actFiveWrapUpOver:
     k "Well, we should probably head out, I want to get a nap before I head back to the library. Saving lives and recycling is pretty demanding."
 
     menu:
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} A nap sounds great. I’ll probably catch you two in the library later. If I don’t, I’ll see you first thing on Monday for our presentations!":
+        kc "Well, we should probably head out, I want to get a nap before I head back to the library. Saving lives and recycling is pretty demanding.{fast}"
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} A nap sounds great. I’ll probably catch you two in the library later. If I don’t, I’ll see you first thing on Monday for our presentations!":
             jump seeingYa
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I think I’m gonna head straight to the library, if I take a nap I think I’ll sleep through the whole weekend. If I don’t see you in the library, I’ll see you first thing on Monday for our presentations!":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I think I’m gonna head straight to the library, if I take a nap I think I’ll sleep through the whole weekend. If I don’t see you in the library, I’ll see you first thing on Monday for our presentations!":
             jump seeingYa
 
 label seeingYa:
@@ -782,6 +816,7 @@ label seeingYa:
             easeout 0.9 alpha 0.0
         $ renpy.pause(0.1)
         play sndfx "sfx/achievement.ogg"
+        sv "You just unlocked the “Act Five Completed” achievement."
     jump actFiveEnterPassword
 
 label actFiveEnterPassword:
