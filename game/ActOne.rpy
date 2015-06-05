@@ -737,6 +737,8 @@ label readyReference:
         sv "What would you like to know about the reference collection?"
 
         menu:
+
+            sv "Choose a response."
         
             "{font=SourceSansPro-Bold.ttf}Ask:{/font} Do we have to walk around and try to find a good reference book just by looking?" if finding_ref == False:
                 $ finding_ref = True
