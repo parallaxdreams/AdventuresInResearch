@@ -133,7 +133,7 @@ image mmSlideShow:
     repeat
 
 ##End Credits
-image EndCredits = "imgs/EndCredits.png"
+image EndCredits = Image("imgs/EndCredits.png", alt="Adventures in Research credits. Project Manager: Dean Sullivan. Characters created by Dean Sullivan and Jessica Critten. Scenario Planning by Dean Sullivan and Jessica Critten. Dialogue written by Jessica Critten. Programming by Dean Sullivan. Character and Environment art by Heidi Black (electricabyss.com). Original Music by Craig Schroer. Music for Larry Hornblatz's website by Dean Sullivan. Testers: Laurie Aycock. Anne Barnhart. Sangi Dave. Adriana Gerena. Derek Maenhoudt. Miriam Nauenburg. Stacey Snyder. Andrea Stanfield. Andrew Walsh. . With Special Thanks to: Anne Barnhart. The characters and situations portrayed in this game are fictional. Any similarities to actual persons or real events are purely coincidental. Thanks for playing. The end.")
 
 
 ##End Credits Slideshow
