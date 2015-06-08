@@ -599,7 +599,7 @@ label zombies:
 
     menu:
 
-        "Game Over{fast}"
+        goc "Game Over{fast}"
 
         "Try Again":
             stop music fadeout 0.8
