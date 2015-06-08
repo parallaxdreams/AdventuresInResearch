@@ -310,22 +310,22 @@ label afterEventNews:
 
         "{font=SourceSansPro-Bold.ttf}Say:{/font} When we were talking about coming up with a topic?":
             #m "When we were talking about coming up with a topic?"
-            s "That’s right. It is a part of a process called Presearching."
+            s "That’s right. It is a part of a process called Pre-searching."
             jump PresearchingActTwo
         
-        "{font=SourceSansPro-Bold.ttf}Say:{/font} When we were talking about presearching?":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} When we were talking about pre-searching?":
             #m "When we were talking about presearching?"
             s "That’s right!"
             jump PresearchingActTwo
 
         "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t remember.":
             #m "I don’t remember."
-            s "We touched on reference materials when were were discussing presearching."
+            s "We touched on reference materials when were were discussing pre-searching."
             jump PresearchingActTwo
 
 label PresearchingActTwo:
 
-    s "Presearching is the process of doing basic research to learn more about your topic so you can research more effectively."
+    s "Pre-searching is the process of doing basic research to learn more about your topic so you can research more effectively."
     s "With that in mind, what kind of information do you think reference materials contain?"
     
     menu:

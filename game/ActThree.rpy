@@ -876,7 +876,7 @@ label gettingToDatabases:
             show stephanie neutral
             with qdissolve
             s "I agree. From what I’m hearing about the kinds of info you want, instead of “film” and “culture” you want to look into film theory."
-            s "You’d probably figure that out with presearching, but it seems like we are on a time crunch."
+            s "You’d probably figure that out with pre-searching, but it seems like we are on a time crunch."
             s "It would be even better if you had an idea of what you meant by culture or if you had specific kinds of film or even specific films themselves to search."
             jump moreDatabaseSearching
 
@@ -941,7 +941,7 @@ label resultsTryAgain:
             show stephanie neutral
             with qdissolve
             s "I agree. From what I’m hearing about the kinds of info you want, instead of “film” and “culture” you want to look into film theory."
-            s "You’d probably figure that out with presearching, but it seems like we are on a time crunch."
+            s "You’d probably figure that out with pre-searching, but it seems like we are on a time crunch."
             s "It would be even better if you had an idea of what you meant by culture or if you had specific kinds of film or even specific films themselves to search."
             jump moreDatabaseSearching
 
