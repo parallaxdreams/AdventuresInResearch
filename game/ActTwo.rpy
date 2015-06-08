@@ -296,6 +296,8 @@ label afterEventNews:
     s "That is a really good question, Kevin, and it is why I originally asked you how to plan to use your newspaper article. Newspapers, television shows, blogs and the like all have their place in research."
     s "Let me show you some other types of information sources, and hopefully this will become a little clearer. Let’s walk over to the reference section."
     
+    sv "You follow Stephanie over to the Reference collection shelves."
+
     scene bg libraryReference with fade
     
     show stephanie neutral at left
@@ -352,6 +354,8 @@ label ReferenceInfoCycle:
     
     s "Exactly. Let’s move on to the computers and I’ll show you some different kinds of information sources that you’d want to use as a part of your research."
     
+    sv "You and Kevin follow Stephanie over to the computers on the main floor."
+
     scene bg libraryPCs with fade
     
     show stephanie neutral at leftmid
@@ -581,6 +585,8 @@ label zombies:
 
     #play ambient "sfx/zombies-ambient.ogg"
     play music "music/Zombies.ogg"
+
+    sv "You’re standing in the kitchen of a farmhouse. Through the window, you can see zombies wandering around outside."
     mt "{font=SourceSansPro-SemiboldItalic.ttf}Scholars warned us that this could happen, but we didn’t listen! That one guy with the blog and the goatee said that a zombie outbreak would never happen and we all believed him.{/font}"
     mt "{font=SourceSansPro-SemiboldItalic.ttf}If only I had cared about the distinctions between scholarly and popular materials when I had the chance...Maybe I could have done something. Now, do I lock myself on the first floor or in the basement?{/font}"
 
@@ -622,7 +628,9 @@ label ScholarlyPop:
 
     menu:
 
-        "{font=SourceSansPro-Bold.ttf}[name!q]:{/font} I can see how knowing the difference between scholarly and popular materials is important.":
+        sv "Choose a response."
+
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} I can see how knowing the difference between scholarly and popular materials is important.":
             s "I’m glad to hear it!"
             jump gottaRun
 
@@ -683,7 +691,7 @@ label gottaRun:
     with qdissolve
 
     play sndfx "sfx/BooksDropped.ogg"
-    k "HEY KANA, NEED A HAND?" with hpunch
+    ks "HEY KANA, NEED A HAND?" with hpunch
 
     sv "Kana is startled by Kevin shouting, and she drops the books she was carrying."
     
@@ -819,7 +827,10 @@ label sourceTypesContinued:
 
     sv "To break the silence, you say..."
 
-    menu:    
+    menu:
+
+        sv "Choose a response."
+
         "{font=SourceSansPro-Bold.ttf}Say:{/font} How cool is it that we have a coffee shop in the library?":
             jump coffeeShopContinues
 
@@ -872,7 +883,9 @@ label coffeeShopContinues:
     with qdissolve
     ka "Let me know too, I love movies! I’m ©KanaPaints"
     
-    k "I’m ©AustenFan18, with an “e”."
+    k "I’m ©AustenFan18."
+
+    sv ", with an “e”, he clarifies."
         
     show kana surprised
     show tony surprised
@@ -960,6 +973,8 @@ label EndofActTwo:
     else:
     
         menu:
+
+            sv "Choose a response."
         
             "{font=SourceSansPro-Bold.ttf}Ask:{/font} Can you explain the information cycle again?" if infocycle_asked == False:
                 #m "Can you explain the information cycle again?"
