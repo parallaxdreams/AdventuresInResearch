@@ -324,6 +324,8 @@ define jc = Character('Jeff', ctc="dialogueAdvance", ctc_position="nestled", who
 define sc = Character('Stephanie', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 define kac = Character('Kana', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 define cc = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
+#used for game over choice menu
+define goc = Character(' ', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 
 
 #This is the unknown character, before he or she has been introduced
