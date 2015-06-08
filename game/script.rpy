@@ -328,9 +328,8 @@ define cc = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled"
 define goc = Character(' ', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 
 
-#This is the unknown character, before he or she has been introduced
+#This is used for Stephanie, before she has introduced herself to the player
 define ul = Character('Librarian', who_alt="The Librarian", ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
-define un = Character('???', who_alt="unknown speaker", color="#000",ctc="dialogueAdvance", ctc_position="nestled", what_alt="says [text]")
 
 #chatterbox characters and window, text styling
 #Kana
