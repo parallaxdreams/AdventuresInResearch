@@ -563,7 +563,7 @@ label bad_end1:
         sv "You just unlocked the “Bad Ending 1: Robot Apocalypse” achievement."
     menu:
 
-        "Game Over{fast}"
+        goc "Game Over{fast}"
 
         "Try Again":
             stop music fadeout 0.8
@@ -574,7 +574,7 @@ label goToLibrary:
     $ save_name = "Name: %s.\nScene: Act 1 – Classroom." % (name)
     scene bg classroom with fade
 
-    sv "Ten years earlier..."
+    sv "Ten years earlier, back in the classroom with Jeff and Kevin."
 
     play music "music/Classroom.ogg"
     show kevin happy at rightmid
@@ -604,7 +604,7 @@ label toTheLibrary:
     play ambient "sfx/library-ambient.ogg"
     play music "music/Library.ogg"
 
-    sv "You've been in the library for about 20 minutes."
+    sv "You’ve been in the library for about 20 minutes."
     sv "You are on the main floor with Jeff and Kevin."
     sv "Kevin is sitting next to you as he types away on one of the computers."
 
