@@ -327,6 +327,8 @@ define cc = Character('Christina', ctc="dialogueAdvance", ctc_position="nestled"
 #used for game over choice menu
 define goc = Character(' ', ctc="dialogueAdvance", ctc_position="nestled", who_alt="Choose a response")
 
+#used for when Kevin shouts
+define ks = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled", what_alt="shouts, [text]")
 
 #This is used for Stephanie, before she has introduced herself to the player
 define ul = Character('Librarian', who_alt="The Librarian", ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
@@ -335,7 +337,7 @@ define ul = Character('Librarian', who_alt="The Librarian", ctc="dialogueAdvance
 #Kana
 define cbkana = Character(None, window_background="imgs/ui/kanachatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False, what_alt="A chatterbox message from Kana says, [text]")
 #Kevin
-define cbkevin = Character(None, window_background="imgs/ui/kevinchatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False, what_alt="A new chatterbox message from Kevin appears, [text]")
+define cbkevin = Character(None, window_background="imgs/ui/kevinchatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False, what_alt="A new chatterbox message from Kevin says, [text]")
 #Player
 define cbkme = Character(None, window_background="imgs/ui/playerchatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False, what_alt="You send a message that says, [text]")
 
