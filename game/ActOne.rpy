@@ -132,13 +132,11 @@ label classContinues:
 
         dwc "Not necessarily. Does anyone know what to do if the book you want isn’t in the library?{fast}"
 
-        "Raise Your Hand":
-            dw "Yes, [name!q]?"
-            m "You should check to see if you can find it through GIL Express."
-            dw "That’s right!"
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Check to see if you can find it through GIL Express.":
+            dw "That’s right, [name!q]!"
             jump talkingILL
 
-        "{font=SourceSansPro-Bold.ttf}Say:{/font} Pick a different topic":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} Pick a different topic.":
             dw "You might eventually find out that your topic needs work, but make sure you’ve exhausted all possibilities first."
             dw "If you can’t find the book you want in Ingram Library, you should check to see if you can find it through GIL Express."
             jump talkingILL
@@ -435,7 +433,7 @@ label questionsRefined:
     
     show jeff neutral at leftthird
     with qdissolve
-    j "In my LIBR 11O1 class, we called that presearching. It is when you do research before you do research."
+    j "In my LIBR 11O1 class, we called that pre-searching. It is when you do research before you do research."
     hide jeff neutral
     with qdissolve
     
@@ -473,22 +471,22 @@ label questionsRefined:
         "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Wait, I’m still a little confused.{/font} Raise your hand.":
             m "What do you mean by “important things about your topic”? What kind of important things?"
             dw "Well, very simply, you want to know the who, what, when, where, and why."
-            dw "Presearching lets you find out who is involved (the players, coaches, audience members), what the main issues are (injuries, penalties, popularity), and when it started."
+            dw "Pre-searching lets you find out who is involved (the players, coaches, audience members), what the main issues are (injuries, penalties, popularity), and when it started."
             dw "You can also find out where it takes place (it’s huge in Europe and South America) and why it is important to begin with."
             jump presearchingWrapUp
 
-        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I’m good, I know what presearching involves.{/font} Don’t raise hand.":
+        "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}I’m good, I know what pre-searching involves.{/font} Don’t raise hand.":
             jump presearchingWrapUp
 
 label presearchingWrapUp:
 
     show windham neutral
     with qdissolve
-    dw "Presearching is just getting some background on a topic, and it is actually a pretty helpful thing to do."
+    dw "Pre-searching is just getting some background on a topic, and it is actually a pretty helpful thing to do."
     
     show windham happy
     with qdissolve
-    dw "Alright, class! It looks like we are out of time. You all should choose a topic for your paper and do some presearching before next class. If you get stuck, feel free to come see me during office hours."
+    dw "Alright, class! It looks like we are out of time. You all should choose a topic for your paper and do some pre-searching before next class. If you get stuck, feel free to come see me during office hours."
     hide windham happy
     with qdissolve
     
@@ -549,7 +547,7 @@ label bad_end1:
     r "Reveal yourself, human minion! It is time to serve your new robot overlords!"
     
     mt "{font=SourceSansPro-SemiboldItalic.ttf}I can’t believe this is happening! If I had learned how to do more in-depth, thoughtful research I would have known that pushing the “Robot Apocalypse” button on the new prototype was a bad idea!{/font}"
-    mt "{font=SourceSansPro-SemiboldItalic.ttf}I wish I could go back in time to when I was writing that paper in college and visit the library to learn about presearching!{/font}"
+    mt "{font=SourceSansPro-SemiboldItalic.ttf}I wish I could go back in time to when I was writing that paper in college and visit the library to learn about pre-searching!{/font}"
 
     "Game Over"
     if not persistent.achievement_bad_end1_unlocked:
@@ -612,7 +610,7 @@ label toTheLibrary:
 
     show kevin confused at rightmid
     with qdissolve
-    k "This presearching thing isn’t going that great for me. I just did a Google search and now I’m totally confused."
+    k "This pre-searching thing isn’t going that great for me. I just did a Google search and now I’m totally confused."
     
     show jeff neutral at left
     with qdissolve
@@ -665,7 +663,7 @@ label getLibrarian:
     m "We don’t know why we got so many results, or how to find the information we need from each result."
     show kevin neutral at rightmid
     with qdissolve
-    s "Ah, it sounds like you guys are doing some presearching! What terms are you using when you search in Google?"
+    s "Ah, it sounds like you guys are doing some pre-searching! What terms are you using when you search in Google?"
     
     k "I just typed in “Why are there video games?”"
     
@@ -685,7 +683,7 @@ label getLibrarian:
     
     show kevin neutral
     with qdissolve
-    k "Oh yeah, Dr. Windham said we could use that in our presearching. I’ll give it a shot. Let’s go straight to Wikipedia and type in “video games.”"
+    k "Oh yeah, Dr. Windham said we could use that in our pre-searching. I’ll give it a shot. Let’s go straight to Wikipedia and type in “video games.”"
     k "Wow, look at all the information that came up!"
     k "I had no idea there was so much going on with this topic. What do I do now?"
     
@@ -702,7 +700,7 @@ label getLibrarian:
     
     show stephanie happy
     with qdissolve
-    s "Well that is a relief. Sounds to me like you are using presearching to narrow down your topic!"
+    s "Well that is a relief. Sounds to me like you are using pre-searching to narrow down your topic!"
     
     show kevin happy at rightmid
     with qdissolve
@@ -710,7 +708,7 @@ label getLibrarian:
     
     show stephanie neutral
     with qdissolve
-    s "Now, don’t forget that you have tons of other resources at your disposal for presearching. These books you see on the walls on the first floor are our Reference collection."
+    s "Now, don’t forget that you have tons of other resources at your disposal for pre-searching. These books you see on the walls on the first floor are our Reference collection."
     s "They are great to get some general info and context on a subject you want to research."
     
     jump readyReference
@@ -796,13 +794,13 @@ label doneReadyRef:
     s "Remember that you are essentially looking for the who, what, when, where, and why of each topic when you presearch. Any of these aspects of a topic are great ways to help narrow and focus your topic."
     s "Kevin looked for the “what” of his topic—What are people studying about video games? What issues are people talking about?"
     s "He might have also looked at where video games are popular to compare, for instance, how people play video games in Korea vs. how they play them in the US."
-    s "And then, once you’ve gotten your info from presearching, you can start putting together your research question."
+    s "And then, once you’ve gotten your info from pre-searching, you can start putting together your research question."
     
     sv "What are you thinking right now?"
 
     menu:
 
-        sc "And then, once you’ve gotten your info from presearching, you can start putting together your research question.{fast}"
+        sc "And then, once you’ve gotten your info from pre-searching, you can start putting together your research question.{fast}"
 
         "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hey! I know what a research question is!{/font}":
             m "A research question is a question you seek to answer with your research, right?"
@@ -1012,7 +1010,7 @@ label talkingToWindham:
     with qdissolve
     dw "Go ahead and take a seat, you two. How can I help you?"
     
-    m "We took your advice about going to the library to do some presearching. While we were there, the librarian mentioned that we would use our presearching to come up with a research question."
+    m "We took your advice about going to the library to do some pre-searching. While we were there, the librarian mentioned that we would use our pre-searching to come up with a research question."
     
     show windham neutral
     with qdissolve
@@ -1032,7 +1030,7 @@ label talkingToWindham:
             
             dw "Think about ways you can narrow a broad topic."
             
-            m "Presearching?"
+            m "Pre-searching?"
             
             jump Presearching
             
@@ -1040,17 +1038,17 @@ label talkingToWindham:
             
             dw "Not quite yet. Think about ways you can narrow a broad topic."
             
-            m "Presearching?"
+            m "Pre-searching?"
             
             jump Presearching
             
-        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Presearching?":
+        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} Pre-searching?":
             
             jump Presearching
     
 label Presearching:
 
-    dw "Right! Through my presearching, I narrow my topic down to cyberbullying and teenage suicide."
+    dw "Right! Through my pre-searching, I narrow my topic down to cyberbullying and teenage suicide."
     
     dw "Now, I need to think about how to turn this topic into a question that I want to answer in my research. I need to think about what I really want to know about cyberbullying and teenage suicide."
     
@@ -1107,7 +1105,7 @@ label interestingQuestion:
             jump ResearchQuestion
             
         "{font=SourceSansPro-Bold.ttf}Suggest:{/font} What is the connection between cyberbullying and teenage suicide?":
-            dw "Not bad, but I think I get even even more specific, since through my presearching I know that I am interested in how this issue relates to law."
+            dw "Not bad, but I think I get even even more specific, since through my pre-searching I know that I am interested in how this issue relates to law."
             m "Maybe, “Should there be an anti-cyberbullying law?”"
             jump ResearchQuestion
             
@@ -1239,14 +1237,14 @@ label actOneAnyQuestions:
     
     m "Okay, I got this."
 
-    dw "Why is presearching important?"
+    dw "Why is pre-searching important?"
     
     menu:
         
-        dwc "Why is presearching important?{fast}"
+        dwc "Why is pre-searching important?{fast}"
         
         "{font=SourceSansPro-Bold.ttf}Say:{/font} To help you narrow your topic":
-            dw "Exactly. Or broaden your focus if your topic is too specific. Presearching gives you the background information about a topic that you need to know to do quality, effective research."
+            dw "Exactly. Or broaden your focus if your topic is too specific. Pre-searching gives you the background information about a topic that you need to know to do quality, effective research."
             show windham neutral
             with qdissolve
             jump actOneWrapUpPresearching
@@ -1261,13 +1259,13 @@ label actOneAnyQuestions:
         "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t know":
             show windham neutral
             with qdissolve
-            dw "Presearching helps you narrow your topic if it is too broad, or broaden your focus if your topic is too specific."
-            dw "Presearching gives you the background information about a topic that you need to know to do effective research."
+            dw "Pre-searching helps you narrow your topic if it is too broad, or broaden your focus if your topic is too specific."
+            dw "Pre-searching gives you the background information about a topic that you need to know to do effective research."
             jump actOneWrapUpPresearching
     
 label actOneWrapUpPresearching:
     
-    dw "Also remember that your presearching should inform your research question."
+    dw "Also remember that your pre-searching should inform your research question."
     
     dw "What is a research question?"
 
@@ -1289,7 +1287,7 @@ label actOneWrapUpPresearching:
             
 label actOneWrapUpResearchQuestion:
     
-    dw "Your research question is your starting point when you do your research. You’ll do presearching to help you decide how you want to narrow your topic into a research question."
+    dw "Your research question is your starting point when you do your research. You’ll do pre-searching to help you decide how you want to narrow your topic into a research question."
     dw "Research questions should be specific enough so that you can address them with the appropriate level of depth in your research paper."
     dw "However, you don’t want them to be so specific that you won’t be able to find any information."
     dw "What are some other things you want to keep in mind when crafting a research question?"
