@@ -654,7 +654,7 @@ label getLibrarian:
     
     m "No. Absolutely not."
     
-    s "Um, alright. Well, I’m Stephanie, and I’m a Librarian here at Ingram Library. Jeff here says that you all might need help with some research?"
+    ul "Um, alright. Well, I’m Stephanie, and I’m a Librarian here at Ingram Library. Jeff here says that you all might need help with some research?"
     
     show kevin happy at rightmid
     with qdissolve
@@ -891,6 +891,7 @@ label actOneFountain:
     
     show jeff confused
     with qdissolve
+    sv "Jeff suddenly notices some workers a short distance away that are setting up lights."
     j "Hey, are those crew members for that movie they are filming on campus?"
     
     #scene bg movieSet with AlphaDissolve("blackWipe", delay=1.0)
@@ -965,6 +966,9 @@ label actOneNextdayClassroom:
 
     show kevin neutral at right
     with qdissolve
+
+    sv "You and Kevin are waiting outside Dr. Windham’s office."
+
     k "...And then I was like, you’ve gotta be kidding me. Everybody knows that if a dinosaur and a robot got into a fight, the robot would definitely win."
     
     menu:
@@ -1253,7 +1257,7 @@ label actOneAnyQuestions:
             show windham neutral
             with qdissolve
             dw "Almost there."
-            dw "You might find some useful sources in your presearch, but when you are developing an argument in your paper, the kinds of reference resources you’d use in a presearch—Wikipedia, encyclopedias—might not be ideal for a research paper."
+            dw "You might find some useful sources in your pre-search, but when you are developing an argument in your paper, the kinds of reference resources you’d use in a pre-search—Wikipedia, encyclopedias—might not be ideal for a research paper."
             jump actOneWrapUpPresearching
             
         "{font=SourceSansPro-Bold.ttf}Say:{/font} I don’t know":
