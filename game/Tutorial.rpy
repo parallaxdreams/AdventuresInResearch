@@ -14,7 +14,7 @@ label Tutorial:
     play ambient "sfx/greenery-ambient.ogg"
     play music "music/Greenery.ogg" fadein 0.8
 
-    tu "Hi [name!q]! Welcome to Adventures in Research! To advance to the next screen, just click the mouse button."
+    tu "Hi [name!q]! Welcome to {font=SourceSansPro-SemiboldItalic.ttf}Adventures in Research!{/font} To advance to the next screen, click the mouse button or press the “Enter” key on the keyboard."
     
     tu "Great! In this game we’ll be exploring the basics of academic research."
     
