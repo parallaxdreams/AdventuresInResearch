@@ -492,7 +492,7 @@ label visitChristina:
     
     show kevin surprised
     with qdissolve
-    k "Ouch!"
+    ks "Ouch!"
     #JEFF: [Looks at Kevin, concerned]
     show jeff surprised
     with qdissolve
@@ -694,7 +694,7 @@ label actFiveWrapup:
     show kevin neutral at right
     with qdissolve
 
-    sv "After leaving the festival, the three of you walk down a sidewalk in a quieter part of campus."
+    sv "After leaving the festival, Kevin, Jeff, and you walk down a sidewalk in a quieter part of campus."
 
     m "I’m glad we stopped by. It’s nice to do something to take my mind off of that presentation."
 
