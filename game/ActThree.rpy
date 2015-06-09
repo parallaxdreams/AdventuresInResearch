@@ -45,9 +45,11 @@ label ActThree:
     play ambient "sfx/movieSet-ambient.ogg"
     play music "music/MovieSet.ogg"
     
-    sv "You’re walking on campus and see a large group of people gathered nearby. You think to yourself..."
+    sv "While taking a walk on campus you see a large group of people gathered nearby. You think to yourself..."
 
     menu:
+
+        sv "Choose a response."
 
         "{font=SourceSansPro-Bold.ttf}(thinking):{/font} {font=SourceSansPro-SemiboldItalic.ttf}Hmm...I’ve got about an hour before my next class. I guess I could go to the library, but it’s so nice outside today.{/font}":
             jump movieFilmingBegins
@@ -128,7 +130,7 @@ label movieFilmingBegins:
     
     show kevin surprised
     with qdissolve
-    k "Why? it’s about my topic."
+    k "Why? It’s about my topic."
 
     show kevin happy
     with qdissolve
@@ -490,9 +492,10 @@ label PointOfView:
     j "Right."
 
     sv "You bring up the library’s website on your phone."
-    sv "Now what?"
     
     menu:
+
+        sv "Choose a response."
 
         "{font=SourceSansPro-Bold.ttf}Say:{/font} Alright, I see the search box where I can look up things in the library catalog. Let’s jump right in.":
             show kevin concerned
@@ -581,6 +584,8 @@ label importantPartsOfRecord:
 
         menu:
 
+            sv "Choose a response."
+
             "{font=SourceSansPro-Bold.ttf}Ask:{/font} Why is it important who the author is?" if author_important_asked == False:
                 $ author_important_asked = True
                 j "Well if you want to find a particular book, the author is a good way to make sure you have the book you want. Sometimes books have the same titles."
@@ -661,7 +666,7 @@ label letsGoFindThatBook:
     with qdissolve
     j "She’s probably busy, maybe we shouldn’t bother—"
     
-    k "Hey Stephanie!"
+    ks "Hey Stephanie!"
     
     show stephanie neutral at center
     with qdissolve
@@ -682,6 +687,8 @@ label letsGoFindThatBook:
     show kevin neutral
     with qdissolve
     k "Actually that would be really helpful. I always get lost when I try to use those things on my own."
+
+    sv "You follow Stephanie downstairs."
     
     scene bg libraryPCs with fade
     
@@ -691,6 +698,9 @@ label letsGoFindThatBook:
     show kevin neutral at center
     show jeff neutralleft at right
     with qdissolve
+
+    sv "Kevin takes a seat at one of the computers."
+
     s "Okay, Kevin. I’ll let you drive. Go ahead and head over to the library homepage."
 
     show screenshot libraryHome
@@ -732,6 +742,8 @@ label gettingToDatabases:
     show screenshot galileoHome
     with qdissolve
     k "Got it."
+
+    sv "The GALILEO homepage comes up on the screen."
     show kevin concerned
     with qdissolve
     k "Where to now? Do I just type in my search terms at the search box at the top of the screen?"
@@ -811,7 +823,10 @@ label gettingToDatabases:
     
     m "I’m confused. If GALILEO isn’t a database, then what is?"
     
-    s "Databases are things like Academic Search Complete, or PsychINFO, both of which are provided to us through EBSCOhost."
+    s "Databases are things like Academic Search Complete, or PsychINFO, both of which are provided to us through EBSCO."
+
+    sv "usually pronounced as ebsco"
+
     s "People sometimes say they want to search EBSCO, but this is the company name, not the database name. EBSCO owns many databases."
     s "You follow?"
     show jeff happyleft
@@ -845,6 +860,8 @@ label gettingToDatabases:
     k "Okay...let me see."
     show screenshot acCompleteHome
     with qdissolve
+
+    sv "The search screen for Academic Search Complete loads up."
     k "Got it. Hey, this kind of looks like the Discovery tool we just used. Am I going to get a million results here?"
 
     s "No, not here. This is only going to search one database, where Discovery searched tens, if not hundreds. Academic Search Complete is actually neither completely academic nor complete, but for our purposes it will do the trick."
@@ -1056,7 +1073,7 @@ label moreDatabaseSearching:
     cbkana "I’m in the library too. I was gonna see if you wanted to meet up to work on our projects?"
     
     play sndfx "sfx/cb_sent_tone.ogg"
-    cbkme "Sure we are on the first floor near the computers, wanna meet us here?"
+    cbkme "Sure, we are on the first floor near the computers, wanna meet us here?"
     
     play sndfx "sfx/cb_tone.ogg"
     cbkana "Sure! See you in a sec"
@@ -1082,7 +1099,7 @@ label moreDatabaseSearching:
     with qdissolve
     ka "Yeah, I use the database Art Full Text all the time."
     ka "When I’m researching artists or specific works of art, it is much faster to search a database dedicated only to art."
-    ka "Saves a lot of time, and I get much better results than I would in a database like Academic Search Complete or Proquest Research Library."
+    ka "Saves a lot of time, and I get much better results than I would in a database like Academic Search Complete or ProQuest Research Library."
     ka "I found Art Full Text on the art research guide, actually."
     
     m "What’s a research guide?"
@@ -1266,7 +1283,7 @@ label searchingWithKeywords:
     show booleanPants at Position(xpos=0.0, xanchor=0.0, ypos=0.0, yanchor=0.0)
     with dissolve
 
-    sv "The three women disappear, leaving the three men to stand there talking to themselves. Each guy is wearing a different color shirt: red, green, or blue."
+    sv "The three women disappear, leaving the three men to stand there talking to themselves. Each guy is wearing a shirt with a different color: red, green, or blue."
 
     m "Wait, how did that happen?"
 
@@ -1548,6 +1565,8 @@ label chattingLibrarian:
     else:
 
         menu:
+
+            sv "Choose a response."
 
             "{font=SourceSansPro-Bold.ttf}Type:{/font} My friends mentioned that there was this acronym to help them remember what all they need to do to evaluate information. I think it was called CRAAP. Do you know what those letters stand for again?" if chat_crap_asked == False: 
                 $chat_crap_asked = True
