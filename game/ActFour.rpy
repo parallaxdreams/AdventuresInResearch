@@ -417,7 +417,7 @@ label actFourtoTheLibrary:
     j "Here’s an example from my paper. I’m writing in MLA style."
     
     #[IN TEXT CITATION EXAMPLE:
-    "{font=Coustard-Regular.ttf}{size=-3}{color=#d9d9d9}“...our study found that individuals who have admitted to illegally downloading music also tend to purchase music legally more often than people who do not download music illegally...” (Mitchell 23).{/color}{/size}{/font}"
+    qchar "{font=Coustard-Regular.ttf}{size=-3}{color=#d9d9d9}“...our study found that individuals who have admitted to illegally downloading music also tend to purchase music legally more often than people who do not download music illegally...” (Mitchell 23).{/color}{/size}{/font}"
     
     show christina neutral
     with qdissolve
@@ -477,7 +477,7 @@ label actFourtoTheLibrary:
     with qdissolve
     s "Any suggestions about how we could paraphrase this sentence:"
 
-    "{font=Coustard-Regular.ttf}{size=-3}{color=#d9d9d9}“...our study found that individuals who have admitted to illegally downloading music also tend to purchase music legally more often than people who do not download music illegally...” (Mitchell 23).{/color}{/size}{/font}"
+    qchar "{font=Coustard-Regular.ttf}{size=-3}{color=#d9d9d9}“...our study found that individuals who have admitted to illegally downloading music also tend to purchase music legally more often than people who do not download music illegally...” (Mitchell 23).{/color}{/size}{/font}"
 
     m "Maybe: {font=Coustard-Regular.ttf}{size=-3}{color=#d9d9d9}The study consulted has found that people who pirate music are more likely to buy music legally.{/color}{/size}{/font}"
 
@@ -503,6 +503,8 @@ label typesofPlagiarism:
 
     else:
         menu:
+
+            sv "Choose a response."
 
             "{font=SourceSansPro-Bold.ttf}Ask:{/font} What’s idea plagiarism?" if idea_plagiarism_asked == False:
                 $ idea_plagiarism_asked = True
@@ -622,6 +624,8 @@ label JeffHasMoreToSay:
     j "No, I’m good. I’ll see you both later!"
     hide jeff with qdissolve
 
+    sv "Jeff leaves."
+
     m "I do have a question or two, actually."
     show stephanie concerned
     with qdissolve
@@ -653,6 +657,8 @@ label actFourWrapUpQuestions:
     else:
 
         menu:
+
+            sv "Choose a response."
 
             "{font=SourceSansPro-Bold.ttf}Ask:{/font} What is paraphrase plagiarism again?" if paraphrase_asked == False:
                 $ paraphrase_asked = True

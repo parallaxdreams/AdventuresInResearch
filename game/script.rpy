@@ -333,6 +333,9 @@ define ks = Character('Kevin', ctc="dialogueAdvance", ctc_position="nestled", wh
 #This is used for Stephanie, before she has introduced herself to the player
 define ul = Character('Librarian', who_alt="The Librarian", ctc="dialogueAdvance", ctc_position="nestled", what_alt="says, [text]")
 
+#Used for quotations from written works
+define qchar = Character(' ', ctc="dialogueAdvance", ctc_position="nestled", who_alt="quote", what_alt="[text], unquote")
+
 #chatterbox characters and window, text styling
 #Kana
 define cbkana = Character(None, window_background="imgs/ui/kanachatterbox.png", window_yminimum=249, window_ypos=0.55, window_left_padding=430, window_right_padding=340, window_top_padding=66, what_font="SourceSansPro-Regular.ttf", what_color="#323232", what_size=24, what_style="say_chatterbox", slow=False, what_alt="A chatterbox message from Kana says, [text]")
