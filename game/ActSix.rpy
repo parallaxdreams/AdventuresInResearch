@@ -63,7 +63,7 @@ label ActSix:
             jump ActSixContinues
 
         "{font=SourceSansPro-Bold.ttf}Say:{/font} I’m glad to finally have it done.":
-            k "Me too. I can’t believe I’m saying this, but it was of interesting to do this research project."
+            k "Me too. I can’t believe I’m saying this, but it was kind of interesting to do this research project."
             jump ActSixContinues
 
 label ActSixContinues:
@@ -85,7 +85,7 @@ label ActSixContinues:
 
         kc "I’m not worried about that, I put most of the stuff I wanted to say on my slides.{fast}"
 
-        "{font=SourceSansPro-Bold.ttf}Suggest:{/font} You might want to rethink that.":
+        "{font=SourceSansPro-Bold.ttf}Say:{/font} You might want to rethink that.":
             show kevin concerned
             with qdissolve
             k "Why?"
