@@ -319,7 +319,7 @@ screen load_file_picker:
             selected_idle "imgs/ui/load_slots_nav_selected.png"
             selected_hover "imgs/ui/load_slots_nav_selected.png"
 
-            hotspot (47, 43, 329, 54) action FilePage(1) alt _("View Saved Games button")
+            hotspot (47, 43, 329, 54) action FilePage(1) alt _("View Your Saved Games button")
             hotspot (378, 43, 326, 54) action FilePage("auto") alt _("View auto saved games button")
             hotspot (706, 43, 244, 54) action ShowMenu("actSelect") alt _("View Act Selection screen button")
             
@@ -430,7 +430,7 @@ screen actSelect:
         selected_idle "imgs/ui/load_slots_nav_selected.png"
         selected_hover "imgs/ui/load_slots_nav_selected.png"
 
-        hotspot (47, 43, 329, 54) action [If(FileCurrentPage()=="auto", FilePage(1)), ShowMenu("load")] alt _("View Saved Games button")
+        hotspot (47, 43, 329, 54) action [If(FileCurrentPage()=="auto", FilePage(1)), ShowMenu("load")] alt _("View Your Saved Games button")
         hotspot (378, 43, 326, 54) action [If(FileCurrentPage()==1, FilePage("auto")), ShowMenu("load")] alt _("View auto saved games button")
         hotspot (706, 43, 244, 54) action ShowMenu("actSelect") alt _("View Act Selection screen button")
 
