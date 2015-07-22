@@ -98,6 +98,7 @@ label classBegins:
             jump classContinues
 
         "Don’t Raise Your Hand":
+            sv "Dr. Windham calls on another student."
             dw "Yes, Jeff?"
             show jeff neutralleft at rightmid
             with qdissolve
