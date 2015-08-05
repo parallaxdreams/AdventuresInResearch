@@ -19,7 +19,7 @@ Adventures in Research (2012-2015)
 Created by Dean Sullivan and Jessica Critten, University of West Georgia
 (dsulliva@westga.edu) and (jcritten@westga.edu)
 Artwork by Heidi Black (heidimblack@gmail.com | www.electricabyss.com)
-Music by Craig Schroer
+Music by Craig Schroer (craig@westga.edu)
 
 
 Note: To run the Software, you will need download the Ren’Py SDK (separately
