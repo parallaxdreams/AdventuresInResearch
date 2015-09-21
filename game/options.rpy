@@ -44,7 +44,7 @@ init -1:
     #Update KeyBindings
     $ config.keymap['rollback'].append('K_LEFT')
     $ config.keymap['rollback'].remove('mousedown_4')
-    $ config.keymap['rollback'].remove('joy_rollback')
+    #$ config.keymap['rollback'].remove('joy_rollback')  Possibly discontinued / rolled into pad_bindings?
     $ config.keymap['rollforward'].append('K_RIGHT')
     $ config.keymap['rollforward'].remove('mousedown_5')
     $ config.keymap['game_menu'].remove('mouseup_3')
