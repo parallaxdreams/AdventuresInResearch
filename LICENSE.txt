@@ -1,4 +1,4 @@
-Adventures in Research (2012-2016)
+Adventures in Research (2012-2017)
 by Dean Sullivan and Jessica Critten
 (dsulliva@westga.edu) and (jcritten@westga.edu)
 University of West Georgia
@@ -15,7 +15,7 @@ for the following:
 for licenses)
 
 For attribution use:
-Adventures in Research (2012-2016)
+Adventures in Research (2012-2017)
 Created by Dean Sullivan and Jessica Critten, University of West Georgia
 (dsulliva@westga.edu) and (jcritten@westga.edu)
 Artwork by Heidi Black (heidimblack@gmail.com | www.electricabyss.com)
