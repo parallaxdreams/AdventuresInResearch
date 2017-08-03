@@ -1,4 +1,4 @@
-%##
+##
 ## Adventures in Research (2012-2017)
 ## by Dean Sullivan and Jessica Critten
 ## (dsulliva@westga.edu) and (jcritten@westga.edu)
