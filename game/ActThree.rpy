@@ -377,7 +377,7 @@ label PointOfView:
 
     show jeff neutral
     with qdissolve
-    j "All this reminds me—in my LIBR 11O1 class we had an acronym for remembering all of these evaluation criteria. It was CRAAP."
+    j "All this reminds me—in my LIBR 21OO class we had an acronym for remembering all of these evaluation criteria. It was CRAAP."
     
     show kevin concerned
     with qdissolve
@@ -1080,7 +1080,7 @@ label moreDatabaseSearching:
     
     m "Kana’s gonna meet us down here to work on our projects."
     
-    j "She was in my LIBR 11O1 class last semester, so she should be able to help us navigate GALILEO."
+    j "She was in my LIBR 21OO class last semester, so she should be able to help us navigate GALILEO."
     
     m "Cool. Well while we are waiting for her, maybe we can search GALILEO?"
     
@@ -1148,7 +1148,7 @@ label databaseSearching:
 
     show jeff confusedleft
     with qdissolve
-    j "We talked about them in LIBR 11O1, keywords are like your search terms."
+    j "We talked about them in LIBR 21OO, keywords are like your search terms."
 
     show kana neutral
     with qdissolve

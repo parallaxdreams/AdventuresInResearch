@@ -434,7 +434,7 @@ label questionsRefined:
     
     show jeff neutral at leftthird
     with qdissolve
-    j "In my LIBR 11O1 class, we called that pre-searching. It is when you do research before you do research."
+    j "In my LIBR 21OO class, we called that pre-searching. It is when you do research before you do research."
     hide jeff neutral
     with qdissolve
     

@@ -160,7 +160,7 @@ label visitKana:
 
     show kevin neutral
     with qdissolve
-    k "I didn’t take LIBR 11O1 or anything but I’m not a dummy."
+    k "I didn’t take LIBR 21OO or anything but I’m not a dummy."
 
     show jeff neutral
     with qdissolve
@@ -232,7 +232,7 @@ label postFilterBubbleWorld:
     j "Think about it, people post news articles or opinions on Facebook or Twitter or Chatterbox because those are things that they have some kind of reaction to—either they really agree with something or really disagree with something."
     j "Either way, there is a good chance that you are starting out with biased information."
 
-    ka "In LIBR 11O1 we talked about it in the context of something called “social media literacy”."
+    ka "In LIBR 21OO we talked about it in the context of something called “social media literacy”."
 
     show kevin concerned
     with qdissolve
