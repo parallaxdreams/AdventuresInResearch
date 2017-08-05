@@ -104,7 +104,7 @@ label slideText:
 
     show kevin neutral
     with qdissolve
-    k "Let me guess, you got some presentation tips in your LIBR 11O1 class."
+    k "Let me guess, you got some presentation tips in your LIBR 21OO class."
 
     show jeff happy
     with qdissolve

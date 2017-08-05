@@ -1,4 +1,4 @@
-﻿##
+##
 ## Adventures in Research (2012-2017)
 ## by Dean Sullivan and Jessica Critten
 ## (dsulliva@westga.edu) and (jcritten@westga.edu)
@@ -444,7 +444,7 @@ python early:
     config.savedir = renpy.config.renpy_base + "/saves"
     
     #Default Value For Saves
-    #config.save_directory = "LIBR1101 Game-1345493192"
+    #config.save_directory = "LIBR2100 Game-1345493192"
 
 init -1 python hide:
     #########################################
@@ -480,13 +480,13 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    #build.directory_name = "libr1101game-" + "v" + config.version + "-" + show_date
-    build.directory_name = "libr1101game-" + "v" + config.version
+    #build.directory_name = "libr2100game-" + "v" + config.version + "-" + show_date
+    build.directory_name = "libr2100game-" + "v" + config.version
     
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
     ## users can click 'mygame.exe' to start the game.
-    build.executable_name = "libr1101game"
+    build.executable_name = "libr2100game"
     
     ## If True, Ren'Py will include update information into packages. This
     ## allows the updater to run.

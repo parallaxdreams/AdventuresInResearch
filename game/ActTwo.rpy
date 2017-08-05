@@ -637,7 +637,7 @@ label ScholarlyPop:
 
 label gottaRun:
 
-    s "Well, folks, the LIBR 11O1 class I teach is in a few minutes so I’ve gotta run. I hope this discussion was helpful."
+    s "Well, folks, the LIBR 21OO class I teach is in a few minutes so I’ve gotta run. I hope this discussion was helpful."
     s "Before you leave you should head up to the stacks and look around."
     s "Send me an email if you have any more questions, or if you’d like to set up a research consultation."
     
@@ -719,7 +719,7 @@ label gottaRun:
     
     m "That sounds cool. I think our friend Jeff was talking about it the other day."
     
-    ka "Jeff from class? I know him, we took LIBR 11O1 together last semester."
+    ka "Jeff from class? I know him, we took LIBR 21OO together last semester."
     show kevin neutral
     with qdissolve
     k "He’s a cool guy. He’s been helping us a lot with this research project for class."
@@ -802,7 +802,7 @@ label sourceTypesContinued:
     
     show kevin happy
     with qdissolve
-    k "Wow, I really wish I had taken LIBR 11O1. It sounds like you and Jeff learned a lot in that class."
+    k "Wow, I really wish I had taken LIBR 21OO. It sounds like you and Jeff learned a lot in that class."
     
     ka "It was pretty useful!"
     
